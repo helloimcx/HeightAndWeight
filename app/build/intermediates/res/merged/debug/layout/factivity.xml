@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageButton
+            android:id="@+id/shareToMoments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#00ffffff"
+            android:src="@drawable/icon_res_download_moments" />
+
+        <ImageButton
+            android:id="@+id/shareToFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/shareToMoments"
+            android:background="#00ffffff"
+            android:src="@drawable/icon64_appwx_logo" />
+
+    </RelativeLayout>
+    
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="27sp"
+        android:text="点击图片开始测试" />
+
+   
+        <ImageButton
+            android:layout_marginTop="30dp"
+            android:id="@+id/imageButton1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00ffffff"
+            android:src="@drawable/one" />
+
+  
+    
+    
+    
+</LinearLayout>

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/drawable/background_login.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/drawable/background_login.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/drawable/buttonshape.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/drawable/buttonshape.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/drawable/background_login_div.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/drawable/background_login_div.xml"
+    }
+]

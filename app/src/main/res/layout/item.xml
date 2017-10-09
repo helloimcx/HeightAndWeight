@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+          <TextView 
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名: "
+            android:textSize="20sp"
+          />
+          <TextView 
+            android:id="@+id/showname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           
+          />
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+          <TextView 
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别: "
+            android:textSize="20sp"
+          />
+          <TextView 
+            android:id="@+id/showSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           
+          />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+          <TextView 
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身高(cm) :"
+            android:textSize="20sp"
+          />
+          <TextView 
+            android:id="@+id/showheight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           
+          />
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+          <TextView 
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体重(kg): "
+            android:textSize="20sp"
+          />
+          <TextView 
+            android:id="@+id/showweight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           
+          />
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+          <TextView 
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI值: "
+            android:textSize="20sp"
+          />
+          <TextView 
+            android:id="@+id/showBMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           
+          />
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+          <TextView 
+          
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试时间: "
+            android:textSize="20sp"
+          />
+          <TextView 
+            android:id="@+id/showDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+           
+          />
+    </LinearLayout>
+    
+     <ImageView
+        android:id="@+id/resultImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+         />
+    
+
+</LinearLayout>

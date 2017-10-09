@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="wechat-sdk-android-with-mta-1.3.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/wechat-sdk-android-with-mta-1.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/factivity.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/factivity.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/access.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/access.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/title.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/title.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/register.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/register.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/welcome.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/welcome.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/login.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/login.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/fragment_main.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/fragment_main.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/webview.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/webview.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/item.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/item.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/sactivity.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/sactivity.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/record_list.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/record_list.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/bottom.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/bottom.xml"
+    },
+    {
+        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/layout/top.xml",
+        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/layout/top.xml"
+    }
+]

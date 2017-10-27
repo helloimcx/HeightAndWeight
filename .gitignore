@@ -63,3 +63,5 @@ captures/
 # Keystore files
 *.jks</span>
 .idea/
+.DS_Store
+

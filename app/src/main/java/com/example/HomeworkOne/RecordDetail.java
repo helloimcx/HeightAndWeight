@@ -1,73 +1,98 @@
 package com.example.HomeworkOne;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class RecordDetail extends Activity{
-	private TextView showName,showSex,showHeight,showWeight,showBMI,showDate;
+import static android.content.Context.MODE_PRIVATE;
+
+public class RecordDetail extends android.support.v4.app.Fragment {
+	private EditText record_height, record_weight, record_bmi, record_result, record_time;
 	private ImageView imageView;
-   @Override
-    protected void onCreate(Bundle savedInstanceState) {
-	// TODO Auto-generated method stub
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.item);
-	showName=(TextView) findViewById(R.id.showname);
-	showSex=(TextView) findViewById(R.id.showSex);
-	showHeight=(TextView) findViewById(R.id.showheight);
-	showWeight=(TextView) findViewById(R.id.showweight);
-	showBMI=(TextView) findViewById(R.id.showBMI);
-	showDate=(TextView) findViewById(R.id.showDate);
-	imageView=(ImageView) findViewById(R.id.resultImage);
-	
-	Intent intent=getIntent();
-	Bundle bundle=intent.getExtras();
-	int sex = bundle.getInt("sex");
-	
-	showName.setText(bundle.getString("name"));
-	showHeight.setText(bundle.getDouble("height")+"");
-	showWeight.setText(bundle.getDouble("weight")+"");
-	showBMI.setText(bundle.getDouble("BMI")+"");
-	showDate.setText(bundle.getString("date"));
-	showSex.setText((sex==0)?"ÄÐ":"Å®");
-	
-	double BMI=Double.parseDouble(showBMI.getText()+"");
-	
-	if(sex==0){
-			if(BMI<18.5){
+	private Button goBack;
+	public static double height, weight, BMI;
+	public static String result, time;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View view = inflater.inflate(R.layout.record_detail, container, false);
+
+		record_height = (EditText) view.findViewById(R.id.record_height);
+		record_weight = (EditText) view.findViewById(R.id.record_weight);
+		record_bmi = (EditText) view.findViewById(R.id.record_bmi);
+		record_result = (EditText) view.findViewById(R.id.record_result);
+		record_time = (EditText) view.findViewById(R.id.record_time);
+		imageView = (ImageView) view.findViewById(R.id.record_image);
+		goBack = (Button) view.findViewById(R.id.record_go_back);
+
+		String height_str = height + "  cm";
+		String weight_str = weight + "  kg";
+		String bmi_str = BMI + "";
+		record_height.setText(height_str);
+		record_weight.setText(weight_str);
+		record_bmi.setText(bmi_str);
+		record_result.setText(result);
+		record_time.setText(time);
+
+		SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
+		String sex = share.getString("sex", "null");
+		if (sex.equals("M")) {
+			if (BMI < 18.5) {
 				imageView.setImageResource(R.drawable.thin);
-			}
-			else if(BMI<=23.9){
+			} else if (BMI <= 23.9) {
 				imageView.setImageResource(R.drawable.good);
-			}
-			else if(BMI<=27){
+			} else if (BMI <= 27) {
 				imageView.setImageResource(R.drawable.fast);
-			}
-			else if(BMI<=32){
+			} else if (BMI <= 32) {
 				imageView.setImageResource(R.drawable.veryfast);
-			}
-			else{
+			} else {
 				imageView.setImageResource(R.drawable.veryveryfast);
 			}
-	}
-	else {
-			if(BMI<18.5){
+		} else {
+			if (BMI < 18.5) {
 				imageView.setImageResource(R.drawable.female_thin);
-			}
-			else if(BMI<=23.9){
+			} else if (BMI <= 23.9) {
 				imageView.setImageResource(R.drawable.female_good);
-			}
-			else if(BMI<=27){
+			} else if (BMI <= 27) {
 				imageView.setImageResource(R.drawable.female_fat);
-			}
-			else if(BMI<=32){
+			} else if (BMI <= 32) {
 				imageView.setImageResource(R.drawable.female_vfat);
-			}
-			else{
+			} else {
 				imageView.setImageResource(R.drawable.female_vvfat);
 			}
+		}
+
+		goBack.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				switchFragment(new RecordFragment());
+			}
+		});
+
+		return view;
+	}
+
+	private void switchFragment(android.support.v4.app.Fragment targetFragment) {
+		MainActivity.tab_transfer = targetFragment;
+		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		if (!targetFragment.isAdded()) {
+			transaction
+					.hide(RecordDetail.this)
+					.add(R.id.id_content, MainActivity.tab_transfer)
+					.commit();
+		} else {
+			transaction
+					.hide(RecordDetail.this)
+					.show(MainActivity.tab_transfer)
+					.commit();
+		}
 	}
 }
-}
+

@@ -1,11 +1,14 @@
 package com.example.HomeworkOne;
 
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,12 +17,15 @@ import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-import org.json.JSONObject;
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
 
 
 public class MainActivity extends FragmentActivity implements OnClickListener{
@@ -37,7 +43,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	private Fragment tab01;
 	private Fragment tab02;
 	private Fragment tab03;
-	public static Fragment tab04;
+	private Fragment tab04;
+	public static Fragment tab_transfer;
+	public static OkHttpClient okHttpClient;
+	public static String sessionid;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +56,28 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		initView();//初始化所有的view
 		initEvents();
 		setSelect(0);//默认显示测试界面
+		createHttpClient();
+		SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
+		sessionid = share.getString("sessionid","null");
+		if(sessionid.equals("null")){
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setCancelable(true);
+			builder.setTitle("登录").setMessage("登陆后可以在云端保存您的测试记录哦，立即登录？")
+					.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface Arg, int arg) {
+							// TODO Auto-generated method stub
+							resetImg();
+							setSelect(3);
+						}
+					}).setNegativeButton("取消", new DialogInterface.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface arg0, int arg1) {
+					// TODO Auto-generated method stub
+				}
+			});
+			builder.create().show();
+		}
 	}
 
 	private void initEvents() {
@@ -54,7 +85,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mTabRecord.setOnClickListener(this);
 		mTabHelp.setOnClickListener(this);
 		mTabAccount.setOnClickListener(this);
-		
 	}
 
 	private void initView() {
@@ -122,10 +152,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		case 0:
 			if (tab01 == null) {
 				tab01 = new TestFragment();
-				/*
-				 * 将Fragment添加到活动中，public abstract FragmentTransaction add (int containerViewId, Fragment fragment)
-				*containerViewId即为Optional identifier of the container this fragment is to be placed in. If 0, it will not be placed in a container.
-				 * */
 				transaction.add(R.id.id_content, tab01);
 			}else {
 				transaction.show(tab01);
@@ -149,39 +175,19 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			mImgHelp.setImageResource(R.drawable.tab_address_pressed);
 			break;
 		case 3:
-			if (tab04 == null) {
-				Runnable networkTask = new Runnable() {
-					@Override
-					public void run() {
-						try {
-							OkHttpClient okHttpClient = new OkHttpClient();
-							RequestBody requestBody = RequestBody.create();
-							Request request = new Request.Builder()
-									.url("http://120.78.67.135:8000/androidaccount/register")
-									.post(requestBody)
-									.build();
-							Response response=okHttpClient.newCall(request).execute();
-							if(response.isSuccessful()){
-								//打印服务端返回结果
-								register_flag=true;
-							}
-						}catch (Exception e){
-							e.printStackTrace();
-						}
-					}
-				};
-				tab04 = new LoginFragment();
-				transaction.add(R.id.id_content, tab04);
-			}else {
-				transaction.show(tab04);
+			if (!sessionid.equals("null")) {
+				tab04 = new UserInfo();
 			}
+			else {
+				tab04 = new LoginFragment();
+			}
+			transaction.add(R.id.id_content,tab04);
 			mImgAccount.setImageResource(R.drawable.tab_settings_pressed);
 			break;
-
 		default:
 			break;
 		}
-		transaction.commit();//提交事务
+		transaction.commit();
 	}
 
 	/*
@@ -200,7 +206,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		if (tab04 != null) {
 			transaction.hide(tab04);
 		}
-		
+		if (tab_transfer != null) {
+			transaction.hide(tab_transfer);
+		}
 	}
 
 	private void resetImg() {
@@ -209,4 +217,26 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mImgHelp.setImageResource(R.drawable.tab_address_normal);
 		mImgAccount.setImageResource(R.drawable.tab_settings_normal);
 	}
+
+
+
+		 void  createHttpClient() {
+			okHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJar() {
+				private final HashMap<String, List<Cookie>> cookieStore = new HashMap<String, List<Cookie>>();
+				@Override
+				public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
+					cookieStore.put(url.host(), cookies);
+				}
+
+				@Override
+				public List<Cookie> loadForRequest(HttpUrl url) {
+					List<Cookie> cookies = cookieStore.get(url.host());
+					return cookies != null ? cookies : new ArrayList<Cookie>();
+				}
+			}).connectTimeout(5, TimeUnit.SECONDS)
+					.readTimeout(10, TimeUnit.SECONDS)
+					.build();
+		}
 }
+
+

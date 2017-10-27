@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/anim/translate_right.xml",
-        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/anim/translate_right.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/translate_right.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/translate_right.xml"
     },
     {
-        "merged": "/home/kafca/StudioProjects/HealthTest/app/build/intermediates/res/merged/debug/anim/translate_left.xml",
-        "source": "/home/kafca/StudioProjects/HealthTest/app/src/main/res/anim/translate_left.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/translate_left.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/translate_left.xml"
     }
 ]

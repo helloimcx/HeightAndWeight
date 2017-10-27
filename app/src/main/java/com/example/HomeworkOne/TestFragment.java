@@ -1,26 +1,19 @@
 package com.example.HomeworkOne;
-
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.platformtools.Util;
-
-import android.app.AlertDialog;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TestFragment extends Fragment {
@@ -30,27 +23,26 @@ public class TestFragment extends Fragment {
 	private ImageButton testButton;
 	private IWXAPI api;
 	private static final String APP_ID="wxac23c0af2a986db5";
+	public static int photo;
+	public static String content = "点击图片开始测试";
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		//引入我们的布局
 		View v=inflater.inflate(R.layout.factivity, container, false);
 		reToWx();
 		shareToFriends=(ImageButton) v.findViewById(R.id.shareToFriends);
 		shareToMoments=(ImageButton) v.findViewById(R.id.shareToMoments);
 		textView=(TextView) v.findViewById(R.id.textView1);
 		testButton=(ImageButton) v.findViewById(R.id.imageButton1);
+		init();
 		testButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intent=new Intent(getActivity(),SActivity.class);
-				startActivityForResult(intent, 1);
+				switchFragment(new TestDetail());
 			}
 		});
-		
-        
-        
+
          shareToFriends.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -64,7 +56,7 @@ public class TestFragment extends Fragment {
 				msg.description="用户输入自己的身高和体重，应用会根据输入值计算用户的BMI指数（身体质量指数），衡量人体的肥胖程度。";
 				
 				Bitmap thump=android.graphics.BitmapFactory.decodeResource(getResources(),R.drawable.logo);
-				msg.thumbData=Util.bmpToByteArray(thump,true);
+				msg.thumbData= Util.bmpToByteArray(thump,true);
 				
 				SendMessageToWX.Req req=new SendMessageToWX.Req();
 				req.transaction =buildTransaction("webpage");
@@ -100,25 +92,16 @@ public class TestFragment extends Fragment {
 	}
 	
 	private void reToWx(){
-		api=WXAPIFactory.createWXAPI(getActivity().getApplicationContext(),APP_ID,true);
+		api= WXAPIFactory.createWXAPI(getActivity().getApplication(),APP_ID,true);
 		api.registerApp(APP_ID);
 	}
 	
 	private static String buildTransaction(final String type) {
 		return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
 	}
-	
-	
-	
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
-		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode==1&&resultCode==2){
-			String contentString=data.getStringExtra("data");
-			int photo=data.getIntExtra("photo",1);
-			textView.setText(contentString);
-			switch (photo) {
+
+	private void init(){
+		switch (photo) {
 			case 1:
 				testButton.setImageResource(R.drawable.thin);
 				break;
@@ -146,12 +129,29 @@ public class TestFragment extends Fragment {
 			case 9:
 				testButton.setImageResource(R.drawable.female_vfat);
 				break;
-
-			default:
+			case 10:
 				testButton.setImageResource(R.drawable.female_vvfat);
 				break;
-			}
-			
+			default:
+				break;
 		}
+		textView.setText(content);
+	}
+
+	private void switchFragment(android.support.v4.app.Fragment targetFragment) {
+		MainActivity.tab_transfer=targetFragment;
+		FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		if (!targetFragment.isAdded()) {
+			transaction
+					.hide(TestFragment.this)
+					.add(R.id.id_content, MainActivity.tab_transfer)
+					.commit();
+		} else {
+			transaction
+					.hide(TestFragment.this)
+					.show( MainActivity.tab_transfer)
+					.commit();
+		}
+
 	}
 }

@@ -13,11 +13,11 @@
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="姓名: "
+            android:text="测试结果:  "
             android:textSize="20sp"
           />
           <TextView 
-            android:id="@+id/shownameTitle"
+            android:id="@+id/show_result_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -35,11 +35,11 @@
           
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试时间: "
+            android:text="测试时间:  "
             android:textSize="20sp"
           />
           <TextView 
-            android:id="@+id/showDateTitle"
+            android:id="@+id/show_date_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"

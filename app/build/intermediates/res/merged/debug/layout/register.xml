@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="邮箱"
-        android:textSize="8pt"
+        android:textSize="18sp"
         android:textColor="@android:color/darker_gray"
         android:layout_alignLeft="@id/email"
         android:layout_alignTop="@id/email"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="姓名"
-        android:textSize="8pt"
+        android:textSize="18sp"
         android:textColor="@android:color/darker_gray"
         android:layout_alignLeft="@id/username"
         android:layout_alignTop="@id/username"
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="密码"
-        android:textSize="8pt"
+        android:textSize="18sp"
         android:textColor="@android:color/darker_gray"
         android:layout_alignLeft="@id/Password"
         android:layout_alignTop="@id/Password"
@@ -98,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="密码"
-        android:textSize="8pt"
+        android:textSize="18sp"
         android:textColor="@android:color/darker_gray"
         android:layout_alignLeft="@id/PasswordRepeat"
         android:layout_alignTop="@id/PasswordRepeat"
@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:text="男"
             android:textColor="@android:color/darker_gray"
-            android:textSize="8pt"
+            android:textSize="18sp"
             android:checked="true"/>
 
         <RadioButton
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:text="女"
             android:textColor="@android:color/darker_gray"
-            android:textSize="8pt" />
+            android:textSize="18sp" />
     </RadioGroup>
 
 
@@ -144,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="性别"
-        android:textSize="8pt"
+        android:textSize="18sp"
         android:textColor="@android:color/darker_gray"
         android:layout_alignLeft="@id/selectSex"
         android:layout_alignTop="@id/selectSex"

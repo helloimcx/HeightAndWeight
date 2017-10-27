@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/drawable/buttonshape.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/buttonshape.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/drawable/background_login_div.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/background_login_div.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/drawable/background_login.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/background_login.xml"
+    }
+]

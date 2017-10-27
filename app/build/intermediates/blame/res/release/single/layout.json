@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/activity_main.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/userinfo.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/userinfo.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/welcome.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/welcome.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/title.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/title.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/record_detail.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/record_detail.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/login.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/login.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/test_detail.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/test_detail.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/fragment_main.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/fragment_main.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/factivity.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/factivity.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/item.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/item.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/register.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/register.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/access.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/access.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/reflesh.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/reflesh.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/webview.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/webview.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/top.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/top.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/bottom.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/sactivity.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/sactivity.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/layout/record_list.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/record_list.xml"
+    }
+]

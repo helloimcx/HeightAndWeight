@@ -1,8 +1,6 @@
 package com.example.HomeworkOne;
 
-import android.app.Fragment;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,21 +10,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import org.apache.commons.logging.Log;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-import org.apache.http.HttpResponse;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 
-import java.io.IOException;
 import java.lang.String;
 import android.os.Handler;
 import android.os.Message;
-import com.squareup.okhttp.*;
+import okhttp3.*;
 
 
 /**
@@ -44,11 +33,9 @@ public class RegisterFragment extends android.support.v4.app.Fragment{
     private String usernameStr;
     private String passwordStr;
     private String passwordRepeatStr;
-    private String usernameRegister;
     private String sex="F";
-    private Handler handler;
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    private boolean register_flag=false;
+    private int register_flag;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,10 +64,28 @@ public class RegisterFragment extends android.support.v4.app.Fragment{
                     Toast.makeText(getActivity(), "请输入正确的信息！",
                             Toast.LENGTH_SHORT).show();
                 }
-                if(passwordStr.equals(passwordRepeatStr)){
-/**
- * 网络操作相关的子线程
- */
+                if(passwordStr.equals(passwordRepeatStr)) {
+
+                    final Handler handler = new Handler() {
+                        @Override
+                        public void handleMessage(Message msg) {
+                            super.handleMessage(msg);
+                            Bundle data = msg.getData();
+                            int status = data.getInt("status");
+                            // TODO
+                            // UI界面的更新等相关操作
+                            if(status==200){
+                                Toast.makeText(getActivity(), "注册成功!",
+                                        Toast.LENGTH_SHORT).show();
+                                switchFragment(new LoginFragment());
+                            }
+                            else {
+                                Toast.makeText(getActivity(), "注册Email已存在!",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    };
+
                     Runnable networkTask = new Runnable() {
 
                         @Override
@@ -92,40 +97,37 @@ public class RegisterFragment extends android.support.v4.app.Fragment{
                                 OkHttpClient okHttpClient = new OkHttpClient();
                                 JSONObject param = new JSONObject();
                                 param.put("email", emailStr);
-                                param.put("username",usernameStr);
+                                param.put("username", usernameStr);
                                 param.put("sex", sex);
                                 param.put("password", passwordStr);
-                                RequestBody requestBody = RequestBody.create(JSON,param.toString());
+                                RequestBody requestBody = RequestBody.create(JSON, param.toString());
                                 Request request = new Request.Builder()
-                                        .url("http://120.78.67.135:8000/androidaccount/register")
+                                        .url("http://120.78.67.135:8000/android_account/register")
                                         .post(requestBody)
                                         .build();
-                                Response response=okHttpClient.newCall(request).execute();
-                                if(response.isSuccessful()){
+                                Response response = okHttpClient.newCall(request).execute();
+                                if (response.isSuccessful()) {
                                     //打印服务端返回结果
-                                    register_flag=true;
+                                    register_flag = response.code();
                                 }
-                            }catch (Exception e){
+
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
-
-
+                            Message msg = new Message();
+                            Bundle data = new Bundle();
+                            data.putInt("status", register_flag);
+                            msg.setData(data);
+                            handler.sendMessage(msg);
                         }
                     };
 
                     new Thread(networkTask).start();
-                    if(register_flag){
-                        Toast.makeText(getActivity(), "注册成功!",
-                                Toast.LENGTH_SHORT).show();
-                        switchFragment(new LoginFragment());
-                    }
-
                 }
                 else{
                     Toast.makeText(getActivity(), "输入密码不一致!",
                             Toast.LENGTH_SHORT).show();
                 }
-
 
             }
         });
@@ -134,17 +136,17 @@ public class RegisterFragment extends android.support.v4.app.Fragment{
         return view;
     }
     private void switchFragment(android.support.v4.app.Fragment targetFragment) {
-        MainActivity.tab04=targetFragment;
+        MainActivity.tab_transfer=targetFragment;
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         if (!targetFragment.isAdded()) {
             transaction
                     .hide(RegisterFragment.this)
-                    .add(R.id.id_content, MainActivity.tab04)
+                    .add(R.id.id_content, MainActivity.tab_transfer)
                     .commit();
         } else {
             transaction
                     .hide(RegisterFragment.this)
-                    .show( MainActivity.tab04)
+                    .show( MainActivity.tab_transfer)
                     .commit();
         }
 

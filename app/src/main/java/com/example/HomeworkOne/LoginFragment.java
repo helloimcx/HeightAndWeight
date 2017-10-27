@@ -1,8 +1,10 @@
 package com.example.HomeworkOne;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,16 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import Utils.JsonUserBean;
+import okhttp3.Headers;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
+import java.io.IOException;
+import java.util.List;
 import org.json.JSONObject;
+import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -35,7 +44,7 @@ public class LoginFragment extends android.support.v4.app.Fragment{
     private String passwordStr;
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private int login_flag;
-
+    private static Response response;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,86 +65,121 @@ public class LoginFragment extends android.support.v4.app.Fragment{
             @Override
             public void onClick(View v) {
                 try{
-
                     emailStr=email.getText().toString();
                     passwordStr=password.getText().toString();
-
-
                 }catch (Exception e){
                     Toast.makeText(getActivity(), "请输入正确的信息！",
                             Toast.LENGTH_SHORT).show();
                 }
 
+                final Handler handler = new Handler() {
+                    @Override
+                    public void handleMessage(Message msg) {
+                        super.handleMessage(msg);
+                        Bundle data = msg.getData();
+                        int status = data.getInt("status");
+                        String sessionid = data.getString("sessionid");
+                        int user_id = data.getInt("user_id");
+                        String email = data.getString("email");
+                        String username = data.getString("username");
+                        String sex = data.getString("sex");
+                        // TODO
+                        // UI界面的更新等相关操作
+                        SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
+                        SharedPreferences.Editor edit = share.edit();
+                        edit.putString("sessionid", sessionid);
+                        MainActivity.sessionid=sessionid; //每次登录都要更新sessionid
+                        edit.putInt("user_id",user_id);
+                        edit.putString("email", email);
+                        edit.putString("username", username);
+                        edit.putString("sex", sex);
+                        edit.commit();  //保存数据信息
+                        AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+                        switch(status){
+                            case 200:
+                                builder.setMessage("登录成功!");
+                                switchFragment(new UserInfo());
+                                break;
+                            case 400:
+                                builder.setMessage("密码错误!");
+                                break;
+                            case 500:
+                                builder.setMessage("账号不存在!");
+                                break;
+                            default:
+                                builder.setMessage(login_flag+"");
+                        }
+                        builder.setCancelable(true);
+                        AlertDialog dialog=builder.create();
+                        dialog.show();
+                    }
+                };
+
 
                     Runnable networkTask = new Runnable() {
-
                         @Override
                         public void run() {
                             // TODO
                             // 在这里进行 http request.网络请求相关操作
 
                             try {
-                                OkHttpClient okHttpClient = new OkHttpClient();
+                                OkHttpClient okHttpClient = MainActivity.okHttpClient;
                                 JSONObject param = new JSONObject();
                                 param.put("email", emailStr);
                                 param.put("password", passwordStr);
-                                RequestBody requestBody = RequestBody.create(JSON,param.toString());
+                                RequestBody requestBody = RequestBody.create(JSON, param.toString());
                                 Request request = new Request.Builder()
-                                        .url("http://120.78.67.135:8000/androidaccount/login")
+                                        .url("http://120.78.67.135:8000/android_account/login")
                                         .post(requestBody)
                                         .build();
-                                Response response=okHttpClient.newCall(request).execute();
-                                    //打印服务端返回结果
-                                login_flag=response.code();
-                                Log.i("STATUS",response.code()+"");
+                                response = okHttpClient.newCall(request).execute();
+                                login_flag = response.code();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            Headers headers = response.headers();
+                            List<String> cookies = headers.values("Set-Cookie");
+                            String session = cookies.get(0);
+                            String sessionid = session.substring(0, session.indexOf(";"));
+                            Message msg = new Message();
+                            Bundle data = new Bundle();
+                            data.putInt("status", login_flag);
+                            data.putString("sessionid",sessionid);
 
-                            }catch (Exception e){
+                            Gson gson = new Gson();
+                            try {
+                                JsonUserBean jsonUserBean = gson.fromJson(response.body().string(),
+                                        JsonUserBean.class);
+                                data.putInt("user_id",jsonUserBean.get_id());
+                                data.putString("email",jsonUserBean.get_email());
+                                data.putString("username",jsonUserBean.get_username());
+                                data.putString("sex",jsonUserBean.get_sex());
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
-
+                            msg.setData(data);
+                            handler.sendMessage(msg);
                         }
                     };
-
                 new Thread(networkTask).start();
-                AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
-
-                switch(login_flag){
-                    case 200:
-                        builder.setMessage("登录成功!");
-
-                        break;
-                    case 400:
-                        builder.setMessage("密码错误!");
-                        break;
-                    case 404:
-                        builder.setMessage("账号不存在!");
-                        break;
-                    default:
-                        builder.setMessage("账号或密码错误!");
-                }
-                builder.setCancelable(true);
-                AlertDialog dialog=builder.create();
-                dialog.show();
-
                 }
         });
-
 
         return view;
     }
     private void switchFragment(android.support.v4.app.Fragment targetFragment) {
-        MainActivity.tab04=targetFragment;
+        MainActivity.tab_transfer=targetFragment;
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         if (!targetFragment.isAdded()) {
             transaction
                     .hide(LoginFragment.this)
-                    .add(R.id.id_content, MainActivity.tab04)
+                    .add(R.id.id_content, MainActivity.tab_transfer)
                     .commit();
         } else {
             transaction
                     .hide(LoginFragment.this)
-                    .show( MainActivity.tab04)
+                    .show( MainActivity.tab_transfer)
                     .commit();
         }
 

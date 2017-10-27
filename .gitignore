@@ -1,0 +1,58 @@
+
+app/build/generated/assets/
+app/build/generated/res/
+app/build/generated/source/aidl/
+app/build/generated/source/apt/
+app/build/generated/source/r/androidTest/
+app/build/generated/source/rs/
+app/build/intermediates/assets/
+app/build/intermediates/blame/res/androidTest/
+app/build/intermediates/incremental/mergeDebugAndroidTestResources/aapt-temp/
+app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/
+app/build/intermediates/incremental/mergeDebugResources/aapt-temp/
+app/build/intermediates/incremental/mergeDebugResources/merged.dir/
+app/build/intermediates/incremental/mergeReleaseResources/aapt-temp/
+app/build/intermediates/incremental/mergeReleaseResources/merged.dir/
+app/build/intermediates/incremental/packageDebugAndroidTest/
+app/build/intermediates/incremental/processDebugAndroidTestResources/
+app/build/intermediates/incremental/processDebugResources/
+app/build/intermediates/incremental/processReleaseResources/
+app/build/intermediates/jniLibs/
+app/build/intermediates/manifest/tmp/
+app/build/intermediates/manifests/instant-run/
+app/build/intermediates/res/merged/androidTest/
+app/build/intermediates/rs/
+app/build/intermediates/shaders/
+app/build/intermediates/symbols/
+app/build/intermediates/transforms/mergeJavaRes/
+app/build/intermediates/transforms/mergeJniLibs/
+app/build/tmp/
+
+<span style="font-size:14px;"># Built application files
+*.apk
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+
+
+# Generated files
+bin/
+gen/
+out/
+  
+
+# Log Files
+*.log
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# Intellij
+*.iml
+
+# Keystore files
+*.jks</span>

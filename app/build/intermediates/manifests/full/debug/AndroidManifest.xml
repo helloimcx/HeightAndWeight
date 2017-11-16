@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.HomeworkOne"
-    android:versionCode="7"
-    android:versionName="3.3" >
+    android:versionCode="8"
+    android:versionName="3.4" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /> <!-- 从SDCard读取数据权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.0" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/luanch"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="design_width"
+            android:value="720" >
+        </meta-data>
+        <meta-data
+            android:name="design_height"
+            android:value="1280" >
+        </meta-data>
+
         <activity
             android:name="com.example.HomeworkOne.MainActivity"
             android:label="@string/app_name" >
@@ -37,9 +58,31 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.HomeworkOne.SActivity"
+            android:name="com.example.HomeworkOne.ContactDeveloper"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.HomeworkOne.UserInfo"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.HomeworkOne.UserHeader"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.lqr.imagepicker.ui.ImageBaseActivity" />
+        <activity
+            android:name="com.lqr.imagepicker.ui.ImageGridActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerTheme" />
+        <activity
+            android:name="com.lqr.imagepicker.ui.ImageCropActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:theme="@style/ImagePickerTheme" />
+        <activity
+            android:name="com.lqr.imagepicker.ui.ImagePreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerThemeFullScreen" />
     </application>
 
 </manifest>

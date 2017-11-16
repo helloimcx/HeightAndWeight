@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:text="联系开发者"/>
+            android:text="账户"/>
     </LinearLayout>
 
 </LinearLayout>

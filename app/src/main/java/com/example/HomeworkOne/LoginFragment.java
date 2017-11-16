@@ -21,8 +21,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
-import java.io.IOException;
 import java.util.List;
 import org.json.JSONObject;
 import com.google.gson.*;
@@ -78,27 +76,27 @@ public class LoginFragment extends android.support.v4.app.Fragment{
                         super.handleMessage(msg);
                         Bundle data = msg.getData();
                         int status = data.getInt("status");
-                        String sessionid = data.getString("sessionid");
-                        int user_id = data.getInt("user_id");
-                        String email = data.getString("email");
-                        String username = data.getString("username");
-                        String sex = data.getString("sex");
-                        // TODO
-                        // UI界面的更新等相关操作
-                        SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
-                        SharedPreferences.Editor edit = share.edit();
-                        edit.putString("sessionid", sessionid);
-                        MainActivity.sessionid=sessionid; //每次登录都要更新sessionid
-                        edit.putInt("user_id",user_id);
-                        edit.putString("email", email);
-                        edit.putString("username", username);
-                        edit.putString("sex", sex);
-                        edit.commit();  //保存数据信息
                         AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
                         switch(status){
                             case 200:
+                                String sessionid = data.getString("sessionid");
+                                int user_id = data.getInt("user_id");
+                                String email = data.getString("email");
+                                String username = data.getString("username");
+                                String sex = data.getString("sex");
+
+                                SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
+                                SharedPreferences.Editor edit = share.edit();
+                                edit.putString("sessionid", sessionid);
+                                MainActivity.sessionid=sessionid; //每次登录都要更新sessionid
+                                edit.putInt("user_id",user_id);
+                                edit.putString("email", email);
+                                edit.putString("username", username);
+                                edit.putString("sex", sex);
+                                edit.commit();  //保存数据信息
+
                                 builder.setMessage("登录成功!");
-                                switchFragment(new UserInfo());
+                                switchFragment(new AccountFragment());
                                 break;
                             case 400:
                                 builder.setMessage("密码错误!");
@@ -138,26 +136,26 @@ public class LoginFragment extends android.support.v4.app.Fragment{
                                 e.printStackTrace();
                             }
                             Headers headers = response.headers();
-                            List<String> cookies = headers.values("Set-Cookie");
-                            String session = cookies.get(0);
-                            String sessionid = session.substring(0, session.indexOf(";"));
                             Message msg = new Message();
                             Bundle data = new Bundle();
-                            data.putInt("status", login_flag);
-                            data.putString("sessionid",sessionid);
-
-                            Gson gson = new Gson();
-                            try {
-                                JsonUserBean jsonUserBean = gson.fromJson(response.body().string(),
-                                        JsonUserBean.class);
-                                data.putInt("user_id",jsonUserBean.get_id());
-                                data.putString("email",jsonUserBean.get_email());
-                                data.putString("username",jsonUserBean.get_username());
-                                data.putString("sex",jsonUserBean.get_sex());
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                            if(login_flag==200){
+                                List<String> cookies = headers.values("Set-Cookie");
+                                String session = cookies.get(0);
+                                String sessionid = session.substring(0, session.indexOf(";"));
+                                data.putString("sessionid",sessionid);
+                                Gson gson = new Gson();
+                                try {
+                                    JsonUserBean jsonUserBean = gson.fromJson(response.body().string(),
+                                            JsonUserBean.class);
+                                    data.putInt("user_id",jsonUserBean.get_id());
+                                    data.putString("email",jsonUserBean.get_email());
+                                    data.putString("username",jsonUserBean.get_username());
+                                    data.putString("sex",jsonUserBean.get_sex());
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
-
+                            data.putInt("status", login_flag);
                             msg.setData(data);
                             handler.sendMessage(msg);
                         }

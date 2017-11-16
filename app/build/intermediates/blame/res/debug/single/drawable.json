@@ -1,14 +1,690 @@
 [
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_kaixin.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_kaixin.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/buttonshape.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/buttonshape.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_edit_focus.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/selector_edit_focus.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_func_press_bg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_func_press_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechat.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechat.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_top_ok.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/drawable/selector_top_ok.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/img_file_receive.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_file_receive.9.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/background_login.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/background_login.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/corner_voice_style.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/corner_voice_style.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_mingdao.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_mingdao.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/img_bubble_send.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_bubble_send.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_youtube.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_youtube.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_whatsapp.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_whatsapp.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_contact_letter_bg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_contact_letter_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_yixinmoments.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_yixinmoments.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_view_pager_indicator.xml",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/selector_view_pager_indicator.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_shortmessage.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_shortmessage.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_kakaostory.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_kakaostory.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_tab_press.xml",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/shape_tab_press.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_dot_horizontal_line.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_dot_horizontal_line.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_alipay.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_alipay.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ios_thumb_selector.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ios_thumb_selector.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_check_default.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_check_default.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechatmoments.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechatmoments.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_toolbar_btn_send.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_toolbar_btn_send.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_linkedin.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_linkedin.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_func_normal_bg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_func_normal_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechatfavorite.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechatfavorite.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ios_back_drawable.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ios_back_drawable.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shadow.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shadow.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_logo.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_logo.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_auth_title_back.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_auth_title_back.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_option_item.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/selector_option_item.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_register_send_code.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/selector_register_send_code.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_pocket.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_pocket.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_dot_vertical_line.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_dot_vertical_line.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_folder_item.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/bg_folder_item.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_dingding.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_dingding.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_qzone.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_qzone.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/rp_receive.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/rp_receive.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_notification_bg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_notification_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_cover_shade.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/ic_cover_shade.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_corner_rect_solid_white.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_corner_rect_solid_white.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_btn_nor.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/bg_btn_nor.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/audio_animation_left_list.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/audio_animation_left_list.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_splash_login.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_splash_login.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/img_location_receive.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_location_receive.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_bottom_green.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_bottom_green.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/checkbox_style.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/checkbox_style.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_emotion_setting.png",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/ic_emotion_setting.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_tab_add.png",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/ic_tab_add.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/img_file_send.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_file_send.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_facebook.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_facebook.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_common_item.xml",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/selector_common_item.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_pinterest.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_pinterest.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_login_btn.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/selector_login_btn.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_item_checked.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/drawable/selector_item_checked.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_splash_register.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_splash_register.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_evernote.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_evernote.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_btn_dis.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/bg_btn_dis.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/background_login_div.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/background_login_div.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/dialog_waiting.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/dialog_waiting.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/img_bubble_receive.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_bubble_receive.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/page_selected.png",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/page_selected.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_btn_send.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_btn_send.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_grid_camera_bg.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/drawable/selector_grid_camera_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/audio_animation_right_list.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/audio_animation_right_list.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_douban.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_douban.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_voice_popup.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/bg_voice_popup.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_instagram.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_instagram.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_vector_delete.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/ic_vector_delete.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_arrow_back.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_foursquare.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_foursquare.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_emoji_del.png",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/ic_emoji_del.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_user_info_send_msg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_user_info_send_msg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_laiwang.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_laiwang.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_bluetooth.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_bluetooth.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_check_checked.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_check_checked.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_horizontal_line.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_horizontal_line.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_instapaper.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_instapaper.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_googleplus.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_googleplus.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_progressbar.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_progressbar.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_corner_rect_solid_gray.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_corner_rect_solid_gray.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_flickr.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_flickr.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/progressbar_webview.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/progressbar_webview.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_tab_emoji.png",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/ic_tab_emoji.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_btn_voice_press.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_btn_voice_press.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg.xml",
+        "source": "/Users/mac/.android/build-cache/4acf3bdac47c355e97c2aa7ade65e97920189729/output/res/drawable/bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/design_bottom_navigation_item_background.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_btn_pre.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/bg_btn_pre.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_laiwangmoments.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_laiwangmoments.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_red_dot.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_red_dot.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_vertical_line.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_vertical_line.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_dropbox.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_dropbox.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_renren.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_renren.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/page_unselected.png",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/page_unselected.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_btn_voice_normal.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_btn_voice_normal.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_platform_cell_back.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_platform_cell_back.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_twitter.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_twitter.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_new_friend_agree.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_new_friend_agree.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_back_arr.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_back_arr.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_qq.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_qq.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_ptr_ptr.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_ptr_ptr.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/img_location_send.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_location_send.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_image_folder.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/bg_image_folder.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_vkontakte.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_vkontakte.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/bg_white.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/bg_white.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_sinaweibo.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_sinaweibo.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_youdao.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_youdao.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_default_image.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/ic_default_image.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_vector_check.xml",
+        "source": "/Users/mac/.android/build-cache/fe65f5a9bb6b19baf56d5bc29a5f7538150120e6/output/res/drawable/ic_vector_check.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_btn_delete.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_btn_delete.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_title_div.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_title_div.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable/navigation_empty_icon.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_meipai.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_meipai.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_register_send_code_disable.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_register_send_code_disable.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_session_func.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/selector_session_func.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/rp_send.9.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/rp_send.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_tumblr.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_tumblr.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_alipaymoments.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_alipaymoments.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_bottom_gray.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_bottom_gray.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_kakaotalk.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_kakaotalk.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_user_info_add_to_contact.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_user_info_add_to_contact.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_back_press.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/drawable/selector_back_press.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_line.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_line.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_facebookmessenger.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_facebookmessenger.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_tab_normal.xml",
+        "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/shape_tab_normal.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_yixin.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_yixin.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_email.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_email.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_register_send_code_enable.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_register_send_code_enable.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/design_password_eye.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable/design_password_eye.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_tencentweibo.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_tencentweibo.png"
     }
 ]

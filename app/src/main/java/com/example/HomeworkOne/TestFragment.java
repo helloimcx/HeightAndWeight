@@ -1,11 +1,4 @@
 package com.example.HomeworkOne;
-import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
-import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.tencent.mm.sdk.platformtools.Util;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -18,20 +11,13 @@ import android.widget.TextView;
 
 public class TestFragment extends Fragment {
 	private TextView textView;
-	private ImageButton shareToFriends;
-	private ImageButton shareToMoments;
 	private ImageButton testButton;
-	private IWXAPI api;
-	private static final String APP_ID="wxac23c0af2a986db5";
 	public static int photo;
 	public static String content = "点击图片开始测试";
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View v=inflater.inflate(R.layout.factivity, container, false);
-		reToWx();
-		shareToFriends=(ImageButton) v.findViewById(R.id.shareToFriends);
-		shareToMoments=(ImageButton) v.findViewById(R.id.shareToMoments);
 		textView=(TextView) v.findViewById(R.id.textView1);
 		testButton=(ImageButton) v.findViewById(R.id.imageButton1);
 		init();
@@ -42,62 +28,7 @@ public class TestFragment extends Fragment {
 				switchFragment(new TestDetail());
 			}
 		});
-
-         shareToFriends.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				WXWebpageObject webpageObject=new WXWebpageObject();
-				webpageObject.webpageUrl="http://kafca.baiduux.com/h5/00995a8c-3555-895e-e141-c20faeb69724.html";
-				
-				WXMediaMessage msg=new WXMediaMessage(webpageObject);
-				msg.title="体型测试";
-				msg.description="用户输入自己的身高和体重，应用会根据输入值计算用户的BMI指数（身体质量指数），衡量人体的肥胖程度。";
-				
-				Bitmap thump=android.graphics.BitmapFactory.decodeResource(getResources(),R.drawable.logo);
-				msg.thumbData= Util.bmpToByteArray(thump,true);
-				
-				SendMessageToWX.Req req=new SendMessageToWX.Req();
-				req.transaction =buildTransaction("webpage");
-				req.message=msg;
-				req.scene = SendMessageToWX.Req.WXSceneSession;
-			    api.sendReq(req);
-				
-			}
-		});
-         shareToMoments.setOnClickListener(new OnClickListener() {
- 			
- 			@Override
- 			public void onClick(View arg0) {
- 				// TODO Auto-generated method stub
- 				WXWebpageObject webpageObject=new WXWebpageObject();
-				webpageObject.webpageUrl="http://kafca.baiduux.com/h5/00995a8c-3555-895e-e141-c20faeb69724.html";
-				
-				WXMediaMessage msg=new WXMediaMessage(webpageObject);
-				msg.title="体型测试";
-				msg.description="用户输入自己的身高和体重，应用会根据输入值计算用户的BMI指数（身体质量指数），衡量人体的肥胖程度。";
-				
-				Bitmap thump=android.graphics.BitmapFactory.decodeResource(getResources(),R.drawable.logo);
-				msg.thumbData=Util.bmpToByteArray(thump,true);
-				
-				SendMessageToWX.Req req=new SendMessageToWX.Req();
-				req.transaction =buildTransaction("webpage");
-				req.message=msg;
-				req.scene = SendMessageToWX.Req.WXSceneTimeline;
-			    api.sendReq(req);
- 			}
- 		});
 		return v;
-	}
-	
-	private void reToWx(){
-		api= WXAPIFactory.createWXAPI(getActivity().getApplication(),APP_ID,true);
-		api.registerApp(APP_ID);
-	}
-	
-	private static String buildTransaction(final String type) {
-		return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
 	}
 
 	private void init(){

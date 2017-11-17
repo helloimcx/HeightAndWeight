@@ -4561,10 +4561,9 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f040057;
         public static final int test_detail=0x7f040058;
         public static final int title=0x7f040059;
-        public static final int top=0x7f04005a;
-        public static final int userinfo=0x7f04005b;
-        public static final int webview=0x7f04005c;
-        public static final int welcome=0x7f04005d;
+        public static final int userinfo=0x7f04005a;
+        public static final int webview=0x7f04005b;
+        public static final int welcome=0x7f04005c;
     }
     public static final class mipmap {
         public static final int _bg_from_hongbao=0x7f030000;

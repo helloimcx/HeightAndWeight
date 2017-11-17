@@ -112,12 +112,12 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/female_thin.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/female_thin.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/account_normal.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/account_normal.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/female_thin.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/female_thin.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/discover_normal.png",

@@ -1,37 +1,56 @@
 package com.example.HomeworkOne;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TestFragment extends Fragment {
 	private TextView textView;
 	private ImageButton testButton;
-	public static int photo;
-	public static String content = "µã»÷Í¼Æ¬¿ªÊ¼²âÊÔ";
+	private int photo;
+	private String content;
+	public static final int  REQUEST_TESTDETAIL = 222;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View v=inflater.inflate(R.layout.factivity, container, false);
 		textView=(TextView) v.findViewById(R.id.textView1);
 		testButton=(ImageButton) v.findViewById(R.id.imageButton1);
-		init();
 		testButton.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
-				switchFragment(new TestDetail());
+				Intent intent = new Intent(getActivity(), TestDetail.class);
+				startActivityForResult(intent,REQUEST_TESTDETAIL);
 			}
 		});
 		return v;
 	}
 
-	private void init(){
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode){
+			case REQUEST_TESTDETAIL:
+				if(resultCode == TestDetail.TEST_RESULT_CODE){
+					content = data.getStringExtra("content");
+					photo = data.getIntExtra("photo",0);
+					showResult();
+				}
+				break;
+			default:
+				break;
+		}
+	}
+
+	private void showResult(){
 		switch (photo) {
 			case 1:
 				testButton.setImageResource(R.drawable.thin);
@@ -67,22 +86,5 @@ public class TestFragment extends Fragment {
 				break;
 		}
 		textView.setText(content);
-	}
-
-	private void switchFragment(android.support.v4.app.Fragment targetFragment) {
-		MainActivity.tab_transfer=targetFragment;
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
-		if (!targetFragment.isAdded()) {
-			transaction
-					.hide(TestFragment.this)
-					.add(R.id.id_content, MainActivity.tab_transfer)
-					.commit();
-		} else {
-			transaction
-					.hide(TestFragment.this)
-					.show( MainActivity.tab_transfer)
-					.commit();
-		}
-
 	}
 }

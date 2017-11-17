@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:1-72:12
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:1-77:12
 	package
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:3:5-38
 		INJECTED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml
@@ -16,7 +16,7 @@ ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:1-72:1
 	xmlns:android
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:7:5-63:19
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:7:5-68:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.1] /Users/mac/.android/build-cache/eb0b15f3127f30480290885b42745a786659e155/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:cardview-v7:25.1.1] /Users/mac/.android/build-cache/381c062d4301bddaae289b7048043cdf13c34bfa/output/AndroidManifest.xml:22:5-20
 MERGED from [com.leon:lsettingviewlibrary:1.5.0] /Users/mac/.android/build-cache/4acf3bdac47c355e97c2aa7ade65e97920189729/output/AndroidManifest.xml:11:5-15:19
@@ -110,36 +110,42 @@ ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:58:9-61:
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:60:13-45
 	android:name
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:59:13-62
+activity#com.example.HomeworkOne.TestDetail
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:63:9-66:20
+	android:label
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:65:13-45
+	android:name
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:64:13-62
 uses-permission#android.permission.INTERNET
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:65:5-66
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:70:5-66
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:65:22-64
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:70:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:66:5-78
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:71:5-78
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:66:22-76
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:71:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:67:5-75
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:72:5-75
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:13:5-76
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:67:22-73
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:72:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:68:5-74
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:73:5-74
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:68:22-72
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:73:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:69:5-80
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:74:5-80
 MERGED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:14:5-81
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:69:22-78
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:74:22-78
 uses-permission#android.permission.CAMERA
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:70:5-64
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:75:5-64
 MERGED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:18:5-65
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:70:22-62
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:75:22-62
 uses-sdk
 INJECTED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] /Users/mac/.android/build-cache/38bbbec0ee49c23a2a2f185b23636be436a70e34/output/AndroidManifest.xml:18:5-42

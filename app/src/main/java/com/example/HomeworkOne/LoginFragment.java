@@ -84,6 +84,7 @@ public class LoginFragment extends android.support.v4.app.Fragment{
                                 String email = data.getString("email");
                                 String username = data.getString("username");
                                 String sex = data.getString("sex");
+                                String header = data.getString("header");
 
                                 SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
                                 SharedPreferences.Editor edit = share.edit();
@@ -93,6 +94,7 @@ public class LoginFragment extends android.support.v4.app.Fragment{
                                 edit.putString("email", email);
                                 edit.putString("username", username);
                                 edit.putString("sex", sex);
+                                edit.putString("header",header);
                                 edit.commit();  //保存数据信息
 
                                 builder.setMessage("登录成功!");
@@ -151,6 +153,7 @@ public class LoginFragment extends android.support.v4.app.Fragment{
                                     data.putString("email",jsonUserBean.get_email());
                                     data.putString("username",jsonUserBean.get_username());
                                     data.putString("sex",jsonUserBean.get_sex());
+                                    data.putString("header",jsonUserBean.get_header());
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

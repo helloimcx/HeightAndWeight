@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import MyInterface.InitView;
 import butterknife.Bind;
@@ -19,6 +21,7 @@ import lrq.com.addpopmenu.PopMenu;
 import lrq.com.addpopmenu.PopMenuItem;
 import lrq.com.addpopmenu.PopMenuItemListener;
 import com.lqr.optionitemview.OptionItemView;
+import com.squareup.picasso.Picasso;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
@@ -46,6 +49,8 @@ public class AccountFragment extends Fragment implements InitView{
 	TextView name;
 	@Bind(R.id.tvEmail)
 	TextView email;
+	@Bind(R.id.ivHeader)
+	ImageView header;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,6 +99,9 @@ public class AccountFragment extends Fragment implements InitView{
 				getSharedPreferences("Session", Context.MODE_PRIVATE);
 		String name_str = sharedPreferences.getString("username","null");
 		String email_str = sharedPreferences.getString("email","null");
+		String header_str = sharedPreferences.getString("header","null");
+		Uri header_uri = Uri.parse(header_str);
+		Picasso.with(getActivity()).load(header_uri).into(header);
 		name.setText(name_str);
 		email.setText(email_str);
 	}

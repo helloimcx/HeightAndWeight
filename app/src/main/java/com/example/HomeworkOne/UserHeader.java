@@ -1,12 +1,11 @@
 package com.example.HomeworkOne;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-
+import android.widget.Toast;
 import com.alibaba.sdk.android.oss.ClientException;
 import com.alibaba.sdk.android.oss.OSS;
 import com.alibaba.sdk.android.oss.OSSClient;
@@ -26,18 +25,17 @@ import com.alibaba.sdk.android.oss.model.PutObjectResult;
 import com.bm.library.PhotoView;
 import MyInterface.InitView;
 import Utils.PopupWindowUtils;
-
 import com.google.gson.Gson;
 import com.lqr.imagepicker.ui.ImageGridActivity;
 import com.lqr.imagepicker.*;
 import com.lqr.imagepicker.view.CropImageView;
 import com.lqr.optionitemview.OptionItemView;
+import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
 import org.json.JSONObject;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import Utils.PicassoImageLoader;
@@ -93,8 +91,7 @@ public class UserHeader extends Activity implements InitView{
         cancel = (OptionItemView) menu.findViewById(R.id.header_cancel);
         ButterKnife.bind(this);
         more.setVisibility(View.VISIBLE);
-        header.setImageResource(R.mipmap.header);
-        header.enable();
+        initHeader();
 
         imagePicker = ImagePicker.getInstance();
         imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
@@ -171,6 +168,10 @@ public class UserHeader extends Activity implements InitView{
                         if (images != null && images.size() > 0) {
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
                             putToOss(imageItem.name,imageItem.path);
+                            String url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
+                                    +imageItem.name;
+                                    //+"?x-oss-process=image/resize,m_fixed,h_50,w_50";
+                            setUserHeader(url);
                         }
                     }
                 }
@@ -242,4 +243,59 @@ public class UserHeader extends Activity implements InitView{
             Log.e("RawMessage", e.getRawMessage());
         }
     }
+
+    private void setUserHeader(final String url){
+        //上传用户头像url
+        final SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
+        int user_id = sharedPreferences.getInt("user_id",0);
+        OkHttpClient okHttpClient = new OkHttpClient();
+        JSONObject param = new JSONObject();
+        try {
+            param.put("header", url);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        RequestBody requestBody = RequestBody.create(JSON, param.toString());
+        Request request = new Request.Builder()
+                .url("http://120.78.67.135:8000/android_account/header/"+user_id+"/")
+                .addHeader("cookie", MainActivity.sessionid)
+                .post(requestBody)
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                UserHeader.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(UserHeader.this,"您的网络似乎出了小差...",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                UserHeader.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("header",url);
+                        editor.apply();
+                        Toast.makeText(UserHeader.this,"设置成功！",Toast.LENGTH_SHORT).show();
+                        initHeader();
+                    }
+                });
+            }
+        });
+    }
+
+    private void initHeader(){
+        //用户头像
+        SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
+        String header_str = sharedPreferences.getString("header","null");
+        Uri header_uri = Uri.parse(header_str);
+        Picasso.with(UserHeader.this).load(header_uri).into(header);
+        header.enable();
+    }
+
 }

@@ -3,11 +3,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -15,13 +15,11 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.lqr.optionitemview.OptionItemView;
 import java.io.IOException;
 
-/**
- * Created by kafca on 17-9-30.
- */
 
 public class UserInfo extends Activity {
     @Bind(R.id.llHeader)
@@ -40,10 +38,13 @@ public class UserInfo extends Activity {
     OptionItemView logout;
     @Bind(R.id.ivToolbarNavigation)
     ImageView goback;
+    @Bind(R.id.ivHeader)
+    ImageView user_header;
 
     private String email_str;
     private String nickname_str;
     private String gender_str;
+    private String user_header_str;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,9 +60,12 @@ public class UserInfo extends Activity {
         email_str = share.getString("email", "null");
         nickname_str = share.getString("username", "null");
         gender_str = share.getString("sex", "null");
+        user_header_str = share.getString("header","null");
+        Uri header_uri = Uri.parse(user_header_str);
         email.setRightText(email_str);
         nickName.setRightText(nickname_str);
         gender.setRightText(gender_str);
+        Picasso.with(UserInfo.this).load(header_uri).into(user_header);
     }
 
     private void initListener() {

@@ -4,10 +4,6 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_weixin_pressed.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_weixin_pressed.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/right_arrow.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/right_arrow.png"
     },
@@ -64,10 +60,6 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_weixin_normal.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_weixin_normal.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/access.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/access.png"
     },
@@ -120,20 +112,20 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_find_frd_pressed.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_find_frd_pressed.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/female_thin.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/female_thin.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/female_vvfat.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/female_vvfat.png"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/account_normal.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/account_normal.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_find_frd_normal.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_find_frd_normal.png"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/discover_normal.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/discover_normal.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/female_vvfat.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/female_vvfat.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png",
@@ -192,6 +184,10 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/luanch.png"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/test_pressed.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/test_pressed.png"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notification_bg_normal.9.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/notification_bg_normal.9.png"
     },
@@ -226,14 +222,6 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_address_pressed.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_address_pressed.png"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_bg2.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_bg2.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/design_ic_visibility_off.png",
@@ -272,8 +260,16 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/icon_res_download_moments.png"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/account_pressed.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/account_pressed.png"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/test_normal.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/test_normal.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
@@ -288,16 +284,8 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_address_normal.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_address_normal.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_settings_pressed.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_settings_pressed.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_black_16dp.png",
@@ -332,10 +320,6 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/tab_settings_normal.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/tab_settings_normal.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
@@ -350,6 +334,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-hdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/discover_pressed.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-hdpi/discover_pressed.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png",

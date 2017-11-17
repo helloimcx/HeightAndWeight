@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:background="@drawable/bottom_bar"
+    android:background="@color/gray4"
     android:orientation="horizontal" >
     <LinearLayout 
         android:id="@+id/id_tab_test"
@@ -16,54 +16,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:src="@drawable/tab_weixin_pressed"
+            android:src="@drawable/test_pressed"
             android:background="#00000000"/>
-        <TextView 
+        <TextView
+            android:id="@+id/id_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
+            android:textColor="#1296db"
             android:text="测试"/>
     </LinearLayout>
+
     <LinearLayout 
-        android:id="@+id/id_tab_record"
+        android:id="@+id/id_tab_discover"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_weight="1">
         <ImageButton 
-            android:id="@+id/id_tab_record_img"
+            android:id="@+id/id_tab_discover_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:src="@drawable/tab_find_frd_normal"
+            android:src="@drawable/discover_normal"
             android:background="#00000000"/>
-        <TextView 
+        <TextView
+            android:id="@+id/id_text_discover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:text="记录"/>
+            android:textColor="@color/gray0"
+            android:text="发现"/>
     </LinearLayout>
-    <LinearLayout 
-        android:id="@+id/id_tab_help"
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_weight="1">
-        <ImageButton 
-            android:id="@+id/id_tab_help_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:src="@drawable/tab_address_normal"
-            android:background="#00000000"/>
-        <TextView 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:text="帮助"/>
-    </LinearLayout>
+
     <LinearLayout 
         android:id="@+id/id_tab_account"
         android:orientation="vertical"
@@ -76,12 +60,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:src="@drawable/tab_settings_normal"
+            android:src="@drawable/account_normal"
             android:background="#00000000"/>
-        <TextView 
+        <TextView
+            android:id="@+id/id_text_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
+            android:textColor="@color/gray0"
             android:text="账户"/>
     </LinearLayout>
 

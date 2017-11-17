@@ -12,38 +12,46 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-
+import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 
 public class MainActivity extends FragmentActivity implements OnClickListener{
 	//底部的4个导航控件
 	private LinearLayout mTabTest;
-	private LinearLayout mTabRecord;
-	private LinearLayout mTabHelp;
+	private LinearLayout mTabDiscover;
 	private LinearLayout mTabAccount;
 	//底部4个导航控件中的图片按钮
 	private ImageButton mImgTest;
-	private ImageButton mImgRecord;
-	private ImageButton mImgHelp;
+	private ImageButton mImgDiscover;
 	private ImageButton mImgAccount;
 	//初始化4个Fragment
 	private Fragment tab01;
 	private Fragment tab02;
 	private Fragment tab03;
-	private Fragment tab04;
 	public static Fragment tab_transfer;
 	public static OkHttpClient okHttpClient;
 	public static String sessionid;
+
+	@Bind(R.id.ivToolbarNavigation)
+	ImageView goback;
+	@Bind(R.id.id_text_test)
+	TextView test_tv;
+	@Bind(R.id.id_text_discover)
+	TextView discover_tv;
+	@Bind(R.id.id_text_account)
+	TextView account_tv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +72,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 						@Override
 						public void onClick(DialogInterface Arg, int arg) {
 							// TODO Auto-generated method stub
-							resetImg();
+							resetImgAndText();
 							setSelect(3);
 						}
 					}).setNegativeButton("取消", new DialogInterface.OnClickListener(){
@@ -79,42 +87,34 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
 	private void initEvents() {
 		mTabTest.setOnClickListener(this);
-		mTabRecord.setOnClickListener(this);
-		mTabHelp.setOnClickListener(this);
+		mTabDiscover.setOnClickListener(this);
 		mTabAccount.setOnClickListener(this);
 	}
 
 	private void initView() {
+		ButterKnife.bind(this);
+		goback.setVisibility(View.GONE);
 		mTabTest = (LinearLayout)findViewById(R.id.id_tab_test);
-		mTabRecord = (LinearLayout)findViewById(R.id.id_tab_record);
-		mTabHelp = (LinearLayout)findViewById(R.id.id_tab_help);
+		mTabDiscover = (LinearLayout)findViewById(R.id.id_tab_discover);
 		mTabAccount = (LinearLayout)findViewById(R.id.id_tab_account);
 		mImgTest = (ImageButton)findViewById(R.id.id_tab_test_img);
-		mImgRecord = (ImageButton)findViewById(R.id.id_tab_record_img);
-		mImgHelp = (ImageButton)findViewById(R.id.id_tab_help_img);
+		mImgDiscover = (ImageButton)findViewById(R.id.id_tab_discover_img);
 		mImgAccount = (ImageButton)findViewById(R.id.id_tab_account_img);
-		
 	}
-
-
 
 	@Override
 	public void onClick(View v) {
-		resetImg();
+		resetImgAndText();
 		switch (v.getId()) {
 		case R.id.id_tab_test://当点击测试按钮时，切换图片为亮色，切换fragment为微信聊天界面
 			setSelect(0);
 			break;
-		case R.id.id_tab_record:
+		case R.id.id_tab_discover:
 			setSelect(1);
 			break;
-		case R.id.id_tab_help:
+		case R.id.id_tab_account:
 			setSelect(2);
 			break;
-		case R.id.id_tab_account:
-			setSelect(3);
-			break;
-
 		default:
 			break;
 		}
@@ -136,33 +136,26 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			}else {
 				transaction.show(tab01);
 			}
-			mImgTest.setImageResource(R.drawable.tab_weixin_pressed);
+			mImgTest.setImageResource(R.drawable.test_pressed);
+			test_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
 		case 1:
 			tab02 = new RecordFragment();
 			transaction.add(R.id.id_content, tab02);
 			transaction.show(tab02);
-			mImgRecord.setImageResource(R.drawable.tab_find_frd_pressed);
+			mImgDiscover.setImageResource(R.drawable.discover_pressed);
+			discover_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
 		case 2:
-			if (tab03 == null) {
-				MyWebFragment.myurl="http://kafca.legendh5.com/h5/hthelp.html";
-				tab03 = new MyWebFragment();
-				transaction.add(R.id.id_content, tab03);
-			}else {
-				transaction.show(tab03);
-			}
-			mImgHelp.setImageResource(R.drawable.tab_address_pressed);
-			break;
-		case 3:
 			if (!sessionid.equals("null")) {
-				tab04 = new AccountFragment();
+				tab03 = new AccountFragment();
 			}
 			else {
-				tab04 = new LoginFragment();
+				tab03 = new LoginFragment();
 			}
-			transaction.add(R.id.id_content,tab04);
-			mImgAccount.setImageResource(R.drawable.tab_settings_pressed);
+			transaction.add(R.id.id_content,tab03);
+			mImgAccount.setImageResource(R.drawable.account_pressed);
+			account_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
 		default:
 			break;
@@ -183,19 +176,18 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		if (tab03 != null) {
 			transaction.hide(tab03);
 		}
-		if (tab04 != null) {
-			transaction.hide(tab04);
-		}
 		if (tab_transfer != null) {
 			transaction.hide(tab_transfer);
 		}
 	}
 
-	private void resetImg() {
-		mImgTest.setImageResource(R.drawable.tab_weixin_normal);
-		mImgRecord.setImageResource(R.drawable.tab_find_frd_normal);
-		mImgHelp.setImageResource(R.drawable.tab_address_normal);
-		mImgAccount.setImageResource(R.drawable.tab_settings_normal);
+	private void resetImgAndText() {
+		mImgTest.setImageResource(R.drawable.test_normal);
+		mImgDiscover.setImageResource(R.drawable.discover_normal);
+		mImgAccount.setImageResource(R.drawable.account_normal);
+		test_tv.setTextColor(getResources().getColor(R.color.gray0));
+		discover_tv.setTextColor(getResources().getColor(R.color.gray0));
+		account_tv.setTextColor(getResources().getColor(R.color.gray0));
 	}
 
 

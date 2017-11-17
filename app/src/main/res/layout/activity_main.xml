@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+	android:background="@drawable/selector_common_item"
     android:id="@+id/id_activity_main"
     >
 
-   <include layout="@layout/top"/>
+	<include layout="@layout/include_toolbar"/>
    	<FrameLayout
    	    android:id="@+id/id_content"
    	    android:layout_weight="1"

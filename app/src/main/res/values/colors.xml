@@ -16,6 +16,7 @@
 
     <color name="assist_red">#ff6d6d</color>
     <color name="assist_blue">#64a4f4</color>
+    <color name="blue">#1296db</color>
     <color name="assist_blue_down">#3489ff</color>
     <color name="assist_green">#6ae068</color>
     <color name="assist_yellow">#fcce0b</color>

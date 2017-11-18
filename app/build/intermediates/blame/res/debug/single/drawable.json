@@ -4,12 +4,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_kaixin.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_colored_material.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/buttonshape.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/buttonshape.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_edit_focus.xml",
@@ -20,16 +20,16 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_func_press_bg.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_func_press_bg.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechat.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechat.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechat.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechat.png"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_func_press_bg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_func_press_bg.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_top_ok.xml",
@@ -44,12 +44,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/background_login.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/corner_voice_style.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/corner_voice_style.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/corner_voice_style.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/corner_voice_style.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",

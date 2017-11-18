@@ -4,12 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <ListView 
+    <ListView
         android:id="@+id/record_list"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:dividerHeight="5px"
-        android:divider="#b0e0e6"   
         ></ListView>
     
 

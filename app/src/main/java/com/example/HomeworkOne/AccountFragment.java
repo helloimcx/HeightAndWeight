@@ -1,5 +1,4 @@
 package com.example.HomeworkOne;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -51,6 +50,7 @@ public class AccountFragment extends Fragment implements InitView{
 	TextView email;
 	@Bind(R.id.ivHeader)
 	ImageView header;
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -133,7 +133,8 @@ public class AccountFragment extends Fragment implements InitView{
 		record.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				switchFragment(new RecordFragment());
+				Intent intent = new Intent(getActivity(),RecordActivity.class);
+				startActivity(intent);
 			}
 		});
 		help.setOnClickListener(new View.OnClickListener() {

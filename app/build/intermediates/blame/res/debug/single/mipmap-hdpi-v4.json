@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/thin_label.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/thin_label.png"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_volume_wraning.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_volume_wraning.png"
     },
@@ -28,12 +32,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_red_pack.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_transfer.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_transfer.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_payment_received.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_payment_received.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_transfer.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_transfer.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/message_press.png",
@@ -90,6 +94,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_excel.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_excel.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/health_label.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/health_label.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_cheat_voice.png",
@@ -374,6 +382,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_volume_0.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_volume_0.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/fat_label.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/fat_label.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/message_normal.png",

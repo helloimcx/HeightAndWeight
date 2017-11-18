@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:background="#dde1ee" >
+    android:background="@color/gray5" >
 
     <ImageView
         android:id="@+id/myImage"

@@ -1,5 +1,4 @@
 package com.example.HomeworkOne;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -72,7 +70,7 @@ public class RecordDetail extends android.support.v4.app.Fragment {
 		goBack.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				switchFragment(new RecordFragment());
+
 			}
 		});
 

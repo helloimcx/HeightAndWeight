@@ -16,12 +16,12 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/top_in.xml",
-        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/top_in.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/scale_out.xml",
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/scale_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/top_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/top_in.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",

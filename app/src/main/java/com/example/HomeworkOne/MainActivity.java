@@ -118,7 +118,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		default:
 			break;
 		}
-		
 	}
 
 	/*
@@ -140,7 +139,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			test_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
 		case 1:
-			tab02 = new RecordFragment();
+			MyWebFragment.myurl="http://www.baidu.com";
+			tab02 = new MyWebFragment();
 			transaction.add(R.id.id_content, tab02);
 			transaction.show(tab02);
 			mImgDiscover.setImageResource(R.drawable.discover_pressed);
@@ -210,5 +210,3 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 					.build();
 		}
 }
-
-

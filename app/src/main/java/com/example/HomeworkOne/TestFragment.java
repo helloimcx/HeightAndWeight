@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class TestFragment extends Fragment {
 	private TextView textView;

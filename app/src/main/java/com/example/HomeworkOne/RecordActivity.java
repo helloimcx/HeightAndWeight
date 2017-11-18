@@ -7,11 +7,13 @@ import java.util.Map;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.google.gson.Gson;
+import com.wang.avi.AVLoadingIndicatorView;
 import MyInterface.InitView;
 import Utils.JsonRecordBean;
 import okhttp3.Call;
@@ -31,10 +34,16 @@ import okhttp3.Response;
 public class RecordActivity extends Activity implements InitView {
 	@Bind(R.id.record_list)
 	ListView listView;
+	@Bind(R.id.ivToolbarNavigation)
+	ImageView goback;
+	@Bind(R.id.avi)
+	AVLoadingIndicatorView avLoadingIndicatorView;
+
 	private SimpleAdapter simpleAdapter;
 	private List<Map<String, Object>> dataList;
 	private int user_id;
 	private int count_record;
+	private int result_label;
 	private ArrayList<JsonRecordBean.RecordBean> records;
 
 	@Override
@@ -94,14 +103,19 @@ public class RecordActivity extends Activity implements InitView {
 								double BMI = weight / (height * height);
 								if (BMI < 18.5) {
 									result = "Æ«ÊÝ";
+									result_label = R.mipmap.thin_label;
 								} else if (BMI <= 23.9) {
 									result = "Õý³£";
+									result_label = R.mipmap.health_label;
 								} else if (BMI <= 27) {
 									result = "Î¢ÅÖ";
+									result_label = R.mipmap.fat_label;
 								} else if (BMI <= 32) {
 									result = "Æ«ÅÖ";
+									result_label = R.mipmap.fat_label;
 								} else {
 									result = "·ÊÅÖ";
+									result_label = R.mipmap.fat_label;
 								}
 								Map<String, Object> map = new HashMap<String, Object>();
 								map.put("record_id", records.get(i).get_record_id());
@@ -110,12 +124,15 @@ public class RecordActivity extends Activity implements InitView {
 								map.put("BMI", BMI);
 								map.put("date", records.get(i).get_record_time());
 								map.put("result", result);
+								map.put("result_label",result_label);
 								dataList.add(map);
 							}
 							simpleAdapter = new SimpleAdapter(RecordActivity.this, dataList, R.layout.title,
-									new String[]{"result", "date"}, new int[]{R.id.show_result_title,
+									new String[]{"result","result_label","date"}, new int[]{R.id.show_result_title,
+									R.id.result_label,
 									R.id.show_date_title});
 							listView.setAdapter(simpleAdapter);
+							avLoadingIndicatorView.setVisibility(View.GONE);
 						}
 					}
 				});
@@ -127,6 +144,7 @@ public class RecordActivity extends Activity implements InitView {
 	@Override
 	public void initView() {
 		ButterKnife.bind(this);
+		avLoadingIndicatorView.setVisibility(View.VISIBLE);
 		dataList = new ArrayList<Map<String, Object>>();
 		getData();
 	}
@@ -204,6 +222,14 @@ public class RecordActivity extends Activity implements InitView {
 				RecordDetail.BMI = (Double) map.get("BMI");
 				RecordDetail.time = (String) map.get("date");
 				RecordDetail.result = (String) map.get("result");
+				Intent intent = new Intent(RecordActivity.this,RecordDetail.class);
+				startActivity(intent);
+			}
+		});
+		goback.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				finish();
 			}
 		});
 	}

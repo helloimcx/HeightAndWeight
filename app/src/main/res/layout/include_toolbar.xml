@@ -58,8 +58,19 @@
                     android:textColor="@color/white"
                     android:textSize="25px"
                     android:visibility="gone"/>
+
             </com.zhy.autolayout.AutoLinearLayout>
 
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_margin_left_and_right"
+                app:indicatorName="BallPulseIndicator"
+                android:visibility="gone"
+                />
             <!--加号菜单-->
             <ImageButton
                 android:id="@+id/ibAddMenu"

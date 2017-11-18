@@ -40,6 +40,10 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/img_file_receive.9.png"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_dark_theme.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/selector_dark_theme.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/background_login.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/background_login.xml"
     },
@@ -224,12 +228,20 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_bottom_green.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/forward_vector.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/forward_vector.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/checkbox_style.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/checkbox_style.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_emotion_setting.png",
         "source": "/Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/res/drawable/ic_emotion_setting.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ic_default_image.9.png",
+        "source": "/Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/res/drawable/ic_default_image.9.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
@@ -314,6 +326,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/audio_animation_right_list.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/audio_animation_right_list.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/close_vector.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/close_vector.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_douban.png",
@@ -452,6 +468,10 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_red_dot.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/back_vector.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/back_vector.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_vertical_line.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_vertical_line.xml"
     },
@@ -540,6 +560,10 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_sinaweibo.png"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/progress_drawable.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/progress_drawable.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_youdao.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_youdao.png"
     },
@@ -566,6 +590,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_session_func.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/selector_session_func.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_light_theme.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/selector_light_theme.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/rp_send.9.png",
@@ -602,6 +630,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_back_press.xml",
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/drawable/selector_back_press.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/more_vector.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/drawable/more_vector.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_line.png",

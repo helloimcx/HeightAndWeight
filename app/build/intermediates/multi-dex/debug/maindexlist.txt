@@ -53,6 +53,7 @@ android/support/v4/media/MediaDescriptionCompat$Builder.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
 android/support/v7/app/ActionBarDrawerToggle$Delegate.class
 android/support/v4/view/ViewCompatLollipop$OnApplyWindowInsetsListenerBridge.class
+com/thefinestartist/annotations/Extra.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
 android/support/v7/widget/RecyclerView$LayoutParams.class
 android/support/multidex/MultiDex.class

@@ -368,8 +368,103 @@
                     "startLine": 21,
                     "startColumn": 4,
                     "startOffset": 1890,
+                    "endColumn": 60,
+                    "endOffset": 1946
+                },
+                "from": {
+                    "file": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 60,
+                        "endOffset": 111
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1951,
+                    "endColumn": 45,
+                    "endOffset": 1992
+                },
+                "from": {
+                    "file": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 116,
+                        "endColumn": 45,
+                        "endOffset": 157
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1997,
+                    "endColumn": 35,
+                    "endOffset": 2028
+                },
+                "from": {
+                    "file": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 162,
+                        "endColumn": 35,
+                        "endOffset": 193
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2033,
+                    "endColumn": 47,
+                    "endOffset": 2076
+                },
+                "from": {
+                    "file": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 198,
+                        "endColumn": 47,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 2081,
+                    "endColumn": 40,
+                    "endOffset": 2117
+                },
+                "from": {
+                    "file": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 246,
+                        "endColumn": 40,
+                        "endOffset": 282
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 2122,
                     "endColumn": 77,
-                    "endOffset": 1963
+                    "endOffset": 2195
                 },
                 "from": {
                     "file": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/values-ko/values-ko.xml",
@@ -384,11 +479,30 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 1968,
+                    "startOffset": 2200,
+                    "endColumn": 45,
+                    "endOffset": 2241
+                },
+                "from": {
+                    "file": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 287,
+                        "endColumn": 45,
+                        "endOffset": 328
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 2246,
                     "endColumn": 100,
-                    "endOffset": 2064
+                    "endOffset": 2342
                 },
                 "from": {
                     "file": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/values-ko/values-ko.xml",

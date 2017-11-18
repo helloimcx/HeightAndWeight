@@ -27,6 +27,7 @@ import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.mm.sdk.platformtools.Util;
+import com.thefinestartist.finestwebview.FinestWebView;
 import com.zhy.autolayout.AutoLinearLayout;
 
 public class AccountFragment extends Fragment implements InitView{
@@ -51,7 +52,6 @@ public class AccountFragment extends Fragment implements InitView{
 	@Bind(R.id.ivHeader)
 	ImageView header;
 
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -65,23 +65,6 @@ public class AccountFragment extends Fragment implements InitView{
 		ButterKnife.bind(this,view);
 		initView();
 		initListener();
-	}
-
-	private void switchFragment(android.support.v4.app.Fragment targetFragment) {
-		MainActivity.tab_transfer=targetFragment;
-		FragmentTransaction transaction = getFragmentManager().beginTransaction();
-		if (!targetFragment.isAdded()) {
-			transaction
-					.hide(AccountFragment.this)
-					.add(R.id.id_content, MainActivity.tab_transfer)
-					.commit();
-		} else {
-			transaction
-					.hide(AccountFragment.this)
-					.show( MainActivity.tab_transfer)
-					.commit();
-		}
-
 	}
 
 	private void reToWx(){
@@ -140,15 +123,13 @@ public class AccountFragment extends Fragment implements InitView{
 		help.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				MyWebFragment.myurl="http://kafca.legendh5.com/h5/hthelp.html";
-				switchFragment(new MyWebFragment());
+				new FinestWebView.Builder(getActivity()).show("http://kafca.legendh5.com/h5/hthelp.html");
 			}
 		});
 		myWeb.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				MyWebFragment.myurl="http://120.78.67.135:8000/home/index";
-				switchFragment(new MyWebFragment());
+				new FinestWebView.Builder(getActivity()).show("http://120.78.67.135:8000/home/index");
 			}
 		});
 		shareApp.setOnClickListener(new View.OnClickListener() {

@@ -61,6 +61,7 @@
 
             </com.zhy.autolayout.AutoLinearLayout>
 
+            <!--加载标签-->
             <com.wang.avi.AVLoadingIndicatorView
                 android:id="@+id/avi"
                 android:layout_width="40px"
@@ -71,6 +72,21 @@
                 app:indicatorName="BallPulseIndicator"
                 android:visibility="gone"
                 />
+
+            <!--发布体型菜单-->
+            <ImageButton
+                android:id="@+id/moment_camera"
+                android:layout_width="60px"
+                android:layout_height="40px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_margin_left_and_right"
+                android:background="@null"
+                android:src="@mipmap/camera"
+                android:visibility="gone"
+                />
+
+
             <!--加号菜单-->
             <ImageButton
                 android:id="@+id/ibAddMenu"

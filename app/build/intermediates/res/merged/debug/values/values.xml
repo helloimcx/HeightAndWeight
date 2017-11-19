@@ -983,7 +983,6 @@
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/><attr format="reference" name="subMenuArrow"/></declare-styleable>
     <declare-styleable name="MetroLayout"><attr format="dimension" name="metro_divider"/></declare-styleable>
     <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/></declare-styleable>
-    <declare-styleable name="NineGridView"><attr format="dimension" name="ngv_singleImageSize"/><attr format="float" name="ngv_singleImageRatio"/><attr format="dimension" name="ngv_gridSpacing"/><attr format="integer" name="ngv_maxSize"/><attr format="enum" name="ngv_mode"><enum name="fill" value="0"/><enum name="grid" value="1"/></attr></declare-styleable>
     <declare-styleable name="OptionItemView"><attr format="string" name="title"/><attr format="dimension" name="title_size"/><attr format="color" name="title_color"/><attr format="reference|color" name="left_src"/><attr format="string" name="left_text"/><attr format="dimension" name="left_text_size"/><attr format="dimension" name="left_image_margin_left"/><attr format="dimension" name="left_text_margin_left"/><attr format="dimension" name="left_image_margin_right"/><attr format="color" name="left_text_color"/><attr format="reference|color" name="right_src"/><attr format="string" name="right_text"/><attr format="dimension" name="right_text_size"/><attr format="dimension" name="right_image_margin_left"/><attr format="dimension" name="right_image_margin_right"/><attr format="dimension" name="right_text_margin_right"/><attr format="color" name="right_text_color"/><attr format="boolean" name="splite_mode"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/><attr name="android:popupAnimationStyle"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
@@ -1137,6 +1136,10 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="action_button_content_margin">16dp</dimen>
+    <dimen name="action_button_margin">12dp</dimen>
+    <dimen name="action_button_size">72dp</dimen>
+    <dimen name="action_menu_radius">96dp</dimen>
     <dimen name="activity_horizontal_margin">32px</dimen>
     <dimen name="activity_vertical_margin">32px</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
@@ -1227,6 +1230,8 @@
     <dimen name="option_item_margin_left">40px</dimen>
     <dimen name="option_item_margin_right">40px</dimen>
     <dimen name="option_item_margin_top">42px</dimen>
+    <dimen name="sub_action_button_content_margin">6dp</dimen>
+    <dimen name="sub_action_button_size">36dp</dimen>
     <dimen name="toolbarHeight">56dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
@@ -1493,7 +1498,6 @@
     <string name="search">搜索</string>
     <string name="search_colon">搜索:</string>
     <string name="search_menu_title">Search</string>
-    <string name="select">%1$s/%2$s</string>
     <string name="select_complete">完成(%1$s/%2$s)</string>
     <string name="select_group_info_fail_please_restart_app">已加入群聊，但查询群信息失败，请重启APP</string>
     <string name="select_limit">最多选择%1$s张图片</string>

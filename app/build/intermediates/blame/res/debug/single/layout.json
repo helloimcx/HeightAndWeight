@@ -36,6 +36,10 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/item.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/moment_item.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/moment_item.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/adapter_camera_item.xml",
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/adapter_camera_item.xml"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/contact_developer.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/contact_developer.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/fragment_dicover.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/fragment_dicover.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_image_grid.xml",
@@ -100,20 +108,12 @@
         "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/layout/design_menu_item_action_area.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_preview.xml",
-        "source": "/Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/res/layout/activity_preview.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/include_toolbar.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/include_toolbar.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/pop_folder.xml",
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/pop_folder.xml"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/item_photoview.xml",
-        "source": "/Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/res/layout/item_photoview.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
@@ -192,12 +192,12 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/userinfo.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/userinfo.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/finest_web_view.xml",
         "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/layout/finest_web_view.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/userinfo.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/userinfo.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
@@ -286,6 +286,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/popup_moment.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/popup_moment.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/welcome.xml",

@@ -139,10 +139,13 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			test_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
 		case 1:
-			MyWebView.myurl="http://www.baidu.com";
-			tab02 = new MyWebView();
-			transaction.add(R.id.id_content, tab02);
-			transaction.show(tab02);
+			if(tab02 == null){
+				tab02 = new DiscoverFragment();
+				transaction.add(R.id.id_content,tab02);
+			}
+			else {
+				transaction.show(tab02);
+			}
 			mImgDiscover.setImageResource(R.drawable.discover_pressed);
 			discover_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;

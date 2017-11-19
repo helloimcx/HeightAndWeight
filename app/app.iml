@@ -122,12 +122,13 @@
     <orderEntry type="library" exported="" name="com.lqr.imagepicker:library-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-core-utils-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="com.oguzdev:CircularFloatingActionMenu-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="com.bm.photoview:library-1.4.1" level="project" />
-    <orderEntry type="library" exported="" name="com.lzy.widget:ninegridview-0.2.0" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:design-25.1.1" level="project" />
     <orderEntry type="library" exported="" name="com.lqr.audio:library-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="com.thefinestartist:finestwebview-1.2.7" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="com.zhy:base-adapter-3.0.3" level="project" />
     <orderEntry type="library" exported="" name="__local_jars__:/Users/mac/myprojects/HT_v2/app/libs/libammsdk.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:transition-25.1.1" level="project" />
     <orderEntry type="library" exported="" name="com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0@jar" level="project" />

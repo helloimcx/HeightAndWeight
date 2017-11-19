@@ -1,4 +1,5 @@
 package com.example.HomeworkOne;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -45,7 +46,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import Utils.OssSecretBean;
-
 import static com.example.HomeworkOne.LoginFragment.JSON;
 
 /**
@@ -163,12 +163,15 @@ public class UserHeader extends Activity implements InitView{
             case REQUEST_IMAGE_PICKER:
                 if (resultCode == ImagePicker.RESULT_CODE_ITEMS) {
                     if (data != null) {
+                        SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
+                        String email = sharedPreferences.getString("email","null");
                         ArrayList<com.lqr.imagepicker.bean.ImageItem> images = (ArrayList<com.lqr.imagepicker.bean.ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
                         if (images != null && images.size() > 0) {
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
-                            putToOss(imageItem.name,imageItem.path);
+                            //以用户邮箱加图像名作为头像名
+                            putToOss(email+imageItem.name,imageItem.path);
                             String url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
-                                    +imageItem.name;
+                                    +email+imageItem.name;
                                     //+"?x-oss-process=image/resize,m_fixed,h_50,w_50";
                             setUserHeader(url);
                         }
@@ -289,7 +292,7 @@ public class UserHeader extends Activity implements InitView{
     }
 
     private void initHeader(){
-        //用户头像
+        // 用户头像
         SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
         String header_str = sharedPreferences.getString("header","null");
         Uri header_uri = Uri.parse(header_str);

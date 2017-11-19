@@ -28,6 +28,10 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/nim_image_download_failed.jpg"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/camera.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/camera.png"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_red_pack.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_red_pack.png"
     },
@@ -88,16 +92,16 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_volume_3.png"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/health_label.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/health_label.png"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_friend_forbid.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_friend_forbid.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_excel.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_excel.png"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/health_label.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/health_label.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_cheat_voice.png",

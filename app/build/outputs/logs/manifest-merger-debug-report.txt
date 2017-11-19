@@ -33,15 +33,14 @@ MERGED from [com.bm.photoview:library:1.4.1] /Users/mac/.android/build-cache/a68
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:17:5-20:19
 MERGED from [com.android.support:design:25.1.1] /Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:transition:25.1.1] /Users/mac/.android/build-cache/fe235be463da5dab433148651732ef155336196d/output/AndroidManifest.xml:22:5-20
-MERGED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:15:5-19:19
 MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-v4:25.3.0] /Users/mac/.android/build-cache/d50ff3db1b9f412c632d50b24f4037dfbe81e71d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/mac/.android/build-cache/e10e4cefc146ce3f94a1302fbdcf8a7c358c5988/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/mac/.android/build-cache/c8b7080cd32de6fd2867db05b34fa2a9ec04f8e5/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.0] /Users/mac/.android/build-cache/a9f126e741f4be26dac4c269ac91008b13d2d40f/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:25.3.0] /Users/mac/.android/build-cache/fb09a05ada371d434cba47b8bab0673910ec0d60/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] /Users/mac/.android/build-cache/a9f126e741f4be26dac4c269ac91008b13d2d40f/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.0] /Users/mac/.android/build-cache/57d59bb41d4660ab6e8ab42e466548a6a1c1980a/output/AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:10:9-41
@@ -142,7 +141,6 @@ ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:78:9-82:
 uses-permission#android.permission.INTERNET
 ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:87:5-66
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:11:5-67
-MERGED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:87:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -163,7 +161,6 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:91:5-80
 MERGED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:14:5-81
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:14:5-81
-MERGED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:12:5-81
 	android:name
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:91:22-78
 uses-permission#android.permission.CAMERA
@@ -181,6 +178,7 @@ MERGED from [com.zhy:autolayout:1.4.5] /Users/mac/.android/build-cache/d9aeca057
 MERGED from [com.lqr.adapter:library:1.0.2] /Users/mac/.android/build-cache/1c58cf3a95f00d5c56ed9b7b04f630817e11dc18/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lqr.recyclerview:library:1.0.2] /Users/mac/.android/build-cache/130b54c228d9ea938e9992fb39b34921e07bf768/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/mac/.android/build-cache/ac3ff8184b8c7b4ada0e86ea849f27ea3ee0799e/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lqr.ninegridimageview:library:1.0.0] /Users/mac/.android/build-cache/32a5af78bfcf1c6e19ad41227db0495322d623a7/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lqr.optionitemview:library:1.0.7] /Users/mac/.android/build-cache/c75321ab323a183cccb523eb409b7bdca101f606/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lqr.emoji:library:1.0.2] /Users/mac/.android/build-cache/53fccd977bf3dca672fc03355c223eeee7ea1a58/output/AndroidManifest.xml:7:5-9:41
@@ -192,20 +190,20 @@ MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cac
 MERGED from [com.wang.avi:library:2.1.3] /Users/mac/.android/build-cache/81518f96c0ac1a7408b3ec83c32379e9394d67d6/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.thefinestartist:finestwebview:1.2.7] /Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:design:25.1.1] /Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:recyclerview-v7:25.1.1] /Users/mac/.android/build-cache/bc07230f45c9b9053f5a745155f0e3d88250904c/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.1.1] /Users/mac/.android/build-cache/fe235be463da5dab433148651732ef155336196d/output/AndroidManifest.xml:20:5-44
 MERGED from [com.thefinestartist:utils:0.9.0] /Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:20:5-43
-MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/mac/.android/build-cache/ac3ff8184b8c7b4ada0e86ea849f27ea3ee0799e/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:25.3.0] /Users/mac/.android/build-cache/d50ff3db1b9f412c632d50b24f4037dfbe81e71d/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/mac/.android/build-cache/e10e4cefc146ce3f94a1302fbdcf8a7c358c5988/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/mac/.android/build-cache/c8b7080cd32de6fd2867db05b34fa2a9ec04f8e5/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.0] /Users/mac/.android/build-cache/a9f126e741f4be26dac4c269ac91008b13d2d40f/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.3.0] /Users/mac/.android/build-cache/fb09a05ada371d434cba47b8bab0673910ec0d60/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:20:5-43
+MERGED from [com.zhy:base-adapter:3.0.3] /Users/mac/.android/build-cache/192a038784ea5129e06e124752e605215b2cb4fb/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:25.1.1] /Users/mac/.android/build-cache/bc07230f45c9b9053f5a745155f0e3d88250904c/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-ui:25.3.0] /Users/mac/.android/build-cache/a9f126e741f4be26dac4c269ac91008b13d2d40f/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:25.3.0] /Users/mac/.android/build-cache/57d59bb41d4660ab6e8ab42e466548a6a1c1980a/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] /Users/mac/.android/build-cache/7787e35b39ec1733ce017294b907446877ac5b23/output/AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.1.1] /Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -220,7 +218,6 @@ ADDED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7
 		ADDED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:12:22-81
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:16:5-80
-MERGED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:13:5-80
 	android:name
 		ADDED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:16:22-77
 activity#com.lqr.imagepicker.ui.ImageBaseActivity
@@ -257,21 +254,15 @@ uses-permission#android.permission.CHANGE_WIFI_STATE
 ADDED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:15:5-76
 	android:name
 		ADDED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:15:22-73
-activity#com.lzy.ninegrid.preview.ImagePreviewActivity
-ADDED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:16:9-18:75
-	android:theme
-		ADDED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:18:13-72
-	android:name
-		ADDED from [com.lzy.widget:ninegridview:0.2.0] /Users/mac/.android/build-cache/75a757ff8d537d06b057636744a9a689e51f1138/output/AndroidManifest.xml:17:13-73
 meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:25.3.0] /Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.0] /Users/mac/.android/build-cache/d50ff3db1b9f412c632d50b24f4037dfbe81e71d/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/mac/.android/build-cache/e10e4cefc146ce3f94a1302fbdcf8a7c358c5988/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/mac/.android/build-cache/c8b7080cd32de6fd2867db05b34fa2a9ec04f8e5/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.0] /Users/mac/.android/build-cache/a9f126e741f4be26dac4c269ac91008b13d2d40f/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-utils:25.3.0] /Users/mac/.android/build-cache/fb09a05ada371d434cba47b8bab0673910ec0d60/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-core-ui:25.3.0] /Users/mac/.android/build-cache/a9f126e741f4be26dac4c269ac91008b13d2d40f/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-compat:25.3.0] /Users/mac/.android/build-cache/57d59bb41d4660ab6e8ab42e466548a6a1c1980a/output/AndroidManifest.xml:25:5-27:34
 	android:value
 		ADDED from [com.android.support:appcompat-v7:25.3.0] /Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/AndroidManifest.xml:27:9-31

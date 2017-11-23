@@ -1,10 +1,9 @@
 package com.example.HomeworkOne;
 
-import android.app.AlertDialog;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,15 +15,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import com.google.gson.Gson;
+import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
+import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.lqr.imagepicker.ImagePicker;
+import com.lqr.imagepicker.ui.ImageGridActivity;
+import com.lqr.imagepicker.view.CropImageView;
 import com.lqr.optionitemview.OptionItemView;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 
@@ -35,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 import MyInterface.InitView;
 import Utils.JsonMomentBean;
-import Utils.JsonRecordBean;
+import Utils.PicassoImageLoader;
 import Utils.PopupWindowUtils;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -45,25 +47,31 @@ import okhttp3.Response;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static android.content.Context.MODE_PRIVATE;
-import static android.content.Context.PRINT_SERVICE;
-
 /**
  * Created by mac on 2017/11/18.
  */
 
 public class DiscoverFragment extends Fragment implements InitView {
-    private SimpleAdapter simpleAdapter;
     private List<Map<String, Object>> dataList;
     private int count_moment;
+    //请求的数据所在的页数
+    private int request_page = 1;
+
     private ArrayList<JsonMomentBean.MomentBean> results;
     private PopupWindow mPopupWindow;
     private View menu;
     private ImageButton camera;
     private OptionItemView item_camera;
     private OptionItemView item_cancel;
+    private CommonAdapter<Map<String, Object>> commonAdapter;
+    public static final int REQUEST_IMAGE_PICKER = 1001;
+    public static final int REQUEST_DISCOVERY_PUBLIC = 1002;
+    private ImagePicker imagePicker;
     @Bind(R.id.moments_list)
     ListView listView;
+    @Bind(R.id.refreshLayout)
+    TwinklingRefreshLayout refreshLayout;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -82,14 +90,45 @@ public class DiscoverFragment extends Fragment implements InitView {
     @Override
     public void initView() {
         dataList = new ArrayList<Map<String, Object>>();
-        getData();
+        //获取moment数据
+        getData(1);
+
+        refreshLayout.setOnRefreshListener(new RefreshListenerAdapter(){
+            //下拉刷新
+            @Override
+            public void onRefresh(final TwinklingRefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dataList.clear();
+                        request_page = 1;
+                        getData(request_page);
+                        refreshLayout.finishRefreshing();
+                    }
+                },2000);
+            }
+
+            //上拉加载更多
+            @Override
+            public void onLoadMore(final TwinklingRefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        request_page++;
+                        getData(request_page);
+                        refreshLayout.finishLoadmore();
+                    }
+                },2000);
+            }
+        });
+
         LayoutInflater factory = LayoutInflater.from(getActivity());
         menu = factory.inflate(R.layout.popup_moment, null);
         camera = (ImageButton) getActivity().findViewById(R.id.moment_camera);
         camera.setVisibility(View.VISIBLE);
         item_camera = (OptionItemView) menu.findViewById(R.id.moment_public);
         item_cancel = (OptionItemView) menu.findViewById(R.id.moment_cancel);
-        //createFloatMenu();
+        initImagePicker();
     }
 
     @Override
@@ -103,6 +142,8 @@ public class DiscoverFragment extends Fragment implements InitView {
         item_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ImageGridActivity.class);
+                startActivityForResult(intent,REQUEST_IMAGE_PICKER );
                 mPopupWindow.dismiss();
             }
         });
@@ -114,9 +155,9 @@ public class DiscoverFragment extends Fragment implements InitView {
         });
     }
 
-    private void getData() {
+    private void getData(final int page) {
         OkHttpClient okHttpClient = MainActivity.okHttpClient;
-        final Request request = new Request.Builder().url("http://120.78.67.135:8000/moment/")
+        final Request request = new Request.Builder().url("http://120.78.67.135:8000/moment/?page="+page)
                 .addHeader("cookie", MainActivity.sessionid)
                 .build();
         Call call = okHttpClient.newCall(request);
@@ -136,6 +177,11 @@ public class DiscoverFragment extends Fragment implements InitView {
             public void onResponse(Call call, final Response response) throws IOException {
                 Gson gson = new Gson();
                 try {
+                    int response_code = response.code();
+                    if(response_code == 404){
+                        request_page--;
+                        return;
+                    }
                     JsonMomentBean jsonMomentBean = gson.fromJson(response.body().string(),
                             JsonMomentBean.class);
                     count_moment = jsonMomentBean.getCount();
@@ -147,7 +193,16 @@ public class DiscoverFragment extends Fragment implements InitView {
                     Log.e("why", response.body().string());
 
                 } else {
-                    for (int i = count_moment - 1; i >= 0; i--) {
+                    //该页的数据量
+                    int count;
+                    if(page <= count_moment / 10){
+                        count = 10;
+                    }
+                    else {
+                        count = count_moment % 10;
+                    }
+
+                    for (int i = count - 1; i >= 0; i--) {
                         String header = results.get(i).getAccount_header();
                         String name = results.get(i).getAccount_name();
                         String content = results.get(i).getMoment_content();
@@ -159,19 +214,14 @@ public class DiscoverFragment extends Fragment implements InitView {
                         map.put("url", url);
                         dataList.add(map);
                     }
-//                    simpleAdapter = new SimpleAdapter(getActivity(), dataList, R.layout.moment_item,
-//                            new String[]{"header", "name", "content", "url"}, new int[]{R.id.moment_header,
-//                            R.id.moment_name,
-//                            R.id.moment_content,
-//                            R.id.moment_image
-//                    });
                 }
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        listView.setAdapter(new CommonAdapter<Map<String, Object>>(getActivity(),R.layout.moment_item,
-                                dataList) {
-
+                       commonAdapter = new CommonAdapter<Map<String, Object>>(
+                                getActivity(),R.layout.moment_item,
+                                dataList
+                        ) {
                             @Override
                             protected void convert(ViewHolder viewHolder, Map<String, Object> stringObjectMap, int i) {
                                 String header_url = stringObjectMap.get("header").toString();
@@ -187,7 +237,8 @@ public class DiscoverFragment extends Fragment implements InitView {
                                 Uri image_uri = Uri.parse(image_url);
                                 Picasso.with(getActivity()).load(image_uri).fit().centerCrop().into(image);
                             }
-                        });
+                        };
+                        listView.setAdapter(commonAdapter);
                     }
                 });
             }
@@ -225,5 +276,42 @@ public class DiscoverFragment extends Fragment implements InitView {
             }
         });
         PopupWindowUtils.makeWindowDark(getActivity());
+    }
+
+    private void initImagePicker(){
+        imagePicker = ImagePicker.getInstance();
+        imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
+        imagePicker.setShowCamera(true);  //显示拍照按钮
+        imagePicker.setCrop(true);        //允许裁剪（单选才有效）
+        imagePicker.setSaveRectangle(true); //是否按矩形区域保存
+        imagePicker.setSelectLimit(1);    //选中数量限制
+        imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
+        imagePicker.setFocusWidth(800);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusHeight(800);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setOutPutX(1000);//保存文件的宽度。单位像素
+        imagePicker.setOutPutY(1000);//保存文件的高度。单位像素
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUEST_IMAGE_PICKER:
+                if (resultCode == ImagePicker.RESULT_CODE_ITEMS) {
+                    if (data != null) {
+                        ArrayList<com.lqr.imagepicker.bean.ImageItem> images = (ArrayList<com.lqr.imagepicker.bean.ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
+                        if (images != null && images.size() > 0) {
+                            com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
+                            Intent intent = new Intent(getActivity(),DiscoveryPublic.class);
+                            intent.putExtra("path", imageItem.path);
+                            intent.putExtra("name", imageItem.name);
+                            startActivityForResult(intent, REQUEST_DISCOVERY_PUBLIC);
+                        }
+                    }
+                }
+            case REQUEST_DISCOVERY_PUBLIC:
+                //刷新moment列表
+                refreshLayout.startRefresh();
+        }
     }
 }

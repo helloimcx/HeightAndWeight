@@ -53,4 +53,5 @@ dependencies {
     compile 'com.thefinestartist:finestwebview:1.2.7'
     compile 'com.zhy:base-adapter:3.0.3'
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
 }

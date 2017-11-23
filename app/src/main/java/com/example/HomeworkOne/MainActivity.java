@@ -67,7 +67,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		if(sessionid.equals("null")){
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(true);
-			builder.setTitle("登录").setMessage("登陆后可以在云端保存您的测试记录哦，立即登录？")
+			builder.setTitle("登录").setMessage("登陆后可以保存您的测试记录哦，立即登录？")
 					.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface Arg, int arg) {

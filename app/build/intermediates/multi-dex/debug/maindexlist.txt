@@ -37,6 +37,7 @@ android/support/v4/net/ConnectivityManagerCompat$JellyBeanConnectivityManagerCom
 android/support/v4/app/NotificationCompat$NotificationCompatImplHoneycomb.class
 android/support/v4/net/ConnectivityManagerCompatHoneycombMR2.class
 android/support/design/widget/BaseTransientBottomBar$OnLayoutChangeListener.class
+com/lcodecore/tkrefreshlayout/header/progresslayout/MaterialProgressDrawable$1.class
 android/support/annotation/Dimension.class
 android/support/v7/widget/RecyclerView$ItemAnimator.class
 android/support/design/widget/TabLayout$OnTabSelectedListener.class
@@ -146,11 +147,13 @@ android/support/v7/widget/RecyclerView$RecycledViewPool.class
 android/support/v4/view/ViewPager$ItemInfo.class
 android/support/annotation/DimenRes.class
 android/support/annotation/TransitionRes.class
+com/lcodecore/tkrefreshlayout/header/progresslayout/MaterialProgressDrawable$Ring.class
 android/support/v7/view/menu/ShowableListMenu.class
 android/support/v4/app/NotificationCompatJellybean$Builder.class
 android/support/v4/app/NotificationCompatIceCreamSandwich.class
 android/support/annotation/MainThread.class
 android/support/v4/app/ServiceCompat$StopForegroundFlags.class
+com/lcodecore/tkrefreshlayout/header/progresslayout/MaterialProgressDrawable.class
 android/support/design/widget/AppBarLayout$1.class
 android/support/annotation/MenuRes.class
 android/support/v4/view/LayoutInflaterFactory.class
@@ -491,6 +494,7 @@ android/support/v7/widget/ViewUtils.class
 android/support/v7/app/AppCompatDelegateImplV11.class
 android/support/design/widget/FloatingActionButton$ShadowDelegateImpl.class
 android/support/v4/media/MediaBrowserCompat.class
+com/lcodecore/tkrefreshlayout/TwinklingRefreshLayout.class
 android/support/v7/widget/RecyclerView$RecyclerViewDataObserver.class
 android/support/v7/widget/RecyclerView$ChildDrawingOrderCallback.class
 android/support/v4/app/NotificationCompat$InboxStyle.class
@@ -526,6 +530,8 @@ butterknife/OnEditorAction.class
 android/support/annotation/UiThread.class
 android/support/v7/widget/RecyclerView$SavedState.class
 android/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat.class
+com/lcodecore/tkrefreshlayout/header/progresslayout/MaterialProgressDrawable$2.class
+com/lcodecore/tkrefreshlayout/header/progresslayout/MaterialProgressDrawable$ProgressDrawableSize.class
 android/support/v7/widget/ViewInfoStore$ProcessCallback.class
 android/support/v4/net/ConnectivityManagerCompatJellyBean.class
 android/support/v4/app/ServiceCompat$ServiceCompatImpl.class
@@ -549,6 +555,7 @@ android/support/design/widget/ViewGroupUtils.class
 android/support/design/widget/BottomSheetBehavior$BottomSheetCallback.class
 android/support/v7/view/menu/MenuPopup.class
 android/support/v4/app/NotificationCompat$NotificationCompatImplJellybean.class
+com/lcodecore/tkrefreshlayout/header/progresslayout/MaterialProgressDrawable$3.class
 android/support/design/widget/BaseTransientBottomBar$3.class
 android/support/design/widget/TabLayout$1.class
 android/support/design/widget/CoordinatorLayout$DispatchChangeEvent.class

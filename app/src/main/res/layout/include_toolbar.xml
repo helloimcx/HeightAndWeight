@@ -86,6 +86,21 @@
                 android:visibility="gone"
                 />
 
+            <!--发布按钮-->
+            <TextView
+                android:id="@+id/moment_public"
+                android:layout_width="60px"
+                android:layout_height="40px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_margin_left_and_right"
+                android:background="@null"
+                android:text="发布"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                />
+
 
             <!--加号菜单-->
             <ImageButton

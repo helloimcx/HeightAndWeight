@@ -28,12 +28,24 @@
         android:layout_marginTop="93dp"
         android:background="@drawable/one" />
 
-    <ListView
-        android:id="@+id/moments_list"
-        android:layout_height="wrap_content"
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/moments_header"
         android:layout_marginTop="20dp"
-        ></ListView>
+        >
+
+        <ListView
+            android:id="@+id/moments_list"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            ></ListView>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
 
 </com.zhy.autolayout.AutoRelativeLayout>

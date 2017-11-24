@@ -1,4 +1,4 @@
-#Fri Nov 24 01:03:42 ULAT 2017
+#Fri Nov 24 13:28:20 ULAT 2017
 base.0=/Users/mac/myprojects/HT_v2/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/mac/myprojects/HT_v2/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

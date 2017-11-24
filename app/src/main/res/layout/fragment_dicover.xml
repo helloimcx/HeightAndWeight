@@ -26,7 +26,7 @@
         android:layout_marginEnd="23dp"
         android:layout_marginRight="23dp"
         android:layout_marginTop="93dp"
-        android:background="@drawable/one" />
+        android:src="@drawable/one" />
 
     <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

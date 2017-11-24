@@ -1,6 +1,7 @@
 package com.example.HomeworkOne;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -47,6 +48,8 @@ import okhttp3.Response;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by mac on 2017/11/18.
  */
@@ -67,6 +70,8 @@ public class DiscoverFragment extends Fragment implements InitView {
     public static final int REQUEST_IMAGE_PICKER = 1001;
     public static final int REQUEST_DISCOVERY_PUBLIC = 1002;
     private ImagePicker imagePicker;
+    @Bind(R.id.moments_header)
+    ImageView moment_header;
     @Bind(R.id.moments_list)
     ListView listView;
     @Bind(R.id.refreshLayout)
@@ -90,6 +95,13 @@ public class DiscoverFragment extends Fragment implements InitView {
     @Override
     public void initView() {
         dataList = new ArrayList<Map<String, Object>>();
+
+        //显示用户头像
+        SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
+        String user_header_str = share.getString("header","null");
+        Uri header_uri = Uri.parse(user_header_str);
+        Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(moment_header);
+
         //获取moment数据
         getData(1);
 
@@ -101,6 +113,7 @@ public class DiscoverFragment extends Fragment implements InitView {
                     @Override
                     public void run() {
                         dataList.clear();
+                        //回到第一页
                         request_page = 1;
                         getData(request_page);
                         refreshLayout.finishRefreshing();
@@ -114,9 +127,11 @@ public class DiscoverFragment extends Fragment implements InitView {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        refreshLayout.finishLoadmore();
+                        //请求下一页
                         request_page++;
                         getData(request_page);
-                        refreshLayout.finishLoadmore();
+                        commonAdapter.notifyDataSetChanged();
                     }
                 },2000);
             }
@@ -178,6 +193,7 @@ public class DiscoverFragment extends Fragment implements InitView {
                 Gson gson = new Gson();
                 try {
                     int response_code = response.code();
+                    //若下一页数据为空，回到当前页
                     if(response_code == 404){
                         request_page--;
                         return;
@@ -202,7 +218,7 @@ public class DiscoverFragment extends Fragment implements InitView {
                         count = count_moment % 10;
                     }
 
-                    for (int i = count - 1; i >= 0; i--) {
+                    for (int i = 0; i <= count-1; i++) {
                         String header = results.get(i).getAccount_header();
                         String name = results.get(i).getAccount_name();
                         String content = results.get(i).getMoment_content();
@@ -215,32 +231,36 @@ public class DiscoverFragment extends Fragment implements InitView {
                         dataList.add(map);
                     }
                 }
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                       commonAdapter = new CommonAdapter<Map<String, Object>>(
-                                getActivity(),R.layout.moment_item,
-                                dataList
-                        ) {
-                            @Override
-                            protected void convert(ViewHolder viewHolder, Map<String, Object> stringObjectMap, int i) {
-                                String header_url = stringObjectMap.get("header").toString();
-                                String name = stringObjectMap.get("name").toString();
-                                String content = stringObjectMap.get("content").toString();
-                                String image_url = stringObjectMap.get("url").toString();
-                                ImageView header = viewHolder.getView(R.id.moment_header);
-                                Uri header_uri = Uri.parse(header_url);
-                                Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(header);
-                                viewHolder.setText(R.id.moment_name,name);
-                                viewHolder.setText(R.id.moment_content,content);
-                                ImageView image = viewHolder.getView(R.id.moment_image);
-                                Uri image_uri = Uri.parse(image_url);
-                                Picasso.with(getActivity()).load(image_uri).fit().centerCrop().into(image);
-                            }
-                        };
-                        listView.setAdapter(commonAdapter);
-                    }
-                });
+
+                //首次打开或刷新时适配adapter
+                if(page == 1){
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            commonAdapter = new CommonAdapter<Map<String, Object>>(
+                                    getActivity(),R.layout.moment_item,
+                                    dataList
+                            ) {
+                                @Override
+                                protected void convert(ViewHolder viewHolder, Map<String, Object> stringObjectMap, int i) {
+                                    String header_url = stringObjectMap.get("header").toString();
+                                    String name = stringObjectMap.get("name").toString();
+                                    String content = stringObjectMap.get("content").toString();
+                                    String image_url = stringObjectMap.get("url").toString();
+                                    ImageView header = viewHolder.getView(R.id.moment_header);
+                                    Uri header_uri = Uri.parse(header_url);
+                                    Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(header);
+                                    viewHolder.setText(R.id.moment_name,name);
+                                    viewHolder.setText(R.id.moment_content,content);
+                                    ImageView image = viewHolder.getView(R.id.moment_image);
+                                    Uri image_uri = Uri.parse(image_url);
+                                    Picasso.with(getActivity()).load(image_uri).fit().centerCrop().into(image);
+                                }
+                            };
+                            listView.setAdapter(commonAdapter);
+                        }
+                    });
+                }
             }
         });
     }

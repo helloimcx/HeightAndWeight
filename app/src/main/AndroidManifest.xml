@@ -29,18 +29,17 @@
         <activity
             android:name="com.example.HomeworkOne.Welcome"
             android:label="@string/app_name" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
         
          <activity
             android:name="com.example.HomeworkOne.Access"
             android:label="@string/app_name" >
+
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
             
         </activity>
 
@@ -77,6 +76,16 @@
 
         <activity
             android:name="com.example.HomeworkOne.DiscoveryPublic"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name="com.example.HomeworkOne.AcRegister"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name="com.example.HomeworkOne.AcLogin"
             android:label="@string/app_name" >
         </activity>
 

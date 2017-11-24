@@ -322,6 +322,7 @@
     <color name="gray7">#999999</color>
     <color name="gray8">#D9D9D9</color>
     <color name="gray9">#DBDFE0</color>
+    <color name="green">#00FF00</color>
     <color name="green0">#45C01A</color>
     <color name="green1">#45C01A</color>
     <color name="green2">#A3DEA3</color>
@@ -657,6 +658,7 @@
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="theme_body">#cc22292c</color>
+    <color name="thumbColor">#66aaaaaa</color>
     <color name="top_bar">#9f556061</color>
     <color name="transparent">#00000000</color>
     <color name="transparent_black_hex_11">#11000000</color>
@@ -934,6 +936,7 @@
             <enum name="rectangle" value="0"/>
             <enum name="circle" value="1"/>
         </attr></declare-styleable>
+    <declare-styleable name="CustomAttributes"><attr format="color|reference" name="mRippleColor"/><attr format="float" name="rippleSpeed"/><attr format="boolean" name="showNumberIndicator"/><attr format="integer" name="max"/><attr format="integer" name="min"/><attr format="integer" name="value"/><attr format="integer" name="progress"/><attr format="dimension" name="ringWidth"/><attr format="boolean" name="check"/><attr format="dimension" name="checkBoxSize"/><attr format="dimension" name="thumbSize"/><attr format="integer" name="iconDrawable"/><attr format="dimension" name="iconSize"/><attr format="boolean" name="animate"/><attr format="float" name="rippleBorderRadius"/><attr format="boolean" name="clickAfterRipple"/></declare-styleable>
     <declare-styleable name="DesignTheme"><attr format="reference" name="bottomSheetDialogTheme"/><attr format="reference" name="bottomSheetStyle"/><attr format="color" name="textColorError"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr name="backgroundTint"/><attr name="backgroundTintMode"/><attr format="color" name="rippleColor"/><attr name="fabSize">

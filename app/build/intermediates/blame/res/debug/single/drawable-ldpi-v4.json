@@ -2,5 +2,9 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_camera_enhance_black_24dp.png",
         "source": "/Users/mac/myprojects/HT_v2/app/build/generated/res/pngs/debug/drawable-ldpi/ic_camera_enhance_black_24dp.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/sprite_check.png",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/drawable-ldpi-v4/sprite_check.png"
     }
 ]

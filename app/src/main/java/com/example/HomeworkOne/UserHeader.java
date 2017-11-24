@@ -46,7 +46,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import Utils.OssSecretBean;
-import static com.example.HomeworkOne.LoginFragment.JSON;
+import static com.example.HomeworkOne.AcLogin.JSON;
 
 /**
  * Created by mac on 2017/11/3.

@@ -72,12 +72,24 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_popup_enter.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/dialog_root_show_amin.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_root_show_amin.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/snackbar_hide_animation.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/snackbar_hide_animation.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
         "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_fab_in.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/no_anim.xml",
         "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/no_anim.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/progress_indeterminate_animation.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/progress_indeterminate_animation.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/fade_in_fast.xml",
@@ -192,6 +204,10 @@
         "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/activity_close_exit.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/dialog_main_hide_amination.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_main_hide_amination.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/fragment_open_enter.xml",
         "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fragment_open_enter.xml"
     },
@@ -210,6 +226,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/slide_left_in.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/slide_left_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/dialog_root_hide_amin.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_root_hide_amin.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
@@ -234,6 +254,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/snackbar_show_animation.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/snackbar_show_animation.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/right_out.xml",
@@ -298,6 +322,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/view_bounce.xml",
         "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_bounce.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/dialog_main_show_amination.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_main_show_amination.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/slide_down.xml",

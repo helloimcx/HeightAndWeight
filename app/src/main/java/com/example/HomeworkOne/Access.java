@@ -2,6 +2,7 @@ package com.example.HomeworkOne;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -23,9 +24,7 @@ public class Access extends Activity{
 		accessButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent intent=null;
-				intent=new Intent(Access.this,MainActivity.class);
-				startActivity(intent);
+				whereToGo();
 				overridePendingTransition(android.R.anim.slide_in_left,
 						android.R.anim.slide_out_right);
 			}
@@ -33,14 +32,31 @@ public class Access extends Activity{
 
 		new Handler(){
             public void handleMessage(android.os.Message msg) {
-            	Intent intent=null;
-				intent=new Intent(Access.this,MainActivity.class);
-				startActivity(intent);
+				whereToGo();
 				overridePendingTransition(android.R.anim.slide_in_left,
 						android.R.anim.slide_out_right);
             };
-        }.sendEmptyMessageDelayed(0, 900);
+        }.sendEmptyMessageDelayed(0, 1000);
 		
+	}
+
+	//转到哪一个Activity
+	private void whereToGo(){
+		//尝试获取sessionid
+		SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
+		String sessionid = sharedPreferences.getString("sessionid","null");
+
+		//若用户已经登录，则进入MainActivity
+		if(!sessionid.equals("null")){
+			Intent intent = new Intent(Access.this, MainActivity.class);
+			startActivity(intent);
+		}
+		//否则转到登陆
+		else {
+			Intent intent = new Intent(Access.this, AcLogin.class);
+			startActivity(intent);
+		}
+
 	}
 
 }

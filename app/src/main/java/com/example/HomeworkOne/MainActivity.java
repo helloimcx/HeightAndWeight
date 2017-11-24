@@ -64,25 +64,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		createHttpClient();
 		SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
 		sessionid = share.getString("sessionid","null");
-		if(sessionid.equals("null")){
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setCancelable(true);
-			builder.setTitle("登录").setMessage("登陆后可以保存您的测试记录哦，立即登录？")
-					.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface Arg, int arg) {
-							// TODO Auto-generated method stub
-							resetImgAndText();
-							setSelect(3);
-						}
-					}).setNegativeButton("取消", new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface arg0, int arg1) {
-					// TODO Auto-generated method stub
-				}
-			});
-			builder.create().show();
-		}
 	}
 
 	private void initEvents() {
@@ -150,13 +131,13 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			discover_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
 		case 2:
-			if (!sessionid.equals("null")) {
+			if (tab03 == null){
 				tab03 = new AccountFragment();
+				transaction.add(R.id.id_content,tab03);
 			}
 			else {
-				tab03 = new LoginFragment();
+				transaction.show(tab03);
 			}
-			transaction.add(R.id.id_content,tab03);
 			mImgAccount.setImageResource(R.drawable.account_pressed);
 			account_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;

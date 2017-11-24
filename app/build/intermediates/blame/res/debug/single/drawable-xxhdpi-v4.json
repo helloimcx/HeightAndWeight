@@ -72,16 +72,16 @@
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/button_action_dark_touch.png",
+        "source": "/Users/mac/.android/build-cache/7787e35b39ec1733ce017294b907446877ac5b23/output/res/drawable-xxhdpi-v4/button_action_dark_touch.png"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-xxhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/button_action_dark_touch.png",
-        "source": "/Users/mac/.android/build-cache/7787e35b39ec1733ce017294b907446877ac5b23/output/res/drawable-xxhdpi-v4/button_action_dark_touch.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
@@ -98,6 +98,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
         "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/sprite_check.png",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/drawable-xxhdpi-v4/sprite_check.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_camera_enhance_black_24dp.png",
@@ -240,12 +244,12 @@
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/drawable-xxhdpi-v4/bg_btn_pre.9.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_launcher.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_btn_radio_to_on_mtrl_000.png",

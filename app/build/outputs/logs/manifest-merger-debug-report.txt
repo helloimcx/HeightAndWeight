@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:1-99:12
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:1-108:12
 	package
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:3:5-38
 		INJECTED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml
@@ -16,7 +16,7 @@ ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:1-99:1
 	xmlns:android
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:7:5-90:19
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:7:5-99:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.1] /Users/mac/.android/build-cache/eb0b15f3127f30480290885b42745a786659e155/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:cardview-v7:25.1.1] /Users/mac/.android/build-cache/381c062d4301bddaae289b7048043cdf13c34bfa/output/AndroidManifest.xml:22:5-20
 MERGED from [com.leon:lsettingviewlibrary:1.5.0] /Users/mac/.android/build-cache/4acf3bdac47c355e97c2aa7ade65e97920189729/output/AndroidManifest.xml:11:5-15:19
@@ -37,6 +37,7 @@ MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/mac/.android/build-
 MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/mac/.android/build-cache/39b624b0f31d2f67842cc6e951ba20306ddd21a1/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/mac/.android/build-cache/efd2c434b11c5be67af4aaba4e16fb346706509a/output/AndroidManifest.xml:26:5-20
 MERGED from [com.lcodecorex:tkrefreshlayout:1.0.7] /Users/mac/.android/build-cache/f844ec06e9af114e236139fba1ce8cecad3bbc73/output/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.vajro:MaterialDesignLibrary:1.6] /Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support:support-v4:25.3.0] /Users/mac/.android/build-cache/d50ff3db1b9f412c632d50b24f4037dfbe81e71d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/mac/.android/build-cache/e10e4cefc146ce3f94a1302fbdcf8a7c358c5988/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/mac/.android/build-cache/c8b7080cd32de6fd2867db05b34fa2a9ec04f8e5/output/AndroidManifest.xml:29:5-20
@@ -72,109 +73,121 @@ ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:23:9-27:
 	android:name
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:24:13-64
 activity#com.example.HomeworkOne.Welcome
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:29:9-39:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:29:9-32:20
 	android:label
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:31:13-45
 	android:name
 		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:30:13-59
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:33:13-37:29
-action#android.intent.action.MAIN
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:34:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:36:17-77
-	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:36:27-74
 activity#com.example.HomeworkOne.Access
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:41:10-45:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:34:10-44:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:43:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:36:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:42:13-58
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:35:13-58
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:38:14-42:30
+action#android.intent.action.MAIN
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:39:18-70
+	android:name
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:39:26-67
+category#android.intent.category.LAUNCHER
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:41:18-78
+	android:name
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:41:28-75
 activity#com.example.HomeworkOne.ContactDeveloper
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:47:9-51:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:46:9-50:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:49:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:48:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:48:13-68
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:47:13-68
 activity#com.example.HomeworkOne.UserInfo
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:53:9-56:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:52:9-55:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:55:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:54:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:54:13-60
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:53:13-60
 activity#com.example.HomeworkOne.UserHeader
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:58:9-61:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:57:9-60:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:60:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:59:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:59:13-62
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:58:13-62
 activity#com.example.HomeworkOne.TestDetail
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:63:9-66:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:62:9-65:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:65:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:64:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:64:13-62
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:63:13-62
 activity#com.example.HomeworkOne.RecordActivity
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:68:9-71:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:67:9-70:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:70:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:69:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:69:13-66
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:68:13-66
 activity#com.example.HomeworkOne.RecordDetail
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:73:9-76:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:72:9-75:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:75:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:74:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:74:13-64
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:73:13-64
 activity#com.example.HomeworkOne.DiscoveryPublic
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:78:9-81:20
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:77:9-80:20
 	android:label
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:80:13-45
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:79:13-45
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:79:13-67
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:78:13-67
+activity#com.example.HomeworkOne.AcRegister
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:82:9-85:20
+	android:label
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:84:13-45
+	android:name
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:83:13-62
+activity#com.example.HomeworkOne.AcLogin
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:87:9-90:20
+	android:label
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:89:13-45
+	android:name
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:88:13-59
 activity#com.thefinestartist.finestwebview.FinestWebViewActivity
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:83:9-87:63
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:92:9-96:63
 	android:screenOrientation
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:86:13-47
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:95:13-47
 	android:configChanges
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:85:13-74
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:94:13-74
 	android:theme
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:87:13-60
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:96:13-60
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:84:13-83
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:93:13-83
 uses-permission#android.permission.INTERNET
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:92:5-66
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:101:5-66
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:92:22-64
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:101:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:93:5-78
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:102:5-78
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:93:22-76
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:102:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:94:5-75
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:103:5-75
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:13:5-76
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:94:22-73
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:103:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:95:5-74
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:104:5-74
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:95:22-72
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:104:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:96:5-80
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:105:5-80
 MERGED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:14:5-81
 MERGED from [com.aliyun.dpa:oss-android-sdk:2.4.4] /Users/mac/.android/build-cache/82d56bad5c8c2ae53641ba5d6bc00b8cff2cdea5/output/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:96:22-78
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:105:22-78
 uses-permission#android.permission.CAMERA
-ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:97:5-64
+ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:106:5-64
 MERGED from [com.lqr.imagepicker:library:1.0.0] /Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/AndroidManifest.xml:18:5-65
 	android:name
-		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:97:22-62
+		ADDED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml:106:22-62
 uses-sdk
 INJECTED from /Users/mac/myprojects/HT_v2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] /Users/mac/.android/build-cache/38bbbec0ee49c23a2a2f185b23636be436a70e34/output/AndroidManifest.xml:18:5-42
@@ -206,6 +219,7 @@ MERGED from [com.zhy:base-adapter:3.0.3] /Users/mac/.android/build-cache/192a038
 MERGED from [com.oguzdev:CircularFloatingActionMenu:1.0.2] /Users/mac/.android/build-cache/7787e35b39ec1733ce017294b907446877ac5b23/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.lcodecorex:tkrefreshlayout:1.0.7] /Users/mac/.android/build-cache/f844ec06e9af114e236139fba1ce8cecad3bbc73/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:recyclerview-v7:25.2.0] /Users/mac/.android/build-cache/17dc9888427dab2686c4d59f7bb8f1aa79ea0631/output/AndroidManifest.xml:20:5-43
+MERGED from [com.github.vajro:MaterialDesignLibrary:1.6] /Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:25.3.0] /Users/mac/.android/build-cache/d50ff3db1b9f412c632d50b24f4037dfbe81e71d/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/mac/.android/build-cache/e10e4cefc146ce3f94a1302fbdcf8a7c358c5988/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/mac/.android/build-cache/c8b7080cd32de6fd2867db05b34fa2a9ec04f8e5/output/AndroidManifest.xml:21:5-23:63

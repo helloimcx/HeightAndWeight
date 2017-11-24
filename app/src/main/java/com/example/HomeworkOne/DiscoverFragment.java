@@ -127,11 +127,10 @@ public class DiscoverFragment extends Fragment implements InitView {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refreshLayout.finishLoadmore();
                         //«Î«Ûœ¬“ª“≥
                         request_page++;
                         getData(request_page);
-                        commonAdapter.notifyDataSetChanged();
+                        refreshLayout.finishLoadmore();
                     }
                 },2000);
             }
@@ -258,6 +257,14 @@ public class DiscoverFragment extends Fragment implements InitView {
                                 }
                             };
                             listView.setAdapter(commonAdapter);
+                        }
+                    });
+                }
+                else {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            commonAdapter.notifyDataSetChanged();
                         }
                     });
                 }

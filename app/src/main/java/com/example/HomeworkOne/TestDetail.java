@@ -23,7 +23,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import static com.example.HomeworkOne.LoginFragment.JSON;
+import static com.example.HomeworkOne.AcLogin.JSON;
 
 public class TestDetail extends Activity implements InitView{
 	@Bind(R.id.testButton)

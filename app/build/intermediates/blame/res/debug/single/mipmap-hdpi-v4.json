@@ -28,12 +28,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/camera.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/camera.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/nim_image_download_failed.jpg",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/nim_image_download_failed.jpg"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/camera.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/camera.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_red_pack.png",
@@ -408,12 +408,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_emo_yellow.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_huanlin.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_huanlin.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/refresh_head_arrow.png",
         "source": "/Users/mac/.android/build-cache/f844ec06e9af114e236139fba1ce8cecad3bbc73/output/res/mipmap-hdpi-v4/refresh_head_arrow.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_huanlin.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_huanlin.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/home_icon.png",
@@ -508,12 +508,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/audio_animation_list_left_2.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/contacts_press.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/contacts_press.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/refresh_loading09.png",
         "source": "/Users/mac/.android/build-cache/f844ec06e9af114e236139fba1ce8cecad3bbc73/output/res/mipmap-hdpi-v4/refresh_loading09.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/contacts_press.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/contacts_press.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_volume_1.png",

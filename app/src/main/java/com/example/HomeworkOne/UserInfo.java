@@ -115,6 +115,10 @@ public class UserInfo extends Activity {
                                 editor.clear().apply();
                                 MainActivity.sessionid = "null";
                                 UserInfo.this.finish();
+
+                                //转到登录界面
+                                Intent intent = new Intent(UserInfo.this, AcLogin.class);
+                                startActivity(intent);
                             }
                         });
                     }

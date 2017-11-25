@@ -242,7 +242,13 @@ public class DiscoverFragment extends Fragment implements InitView {
                             ) {
                                 @Override
                                 protected void convert(ViewHolder viewHolder, Map<String, Object> stringObjectMap, int i) {
-                                    String header_url = stringObjectMap.get("header").toString();
+                                    String header_url = "";
+                                    try {
+                                        header_url = stringObjectMap.get("header").toString();
+                                    }catch (Exception e){
+                                        //若用户没有设置头像，头像url置为"null"
+                                        header_url = "null";
+                                    }
                                     String name = stringObjectMap.get("name").toString();
                                     String content = stringObjectMap.get("content").toString();
                                     String image_url = stringObjectMap.get("url").toString();

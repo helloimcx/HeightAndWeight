@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Nov 25 17:33:07 ULAT 2017
+#Sat Nov 25 21:38:31 ULAT 2017
 4719.set=JAVA_RESOURCE
 2185.file=/Users/mac/myprojects/HT_v2/app/build/intermediates/transforms/proguard/release/jars/3/1f/main.jar/android/support/annotation/AnimatorRes.class
 1425.base=/Users/mac/myprojects/HT_v2/app/build/intermediates/transforms/proguard/release/jars/3/1f/main.jar

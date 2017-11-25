@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/gray5" >
+
+    <include layout="@layout/include_toolbar"/>
+
+    <TextView
+        android:id="@+id/myImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dip"
+        android:layout_centerHorizontal="true"
+        android:text="体型测试"
+        android:textSize="25sp"
+        android:textColor="@android:color/holo_blue_dark"
+        />
+    <EditText
+        android:id="@+id/height"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="30dip"
+        android:layout_marginTop="15dip"
+        android:paddingLeft="50dip"
+        android:layout_below="@id/myImage"
+        android:inputType="numberDecimal"
+        android:background="#ffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="身高"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignLeft="@id/height"
+        android:layout_alignTop="@id/height"
+        android:layout_marginTop="9dip"
+        android:layout_marginLeft="3dip"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cm"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignRight="@id/height"
+        android:layout_alignTop="@id/height"
+        android:layout_marginTop="9dip"
+        />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:paddingLeft="50dip"
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="30dip"
+        android:layout_below="@id/height"
+        android:inputType="numberDecimal"
+        android:background="#ffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="体重"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignLeft="@id/weight"
+        android:layout_alignTop="@id/weight"
+        android:layout_marginTop="9dip"
+        android:layout_marginLeft="3dip"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kg"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignRight="@id/weight"
+        android:layout_alignTop="@id/weight"
+        android:layout_marginTop="9dip"
+        />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:layout_below="@id/weight"
+        android:layout_alignLeft="@id/weight"
+        android:layout_alignRight="@id/weight"
+        android:layout_marginTop="50dip"
+        android:background="#ffffff"
+        android:text="测试"
+        android:textColor="@android:color/holo_blue_dark"/>
+
+
+</RelativeLayout>

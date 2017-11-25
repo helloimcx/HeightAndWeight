@@ -1,0 +1,838 @@
+android.support.constraint.ConstraintLayout:
+    static final boolean ALLOWS_EMBEDDED
+android.support.constraint.ConstraintSet$Constraint:
+    static final int UNSET
+android.support.constraint.solver.ArrayLinkedVariables:
+    389:397:boolean hasAtLeastOnePositiveVariable()
+    578:597:android.support.constraint.solver.SolverVariable getPivotCandidate()
+android.support.constraint.solver.ArrayRow:
+    39:39:boolean hasAtLeastOnePositiveVariable()
+android.support.constraint.solver.LinearSystem:
+    258:258:android.support.constraint.solver.Goal getGoal()
+    265:269:float getValueFor(java.lang.String)
+    288:295:android.support.constraint.solver.SolverVariable getVariable(java.lang.String,android.support.constraint.solver.SolverVariable$Type)
+    306:310:void rebuildGoalFromErrors()
+    705:715:void displayReadableRows()
+    753:775:void displaySystemInformations()
+android.support.constraint.solver.SolverVariable:
+    static final int MAX_STRENGTH
+android.support.constraint.solver.widgets.ConstraintTableLayout$HorizontalSlice:
+    int padding
+android.support.constraint.solver.widgets.ConstraintTableLayout$VerticalSlice:
+    int padding
+android.support.constraint.solver.widgets.ConstraintWidget:
+    protected static final int SOLVER
+    protected static final int DIRECT
+    519:519:int getInternalDrawX()
+    523:523:int getInternalDrawY()
+android.support.design.widget.AppBarLayout:
+    static final int PENDING_ACTION_NONE
+    static final int PENDING_ACTION_EXPANDED
+    static final int PENDING_ACTION_COLLAPSED
+    static final int PENDING_ACTION_ANIMATE_ENABLED
+android.support.design.widget.AppBarLayout$Behavior:
+    1176:1176:boolean isOffsetAnimatorRunning()
+android.support.design.widget.AppBarLayout$LayoutParams:
+    static final int FLAG_QUICK_RETURN
+    static final int FLAG_SNAP
+    static final int COLLAPSIBLE_FLAGS
+android.support.design.widget.BaseTransientBottomBar:
+    static final int ANIMATION_DURATION
+    static final int ANIMATION_FADE_DURATION
+    static final int MSG_SHOW
+    static final int MSG_DISMISS
+android.support.design.widget.BottomSheetBehavior:
+    737:737:int getPeekHeightMin()
+android.support.design.widget.BottomSheetDialog:
+    44:189:protected BottomSheetDialog(android.content.Context,boolean,android.content.DialogInterface$OnCancelListener)
+android.support.design.widget.CollapsingTextHelper:
+    138:142:void setCollapsedTextSize(float)
+    341:341:float getExpandedTextSize()
+    686:686:android.content.res.ColorStateList getExpandedTextColor()
+android.support.design.widget.CoordinatorLayout:
+    static final java.lang.String TAG
+    static final int EVENT_PRE_DRAW
+    static final int EVENT_NESTED_SCROLL
+    static final int EVENT_VIEW_REMOVED
+android.support.design.widget.DirectedAcyclicGraph:
+    185:185:int size()
+android.support.design.widget.FloatingActionButton$Behavior:
+    628:629:void setInternalAutoHideListener(android.support.design.widget.FloatingActionButton$OnVisibilityChangedListener)
+android.support.design.widget.FloatingActionButtonImpl:
+    static final long PRESSED_ANIM_DURATION
+    static final long PRESSED_ANIM_DELAY
+    static final int ANIM_STATE_NONE
+    static final int ANIM_STATE_HIDING
+    static final int ANIM_STATE_SHOWING
+    static final int SHOW_HIDE_ANIM_DURATION
+android.support.design.widget.ShadowDrawableWrapper:
+    static final float SHADOW_MULTIPLIER
+    static final float SHADOW_TOP_SCALE
+    static final float SHADOW_HORIZ_SCALE
+    static final float SHADOW_BOTTOM_SCALE
+android.support.design.widget.SnackbarManager:
+    static final int MSG_TIMEOUT
+android.support.design.widget.TabLayout:
+    static final int DEFAULT_GAP_TEXT_ICON
+    static final int FIXED_WRAP_GUTTER_MIN
+    static final int MOTION_NON_ADJACENT_OFFSET
+android.support.design.widget.TextInputLayout:
+    1437:1437:final boolean isHintExpanded()
+android.support.graphics.drawable.AndroidResources:
+    static final int styleable_VectorDrawable_alpha
+    static final int styleable_VectorDrawable_autoMirrored
+    static final int styleable_VectorDrawable_height
+    static final int styleable_VectorDrawable_name
+    static final int styleable_VectorDrawable_tint
+    static final int styleable_VectorDrawable_tintMode
+    static final int styleable_VectorDrawable_viewportHeight
+    static final int styleable_VectorDrawable_viewportWidth
+    static final int styleable_VectorDrawable_width
+    static final int styleable_VectorDrawableGroup_name
+    static final int styleable_VectorDrawableGroup_pivotX
+    static final int styleable_VectorDrawableGroup_pivotY
+    static final int styleable_VectorDrawableGroup_rotation
+    static final int styleable_VectorDrawableGroup_scaleX
+    static final int styleable_VectorDrawableGroup_scaleY
+    static final int styleable_VectorDrawableGroup_translateX
+    static final int styleable_VectorDrawableGroup_translateY
+    static final int styleable_VectorDrawablePath_fillAlpha
+    static final int styleable_VectorDrawablePath_fillColor
+    static final int styleable_VectorDrawablePath_name
+    static final int styleable_VectorDrawablePath_pathData
+    static final int styleable_VectorDrawablePath_strokeAlpha
+    static final int styleable_VectorDrawablePath_strokeColor
+    static final int styleable_VectorDrawablePath_strokeLineCap
+    static final int styleable_VectorDrawablePath_strokeLineJoin
+    static final int styleable_VectorDrawablePath_strokeMiterLimit
+    static final int styleable_VectorDrawablePath_strokeWidth
+    static final int styleable_VectorDrawablePath_trimPathEnd
+    static final int styleable_VectorDrawablePath_trimPathOffset
+    static final int styleable_VectorDrawablePath_trimPathStart
+    static final int styleable_VectorDrawableClipPath_name
+    static final int styleable_VectorDrawableClipPath_pathData
+    static final int styleable_AnimatedVectorDrawable_drawable
+    static final int styleable_AnimatedVectorDrawableTarget_animation
+    static final int styleable_AnimatedVectorDrawableTarget_name
+android.support.graphics.drawable.VectorDrawableCompat:
+    static final java.lang.String LOGTAG
+android.support.graphics.drawable.VectorDrawableCompat$VectorDrawableCompatState:
+    int[] mCachedThemeAttrs
+android.support.multidex.MultiDex:
+    static final java.lang.String TAG
+android.support.transition.TransitionPort:
+    static final boolean DBG
+    1029:1042:protected void cancel()
+android.support.transition.TransitionSetPort:
+    268:273:protected void cancel()
+android.support.transition.ViewOverlay:
+    87:87:android.view.ViewGroup getOverlayView()
+    121:121:boolean isEmpty()
+android.support.transition.ViewOverlay$OverlayViewGroup:
+    335:346:protected android.view.ViewParent invalidateChildInParentFast(int,int,android.graphics.Rect)
+android.support.transition.ViewOverlay$OverlayViewGroup$TouchInterceptor:
+    370:371:ViewOverlay$OverlayViewGroup$TouchInterceptor(android.content.Context)
+android.support.v4.app.ActivityCompatHoneycomb:
+    39:40:static void dump(android.app.Activity,java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+android.support.v4.app.BackStackRecord:
+    static final java.lang.String TAG
+    static final int OP_NULL
+    static final int OP_ADD
+    static final int OP_REPLACE
+    static final int OP_REMOVE
+    static final int OP_HIDE
+    static final int OP_SHOW
+    static final int OP_DETACH
+    static final int OP_ATTACH
+android.support.v4.app.Fragment:
+    static final int INITIALIZING
+    static final int CREATED
+    static final int ACTIVITY_CREATED
+    static final int STOPPED
+    static final int STARTED
+    static final int RESUMED
+    723:723:android.support.v4.app.FragmentManager peekChildFragmentManager()
+android.support.v4.app.FragmentActivity:
+    static final java.lang.String FRAGMENTS_TAG
+    static final java.lang.String NEXT_CANDIDATE_REQUEST_INDEX_TAG
+    static final java.lang.String ALLOCATED_REQUEST_INDICIES_TAG
+    static final java.lang.String REQUEST_FRAGMENT_WHO_TAG
+    static final int MAX_NUM_PENDING_FRAGMENT_ACTIVITY_RESULTS
+    static final int MSG_REALLY_STOPPED
+    static final int MSG_RESUME_PENDING
+android.support.v4.app.FragmentManagerImpl:
+    static final java.lang.String TAG
+    static final java.lang.String TARGET_REQUEST_CODE_STATE_TAG
+    static final java.lang.String TARGET_STATE_TAG
+    static final java.lang.String VIEW_STATE_TAG
+    static final java.lang.String USER_VISIBLE_HINT_TAG
+    java.lang.Runnable[] mTmpActions
+    static final int ANIM_DUR
+android.support.v4.app.INotificationSideChannel$Stub:
+    static final int TRANSACTION_notify
+    static final int TRANSACTION_cancel
+    static final int TRANSACTION_cancelAll
+android.support.v4.app.ListFragment:
+    static final int INTERNAL_EMPTY_ID
+    static final int INTERNAL_PROGRESS_CONTAINER_ID
+    static final int INTERNAL_LIST_CONTAINER_ID
+android.support.v4.app.LoaderManagerImpl:
+    static final java.lang.String TAG
+    boolean mRetainingStarted
+android.support.v4.app.NotificationCompat$MessagingStyle$Message:
+    static final java.lang.String KEY_TEXT
+    static final java.lang.String KEY_TIMESTAMP
+    static final java.lang.String KEY_SENDER
+    static final java.lang.String KEY_DATA_MIME_TYPE
+    static final java.lang.String KEY_DATA_URI
+android.support.v4.app.NotificationCompatBase$UnreadConversation:
+    abstract java.lang.String getParticipant()
+android.support.v4.app.NotificationCompatJellybean:
+    static final java.lang.String EXTRA_LOCAL_ONLY
+    static final java.lang.String EXTRA_ACTION_EXTRAS
+    static final java.lang.String EXTRA_REMOTE_INPUTS
+    static final java.lang.String EXTRA_GROUP_KEY
+    static final java.lang.String EXTRA_GROUP_SUMMARY
+    static final java.lang.String EXTRA_SORT_KEY
+    static final java.lang.String EXTRA_USE_SIDE_CHANNEL
+    static final java.lang.String EXTRA_ALLOW_GENERATED_REPLIES
+android.support.v4.app.NotificationManagerCompat:
+    static final int MAX_SIDE_CHANNEL_SDK_VERSION
+android.support.v4.app.NotificationManagerCompatIceCreamSandwich:
+    static final int SIDE_CHANNEL_BIND_FLAGS
+android.support.v4.content.AsyncTaskLoader:
+    static final java.lang.String TAG
+    static final boolean DEBUG
+android.support.v4.content.LocalBroadcastManager:
+    static final int MSG_EXEC_PENDING_BROADCASTS
+android.support.v4.content.ModernAsyncTask:
+    475:479:protected final varargs void publishProgress(java.lang.Object[])
+android.support.v4.media.MediaBrowserCompat:
+    static final java.lang.String TAG
+android.support.v4.media.MediaBrowserCompat$MediaBrowserImplBase:
+    static final int CONNECT_STATE_DISCONNECTED
+    static final int CONNECT_STATE_CONNECTING
+    static final int CONNECT_STATE_SUSPENDED
+android.support.v4.media.MediaBrowserCompatApi21:
+    static final java.lang.String NULL_MEDIA_ITEM_ID
+android.support.v4.media.MediaBrowserServiceCompat:
+    static final java.lang.String TAG
+    static final int RESULT_FLAG_OPTION_NOT_HANDLED
+    static final int RESULT_FLAG_ON_LOAD_ITEM_NOT_IMPLEMENTED
+    static final int RESULT_FLAG_ON_SEARCH_NOT_IMPLEMENTED
+    static final int RESULT_ERROR
+    static final int RESULT_OK
+android.support.v4.media.MediaMetadataCompat:
+    static final int METADATA_TYPE_LONG
+    static final int METADATA_TYPE_TEXT
+    static final int METADATA_TYPE_BITMAP
+    static final int METADATA_TYPE_RATING
+android.support.v4.media.ParceledListSliceAdapterApi21:
+    44:50:static java.lang.Object newInstance(java.util.List)
+android.support.v4.media.TransportPerformer:
+    static final int AUDIOFOCUS_GAIN
+    static final int AUDIOFOCUS_GAIN_TRANSIENT
+    static final int AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK
+    static final int AUDIOFOCUS_LOSS
+    static final int AUDIOFOCUS_LOSS_TRANSIENT
+    static final int AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK
+android.support.v4.media.session.IMediaControllerCallback$Stub:
+    static final int TRANSACTION_onEvent
+    static final int TRANSACTION_onSessionDestroyed
+    static final int TRANSACTION_onPlaybackStateChanged
+    static final int TRANSACTION_onMetadataChanged
+    static final int TRANSACTION_onQueueChanged
+    static final int TRANSACTION_onQueueTitleChanged
+    static final int TRANSACTION_onExtrasChanged
+    static final int TRANSACTION_onVolumeInfoChanged
+    static final int TRANSACTION_onRepeatModeChanged
+    static final int TRANSACTION_onShuffleModeChanged
+android.support.v4.media.session.IMediaSession$Stub:
+    static final int TRANSACTION_sendCommand
+    static final int TRANSACTION_sendMediaButton
+    static final int TRANSACTION_registerCallbackListener
+    static final int TRANSACTION_unregisterCallbackListener
+    static final int TRANSACTION_isTransportControlEnabled
+    static final int TRANSACTION_getPackageName
+    static final int TRANSACTION_getTag
+    static final int TRANSACTION_getLaunchPendingIntent
+    static final int TRANSACTION_getFlags
+    static final int TRANSACTION_getVolumeAttributes
+    static final int TRANSACTION_adjustVolume
+    static final int TRANSACTION_setVolumeTo
+    static final int TRANSACTION_getMetadata
+    static final int TRANSACTION_getPlaybackState
+    static final int TRANSACTION_getQueue
+    static final int TRANSACTION_getQueueTitle
+    static final int TRANSACTION_getExtras
+    static final int TRANSACTION_getRatingType
+    static final int TRANSACTION_getRepeatMode
+    static final int TRANSACTION_isShuffleModeEnabled
+    static final int TRANSACTION_addQueueItem
+    static final int TRANSACTION_addQueueItemAt
+    static final int TRANSACTION_removeQueueItem
+    static final int TRANSACTION_removeQueueItemAt
+    static final int TRANSACTION_prepare
+    static final int TRANSACTION_prepareFromMediaId
+    static final int TRANSACTION_prepareFromSearch
+    static final int TRANSACTION_prepareFromUri
+    static final int TRANSACTION_play
+    static final int TRANSACTION_playFromMediaId
+    static final int TRANSACTION_playFromSearch
+    static final int TRANSACTION_playFromUri
+    static final int TRANSACTION_skipToQueueItem
+    static final int TRANSACTION_pause
+    static final int TRANSACTION_stop
+    static final int TRANSACTION_next
+    static final int TRANSACTION_previous
+    static final int TRANSACTION_fastForward
+    static final int TRANSACTION_rewind
+    static final int TRANSACTION_seekTo
+    static final int TRANSACTION_rate
+    static final int TRANSACTION_setRepeatMode
+    static final int TRANSACTION_setShuffleModeEnabled
+    static final int TRANSACTION_sendCustomAction
+android.support.v4.media.session.MediaControllerCompat:
+    static final java.lang.String TAG
+    static final java.lang.String COMMAND_GET_EXTRA_BINDER
+    static final java.lang.String COMMAND_ADD_QUEUE_ITEM
+    static final java.lang.String COMMAND_ADD_QUEUE_ITEM_AT
+    static final java.lang.String COMMAND_REMOVE_QUEUE_ITEM
+    static final java.lang.String COMMAND_REMOVE_QUEUE_ITEM_AT
+    static final java.lang.String COMMAND_ARGUMENT_MEDIA_DESCRIPTION
+    static final java.lang.String COMMAND_ARGUMENT_INDEX
+    511:514:boolean isExtraBinderReady()
+android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21:
+    1618:1618:static synthetic android.support.v4.media.session.IMediaSession access$000(android.support.v4.media.session.MediaControllerCompat$MediaControllerImplApi21)
+android.support.v4.media.session.MediaSessionCompat:
+    static final java.lang.String TAG
+    static final java.lang.String ACTION_PLAY_FROM_URI
+    static final java.lang.String ACTION_PREPARE
+    static final java.lang.String ACTION_PREPARE_FROM_MEDIA_ID
+    static final java.lang.String ACTION_PREPARE_FROM_SEARCH
+    static final java.lang.String ACTION_PREPARE_FROM_URI
+    static final java.lang.String ACTION_SET_REPEAT_MODE
+    static final java.lang.String ACTION_SET_SHUFFLE_MODE_ENABLED
+    static final java.lang.String ACTION_ARGUMENT_MEDIA_ID
+    static final java.lang.String ACTION_ARGUMENT_QUERY
+    static final java.lang.String ACTION_ARGUMENT_URI
+    static final java.lang.String ACTION_ARGUMENT_EXTRAS
+    static final java.lang.String ACTION_ARGUMENT_REPEAT_MODE
+    static final java.lang.String ACTION_ARGUMENT_SHUFFLE_MODE_ENABLED
+    static final java.lang.String EXTRA_BINDER
+android.support.v4.media.session.MediaSessionCompatApi14:
+    static final int RCC_PLAYSTATE_NONE
+    static final int STATE_NONE
+    static final int STATE_STOPPED
+    static final int STATE_PAUSED
+    static final int STATE_PLAYING
+    static final int STATE_FAST_FORWARDING
+    static final int STATE_REWINDING
+    static final int STATE_BUFFERING
+    static final int STATE_ERROR
+    static final int STATE_CONNECTING
+    static final int STATE_SKIPPING_TO_PREVIOUS
+    static final int STATE_SKIPPING_TO_NEXT
+    static final int STATE_SKIPPING_TO_QUEUE_ITEM
+android.support.v4.os.IResultReceiver$Stub:
+    static final int TRANSACTION_send
+android.support.v4.provider.DocumentFile:
+    static final java.lang.String TAG
+android.support.v4.util.PatternsCompat:
+    static final java.lang.String IANA_TOP_LEVEL_DOMAINS
+android.support.v4.view.AbsSavedState:
+    58:59:protected AbsSavedState(android.os.Parcel)
+android.support.v4.view.ViewPager:
+    963:964:void smoothScrollTo(int,int)
+android.support.v4.view.ViewPropertyAnimatorCompat:
+    static final int LISTENER_TAG_ID
+android.support.v4.widget.CursorAdapter:
+    172:173:protected void init(android.content.Context,android.database.Cursor,boolean)
+android.support.v4.widget.MaterialProgressDrawable:
+    static final int LARGE
+    static final int DEFAULT
+android.support.v4.widget.NestedScrollView:
+    static final int ANIMATED_SCROLL_GAP
+    static final float MAX_SCROLL_FACTOR
+android.support.v4.widget.SlidingPaneLayout:
+    1233:1252:protected boolean canScroll(android.view.View,boolean,int,int,int)
+android.support.v4.widget.SwipeProgressBar:
+    54:76:SwipeProgressBar(android.view.View)
+    89:93:void setColorScheme(int,int,int,int)
+    101:105:void setTriggerPercentage(float)
+    111:117:void start()
+    123:129:void stop()
+    135:135:boolean isRunning()
+    139:241:void draw(android.graphics.Canvas)
+    271:275:void setBounds(int,int,int,int)
+android.support.v4.widget.SwipeRefreshLayout:
+    static final int CIRCLE_DIAMETER
+    static final int CIRCLE_DIAMETER_LARGE
+android.support.v4.widget.ViewDragHelper:
+    923:943:protected boolean canScroll(android.view.View,boolean,int,int,int,int)
+android.support.v7.app.AlertDialog:
+    static final int LAYOUT_HINT_NONE
+    static final int LAYOUT_HINT_SIDE
+    87:88:protected AlertDialog(android.content.Context)
+    103:106:protected AlertDialog(android.content.Context,boolean,android.content.DialogInterface$OnCancelListener)
+    192:193:void setButtonPanelLayoutHint(int)
+android.support.v7.app.AppCompatDelegate:
+    static final java.lang.String TAG
+    static final int MODE_NIGHT_UNSPECIFIED
+android.support.v7.app.AppCompatDelegateImplBase:
+    static final boolean DEBUG
+    static final java.lang.String EXCEPTION_HANDLER_MESSAGE_SUFFIX
+    282:282:final boolean isStarted()
+android.support.v7.app.AppCompatDelegateImplV14:
+    240:241:final android.support.v7.app.AppCompatDelegateImplV14$AutoNightModeManager getAutoNightModeManager()
+android.support.v7.app.AppCompatDelegateImplV9:
+    1751:1751:android.view.ViewGroup getSubDecor()
+android.support.v7.app.AppCompatDelegateImplV9$PanelFeatureState:
+    boolean wasLastOpen
+    android.os.Bundle frozenMenuState
+    2036:2045:android.os.Parcelable onSaveInstanceState()
+    2049:2056:void onRestoreInstanceState(android.os.Parcelable)
+    2059:2063:void applyFrozenState()
+android.support.v7.app.AppCompatDialog:
+    60:61:protected AppCompatDialog(android.content.Context,boolean,android.content.DialogInterface$OnCancelListener)
+android.support.v7.app.NotificationCompatImplBase:
+    static final int MAX_MEDIA_BUTTONS_IN_COMPACT
+    static final int MAX_MEDIA_BUTTONS
+android.support.v7.app.TwilightManager:
+    54:55:static void setInstance(android.support.v7.app.TwilightManager)
+android.support.v7.util.AsyncListUtil:
+    static final java.lang.String TAG
+    static final boolean DEBUG
+    76:77:varargs void log(java.lang.String,java.lang.Object[])
+android.support.v7.util.DiffUtil$DiffResult:
+    831:831:java.util.List getSnakes()
+android.support.v7.util.MessageThreadUtil$1:
+    static final int UPDATE_ITEM_COUNT
+    static final int ADD_TILE
+    static final int REMOVE_TILE
+android.support.v7.util.MessageThreadUtil$2:
+    static final int REFRESH
+    static final int UPDATE_RANGE
+    static final int LOAD_TILE
+    static final int RECYCLE_TILE
+android.support.v7.view.SupportMenuInflater:
+    static final java.lang.String LOG_TAG
+    static final int NO_ID
+android.support.v7.view.menu.CascadingMenuPopup:
+    static final int HORIZ_POSITION_LEFT
+    static final int HORIZ_POSITION_RIGHT
+    static final int SUBMENU_TIMEOUT_MS
+android.support.v7.view.menu.ListMenuPresenter:
+    160:160:int getItemIndexOffset()
+android.support.v7.view.menu.MenuItemImpl:
+    static final int NO_ICON
+    231:231:java.lang.Runnable getCallback()
+android.support.v7.view.menu.MenuItemWrapperICS:
+    static final java.lang.String LOG_TAG
+android.support.v7.widget.ActionMenuView:
+    static final int MIN_CELL_SIZE
+    static final int GENERATED_ITEM_PADDING
+android.support.v7.widget.ActionMenuView$LayoutParams:
+    846:848:ActionMenuView$LayoutParams(int,int,boolean)
+android.support.v7.widget.ActivityChooserModel:
+    static final boolean DEBUG
+    static final java.lang.String TAG_HISTORICAL_RECORDS
+    static final java.lang.String TAG_HISTORICAL_RECORD
+    static final java.lang.String ATTRIBUTE_ACTIVITY
+    static final java.lang.String ATTRIBUTE_TIME
+    static final java.lang.String ATTRIBUTE_WEIGHT
+android.support.v7.widget.AdapterHelper:
+    static final int POSITION_TYPE_INVISIBLE
+    static final int POSITION_TYPE_NEW_OR_LAID_OUT
+    81:82:varargs android.support.v7.widget.AdapterHelper addUpdateOp(android.support.v7.widget.AdapterHelper$UpdateOp[])
+android.support.v7.widget.AdapterHelper$UpdateOp:
+    static final int ADD
+    static final int REMOVE
+    static final int UPDATE
+    static final int MOVE
+    static final int POOL_SIZE
+android.support.v7.widget.AppCompatSeekBarHelper:
+    98:98:android.graphics.drawable.Drawable getTickMark()
+    102:106:void setTickMarkTintList(android.content.res.ColorStateList)
+    110:110:android.content.res.ColorStateList getTickMarkTintList()
+    114:118:void setTickMarkTintMode(android.graphics.PorterDuff$Mode)
+    122:122:android.graphics.PorterDuff$Mode getTickMarkTintMode()
+android.support.v7.widget.ChildHelper$Bucket:
+    static final int BITS_PER_WORD
+    static final long LAST_BIT
+android.support.v7.widget.GridLayout:
+    static final int MAX_SIZE
+    static final int DEFAULT_CONTAINER_MARGIN
+    static final int UNINITIALIZED_HASH
+android.support.v7.widget.GridLayout$Spec:
+    static final float DEFAULT_WEIGHT
+android.support.v7.widget.LayoutState:
+    static final java.lang.String TAG
+    static final int LAYOUT_START
+    static final int LAYOUT_END
+    static final int INVALID_LAYOUT
+    static final int ITEM_DIRECTION_HEAD
+    static final int ITEM_DIRECTION_TAIL
+android.support.v7.widget.LinearLayoutManager:
+    static final boolean DEBUG
+    1963:2000:void validateChildOrder()
+android.support.v7.widget.LinearLayoutManager$LayoutState:
+    static final java.lang.String TAG
+    static final int LAYOUT_START
+    static final int LAYOUT_END
+    static final int INVALID_LAYOUT
+    static final int ITEM_DIRECTION_HEAD
+    static final int ITEM_DIRECTION_TAIL
+    static final int SCROLLING_OFFSET_NaN
+    2221:2223:void log()
+android.support.v7.widget.ListPopupWindow:
+    static final int EXPAND_LIST_TIMEOUT
+    929:930:void setListItemExpandMax(int)
+android.support.v7.widget.PositionMap:
+    406:406:static int idealBooleanArraySize(int)
+    410:410:static int idealShortArraySize(int)
+    414:414:static int idealCharArraySize(int)
+    422:422:static int idealFloatArraySize(int)
+    426:426:static int idealObjectArraySize(int)
+    430:430:static int idealLongArraySize(int)
+android.support.v7.widget.RecyclerView:
+    static final java.lang.String TAG
+    static final boolean DEBUG
+    static final boolean DISPATCH_TEMP_DETACH
+    static final int MAX_SCROLL_DURATION
+    static final java.lang.String TRACE_SCROLL_TAG
+    static final java.lang.String TRACE_BIND_VIEW_TAG
+    static final java.lang.String TRACE_PREFETCH_TAG
+    static final java.lang.String TRACE_NESTED_PREFETCH_TAG
+    static final java.lang.String TRACE_CREATE_VIEW_TAG
+    static final long FOREVER_NS
+android.support.v7.widget.RecyclerView$RecycledViewPool:
+    5008:5015:int size()
+android.support.v7.widget.RecyclerView$Recycler:
+    static final int DEFAULT_CACHE_SIZE
+    5643:5644:void recycleViewInternal(android.view.View)
+android.support.v7.widget.RecyclerView$State:
+    static final int STEP_START
+    static final int STEP_LAYOUT
+    static final int STEP_ANIMATIONS
+    11286:11293:android.support.v7.widget.RecyclerView$State reset()
+android.support.v7.widget.RecyclerView$ViewHolder:
+    static final int FLAG_BOUND
+    static final int FLAG_UPDATE
+    static final int FLAG_INVALID
+    static final int FLAG_REMOVED
+    static final int FLAG_NOT_RECYCLABLE
+    static final int FLAG_RETURNED_FROM_SCRAP
+    static final int FLAG_IGNORE
+    static final int FLAG_TMP_DETACHED
+    static final int FLAG_ADAPTER_POSITION_UNKNOWN
+    static final int FLAG_ADAPTER_FULLUPDATE
+    static final int FLAG_MOVED
+    static final int FLAG_APPEARED_IN_PRE_LAYOUT
+    static final int PENDING_ACCESSIBILITY_STATE_NOT_SET
+    static final int FLAG_BOUNCED_FROM_HIDDEN_LIST
+android.support.v7.widget.RoundRectDrawableWithShadow:
+    static final float SHADOW_MULTIPLIER
+android.support.v7.widget.SearchView:
+    static final boolean DBG
+    static final java.lang.String LOG_TAG
+android.support.v7.widget.SnapHelper:
+    static final float MILLISECONDS_PER_INCH
+android.support.v7.widget.StaggeredGridLayoutManager:
+    static final boolean DEBUG
+    static final int INVALID_OFFSET
+android.support.v7.widget.StaggeredGridLayoutManager$Span:
+    static final int INVALID_LINE
+android.support.v7.widget.SuggestionsAdapter:
+    static final int REFINE_NONE
+    static final int REFINE_BY_ENTRY
+    static final int REFINE_ALL
+    static final int INVALID_INDEX
+android.support.v7.widget.Toolbar$LayoutParams:
+    static final int CUSTOM
+    static final int SYSTEM
+    static final int EXPANDED
+android.support.v7.widget.ViewInfoStore$InfoRecord:
+    static final int FLAG_DISAPPEARED
+    static final int FLAG_APPEAR
+    static final int FLAG_PRE
+    static final int FLAG_POST
+    static final int FLAG_APPEAR_AND_DISAPPEAR
+    static final int FLAG_PRE_AND_POST
+    static final int FLAG_APPEAR_PRE_AND_POST
+android.support.v7.widget.helper.ItemTouchHelper:
+    static final java.lang.String TAG
+    static final boolean DEBUG
+    static final int ACTIVE_POINTER_ID_NONE
+    static final int DIRECTION_FLAG_COUNT
+    static final int ACTION_MODE_SWIPE_MASK
+    static final int ACTION_MODE_DRAG_MASK
+android.support.v7.widget.helper.ItemTouchHelper$Callback:
+    static final int RELATIVE_DIR_FLAGS
+butterknife.internal.ButterKnifeProcessor:
+    static final java.lang.String VIEW_TYPE
+com.example.HomeworkOne.MyWebView:
+    android.webkit.WebView webview
+com.gc.materialdesign.views.Button:
+    static final java.lang.String ANDROIDXML
+com.gc.materialdesign.views.ButtonFloat:
+    java.lang.Integer height
+    java.lang.Integer width
+com.gc.materialdesign.views.ButtonRectangle:
+    int paddingTop
+    int paddingBottom
+    int paddingLeft
+    int paddingRight
+    java.lang.Integer height
+    java.lang.Integer width
+com.gc.materialdesign.views.Card:
+    android.widget.TextView textButton
+    int paddingTop
+    int paddingBottom
+    int paddingLeft
+    int paddingRight
+com.gc.materialdesign.views.CustomView:
+    static final java.lang.String MATERIALDESIGNXML
+    static final java.lang.String ANDROIDXML
+com.gc.materialdesign.views.ProgressBarCircularIndeterminate:
+    static final java.lang.String ANDROIDXML
+com.gc.materialdesign.views.Slider:
+    186:192:protected int makePressColor()
+com.google.gson.DefaultDateTypeAdapter:
+    49:52:DefaultDateTypeAdapter(java.lang.Class)
+    59:60:DefaultDateTypeAdapter(java.lang.Class,int)
+com.google.gson.FieldAttributes:
+    150:150:java.lang.Object get(java.lang.Object)
+    159:159:boolean isSynthetic()
+com.google.gson.Gson:
+    static final boolean DEFAULT_JSON_NON_EXECUTABLE
+    static final boolean DEFAULT_LENIENT
+    static final boolean DEFAULT_PRETTY_PRINT
+    static final boolean DEFAULT_ESCAPE_HTML
+    static final boolean DEFAULT_SERIALIZE_NULLS
+    static final boolean DEFAULT_COMPLEX_MAP_KEYS
+    static final boolean DEFAULT_SPECIALIZE_FLOAT_VALUES
+com.google.gson.JsonParseException:
+    static final long serialVersionUID
+com.google.gson.stream.JsonScope:
+    static final int EMPTY_ARRAY
+    static final int NONEMPTY_ARRAY
+    static final int EMPTY_OBJECT
+    static final int DANGLING_NAME
+    static final int NONEMPTY_OBJECT
+    static final int EMPTY_DOCUMENT
+    static final int NONEMPTY_DOCUMENT
+    static final int CLOSED
+com.lcodecore.tkrefreshlayout.header.bezierlayout.WaveView:
+    79:86:static android.graphics.Bitmap drawableToBitmap(android.graphics.drawable.Drawable)
+com.lcodecore.tkrefreshlayout.header.progresslayout.MaterialProgressDrawable:
+    static final int LARGE
+    static final int DEFAULT
+com.nineoldandroids.animation.AnimatorSet$Dependency:
+    static final int WITH
+    static final int AFTER
+com.nineoldandroids.animation.ValueAnimator:
+    static final int ANIMATION_START
+    static final int ANIMATION_FRAME
+    static final int STOPPED
+    static final int RUNNING
+    static final int SEEKED
+com.nostra13.universalimageloader.cache.disc.impl.ext.DiskLruCache:
+    static final java.lang.String JOURNAL_FILE
+    static final java.lang.String JOURNAL_FILE_TEMP
+    static final java.lang.String JOURNAL_FILE_BACKUP
+    static final java.lang.String MAGIC
+    static final java.lang.String VERSION_1
+    static final long ANY_SEQUENCE_NUMBER
+com.nostra13.universalimageloader.core.ImageLoader:
+    static final java.lang.String LOG_INIT_CONFIG
+    static final java.lang.String LOG_DESTROY
+    static final java.lang.String LOG_LOAD_IMAGE_FROM_MEMORY_CACHE
+com.nostra13.universalimageloader.core.decode.BaseImageDecoder:
+    protected static final java.lang.String LOG_SUBSAMPLE_IMAGE
+    protected static final java.lang.String LOG_SCALE_IMAGE
+    protected static final java.lang.String LOG_ROTATE_IMAGE
+    protected static final java.lang.String LOG_FLIP_IMAGE
+    protected static final java.lang.String ERROR_NO_IMAGE_STREAM
+    protected static final java.lang.String ERROR_CANT_DECODE_IMAGE
+com.nostra13.universalimageloader.core.download.BaseImageDownloader:
+    protected static final int BUFFER_SIZE
+    protected static final java.lang.String ALLOWED_URI_CHARS
+    protected static final int MAX_REDIRECT_COUNT
+    protected static final java.lang.String CONTENT_CONTACTS_URI_PREFIX
+com.oguzdev.circularfloatingactionmenu.library.animation.DefaultAnimationHandler:
+    protected static final int DURATION
+    protected static final int LAG_BETWEEN_ITEMS
+com.squareup.picasso.AssetRequestHandler:
+    protected static final java.lang.String ANDROID_ASSET
+com.squareup.picasso.DeferredRequestCreator:
+    30:31:DeferredRequestCreator(com.squareup.picasso.RequestCreator,android.widget.ImageView)
+com.squareup.picasso.Dispatcher:
+    static final int REQUEST_SUBMIT
+    static final int REQUEST_CANCEL
+    static final int REQUEST_GCED
+    static final int HUNTER_COMPLETE
+    static final int HUNTER_RETRY
+    static final int HUNTER_DECODE_FAILED
+    static final int HUNTER_DELAY_NEXT_BATCH
+    static final int HUNTER_BATCH_COMPLETE
+    static final int NETWORK_STATE_CHANGE
+    static final int AIRPLANE_MODE_CHANGE
+    static final int TAG_PAUSE
+    static final int TAG_RESUME
+    static final int REQUEST_BATCH_RESUME
+com.squareup.picasso.Dispatcher$NetworkBroadcastReceiver:
+    static final java.lang.String EXTRA_AIRPLANE_STATE
+com.squareup.picasso.NetworkRequestHandler:
+    static final int RETRY_COUNT
+com.squareup.picasso.OkHttpDownloader:
+    92:92:protected final com.squareup.okhttp.OkHttpClient getClient()
+com.squareup.picasso.Picasso:
+    static final java.lang.String TAG
+com.squareup.picasso.UrlConnectionDownloader:
+    static final java.lang.String RESPONSE_SOURCE
+com.squareup.picasso.Utils:
+    static final java.lang.String THREAD_PREFIX
+    static final java.lang.String THREAD_IDLE_NAME
+    static final int DEFAULT_READ_TIMEOUT_MILLIS
+    static final int DEFAULT_WRITE_TIMEOUT_MILLIS
+    static final int DEFAULT_CONNECT_TIMEOUT_MILLIS
+    static final int THREAD_LEAK_CLEANING_MS
+    static final char KEY_SEPARATOR
+    static final java.lang.String OWNER_MAIN
+    static final java.lang.String OWNER_DISPATCHER
+    static final java.lang.String OWNER_HUNTER
+    static final java.lang.String VERB_CREATED
+    static final java.lang.String VERB_CHANGED
+    static final java.lang.String VERB_IGNORED
+    static final java.lang.String VERB_ENQUEUED
+    static final java.lang.String VERB_CANCELED
+    static final java.lang.String VERB_BATCHED
+    static final java.lang.String VERB_RETRYING
+    static final java.lang.String VERB_EXECUTING
+    static final java.lang.String VERB_DECODED
+    static final java.lang.String VERB_TRANSFORMED
+    static final java.lang.String VERB_JOINED
+    static final java.lang.String VERB_REMOVED
+    static final java.lang.String VERB_DELIVERED
+    static final java.lang.String VERB_REPLAYING
+    static final java.lang.String VERB_COMPLETED
+    static final java.lang.String VERB_ERRORED
+    static final java.lang.String VERB_PAUSED
+    static final java.lang.String VERB_RESUMED
+com.thefinestartist.binders.ExtrasBinder:
+    static final java.lang.String SUFFIX
+com.thefinestartist.finestwebview.FinestWebViewActivity:
+    protected int theme
+com.thefinestartist.finestwebview.listeners.BroadCastManager:
+    static final java.lang.String WEBVIEW_EVENT
+    static final java.lang.String EXTRA_KEY
+    static final java.lang.String EXTRA_TYPE
+    static final java.lang.String EXTRA_URL
+    static final java.lang.String EXTRA_TITLE
+    static final java.lang.String EXTRA_PROGESS
+    static final java.lang.String EXTRA_PRECOMPOSED
+    static final java.lang.String EXTRA_USER_AGENT
+    static final java.lang.String EXTRA_CONTENT_DISPOSITION
+    static final java.lang.String EXTRA_MIME_TYPE
+    static final java.lang.String EXTRA_CONTENT_LENGTH
+okhttp3.HttpUrl:
+    static final java.lang.String USERNAME_ENCODE_SET
+    static final java.lang.String PASSWORD_ENCODE_SET
+    static final java.lang.String PATH_SEGMENT_ENCODE_SET
+    static final java.lang.String PATH_SEGMENT_ENCODE_SET_URI
+    static final java.lang.String QUERY_ENCODE_SET
+    static final java.lang.String QUERY_COMPONENT_ENCODE_SET
+    static final java.lang.String QUERY_COMPONENT_ENCODE_SET_URI
+    static final java.lang.String FORM_ENCODE_SET
+    static final java.lang.String FRAGMENT_ENCODE_SET
+    static final java.lang.String FRAGMENT_ENCODE_SET_URI
+okhttp3.RealCall$AsyncCall:
+    110:110:okhttp3.Request request()
+okhttp3.internal.cache.DiskLruCache:
+    static final java.lang.String JOURNAL_FILE
+    static final java.lang.String JOURNAL_FILE_TEMP
+    static final java.lang.String JOURNAL_FILE_BACKUP
+    static final java.lang.String MAGIC
+    static final java.lang.String VERSION_1
+    static final long ANY_SEQUENCE_NUMBER
+okhttp3.internal.framed.Hpack$Reader:
+    141:141:int maxDynamicTableByteCount()
+okhttp3.internal.framed.Http2:
+    static final int INITIAL_MAX_FRAME_SIZE
+    static final byte TYPE_DATA
+    static final byte TYPE_HEADERS
+    static final byte TYPE_PRIORITY
+    static final byte TYPE_RST_STREAM
+    static final byte TYPE_SETTINGS
+    static final byte TYPE_PUSH_PROMISE
+    static final byte TYPE_PING
+    static final byte TYPE_GOAWAY
+    static final byte TYPE_WINDOW_UPDATE
+    static final byte TYPE_CONTINUATION
+    static final byte FLAG_NONE
+    static final byte FLAG_ACK
+    static final byte FLAG_END_STREAM
+    static final byte FLAG_END_HEADERS
+    static final byte FLAG_END_PUSH_PROMISE
+    static final byte FLAG_PADDED
+    static final byte FLAG_PRIORITY
+    static final byte FLAG_COMPRESSED
+okhttp3.internal.framed.Huffman:
+    91:114:void encode(byte[],java.io.OutputStream)
+    117:124:int encodedLength(byte[])
+okhttp3.internal.framed.Settings:
+    static final int DEFAULT_INITIAL_WINDOW_SIZE
+    static final int FLAG_CLEAR_PREVIOUSLY_PERSISTED_SETTINGS
+    static final int PERSIST_VALUE
+    static final int PERSISTED
+    static final int UPLOAD_BANDWIDTH
+    static final int HEADER_TABLE_SIZE
+    static final int DOWNLOAD_BANDWIDTH
+    static final int ENABLE_PUSH
+    static final int ROUND_TRIP_TIME
+    static final int MAX_CONCURRENT_STREAMS
+    static final int CURRENT_CWND
+    static final int MAX_FRAME_SIZE
+    static final int DOWNLOAD_RETRANS_RATE
+    static final int MAX_HEADER_LIST_SIZE
+    static final int INITIAL_WINDOW_SIZE
+    static final int CLIENT_CERTIFICATE_VECTOR_SIZE
+    static final int FLOW_CONTROL_OPTIONS
+    static final int COUNT
+    static final int FLOW_CONTROL_OPTIONS_DISABLED
+    137:138:int getUploadBandwidth(int)
+    149:150:int getDownloadBandwidth(int)
+    156:157:boolean getEnablePush(boolean)
+    162:163:int getRoundTripTime(int)
+    174:175:int getCurrentCwnd(int)
+    186:187:int getDownloadRetransRate(int)
+    192:193:int getMaxHeaderListSize(int)
+    203:204:int getClientCertificateVectorSize(int)
+    209:211:boolean isFlowControlDisabled()
+okhttp3.internal.framed.Spdy3:
+    static final int TYPE_DATA
+    static final int TYPE_SYN_STREAM
+    static final int TYPE_SYN_REPLY
+    static final int TYPE_RST_STREAM
+    static final int TYPE_SETTINGS
+    static final int TYPE_PING
+    static final int TYPE_GOAWAY
+    static final int TYPE_HEADERS
+    static final int TYPE_WINDOW_UPDATE
+    static final int FLAG_FIN
+    static final int FLAG_UNIDIRECTIONAL
+    static final int VERSION
+okio.Buffer:
+    static final int REPLACEMENT_CHARACTER
+    1514:1520:java.util.List segmentSizes()
+okio.Segment:
+    static final int SIZE
+    static final int SHARE_MINIMUM
+okio.SegmentPool:
+    static final long MAX_SIZE
+uk.co.senab.photoview.PhotoViewAttacher:
+    static final int EDGE_NONE
+    static final int EDGE_LEFT
+    static final int EDGE_RIGHT
+    static final int EDGE_BOTH

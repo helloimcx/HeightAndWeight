@@ -1,0 +1,366 @@
+[
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/snackbar_show_animation.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/snackbar_show_animation.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/activity_open_exit.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/activity_open_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_blink.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_blink.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_in_fast.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fade_in_fast.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fragment_close_exit_reverse.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/fragment_close_exit_reverse.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/alerter_slide_in_from_top.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/alerter_slide_in_from_top.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_bounce.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_bounce.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/slide_right_out.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/slide_right_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_out.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/fade_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/dialog_main_hide_amination.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_main_hide_amination.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/progress_indeterminate_animation.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/progress_indeterminate_animation.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fragment_open_exit.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fragment_open_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/bottom_out.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/bottom_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/top_out.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/top_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/activity_open_enter.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/activity_open_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_fade_in.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_fade_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/hide_to_bottom.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/hide_to_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_slide_up.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_slide_up.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fragment_open_enter.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fragment_open_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/modal_activity_open_exit.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/modal_activity_open_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/decelerate_quart.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/decelerate_quart.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_move.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_move.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/splash_out.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/splash_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/right_out.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/right_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/design_fab_out.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/slide_left_in.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/slide_left_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fragment_close_exit.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fragment_close_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/left_out.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/left_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_out_slow.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/fade_out_slow.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/scale_out.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/scale_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/modal_activity_close_exit.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/modal_activity_close_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/none.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/none.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_out_fast.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fade_out_fast.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/activity_close_enter.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/activity_close_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/dialog_root_hide_amin.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_root_hide_amin.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/bottom_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/bottom_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/decelerate_quint.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/decelerate_quint.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/snackbar_hide_animation.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/snackbar_hide_animation.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/modal_activity_open_enter.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/modal_activity_open_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/dialog_main_show_amination.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_main_show_amination.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/design_snackbar_out.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_slide_down.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_slide_down.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/interpolator_slight_overshoot.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/interpolator_slight_overshoot.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fragment_close_enter.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fragment_close_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/interpolator_slight_anticipate.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/interpolator_slight_anticipate.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/alerter_pulse.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/alerter_pulse.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_fade_out.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_fade_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/accelerate_cubic.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/accelerate_cubic.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/design_fab_in.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/alerter_slide_out_to_top.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/alerter_slide_out_to_top.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_zoom_out.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_zoom_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/right_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/right_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/accelerate_quart.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/accelerate_quart.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/translate_right.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/translate_right.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/slide_left_out.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/slide_left_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/show_from_bottom.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/show_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/fade_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_zoom_in.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_zoom_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/activity_close_exit.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/activity_close_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/slide_right_in.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/slide_right_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/design_snackbar_in.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/popup_flyout_hide.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/popup_flyout_hide.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/modal_activity_close_enter.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/modal_activity_close_enter.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_in_medium.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fade_in_medium.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fragment_open_enter_reverse.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/fragment_open_enter_reverse.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/popup_flyout_show.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/popup_flyout_show.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/fade_out_medium.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/fade_out_medium.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/hold.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/hold.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/left_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/left_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/translate_left.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/anim/translate_left.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/accelerate_quint.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/accelerate_quint.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/slide_down.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/slide_down.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/decelerate_cubic.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/decelerate_cubic.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/top_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/top_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/scale_in.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/anim/scale_in.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/view_rotate.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_rotate.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/anim/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/no_anim.xml",
+        "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/no_anim.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/slide_up.xml",
+        "source": "/Users/mac/.android/build-cache/30283e77bcd31df62552c0848b0476678796bbe5/output/res/anim/slide_up.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/anim/dialog_root_show_amin.xml",
+        "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/dialog_root_show_amin.xml"
+    }
+]

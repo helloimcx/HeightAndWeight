@@ -154,7 +154,7 @@ public class RecordActivity extends Activity implements InitView {
 		listView.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, final View arg1,
-										   int arg2, long arg3) {
+										   final int arg2, long arg3) {
 				ListView listView = (ListView) arg0;
 				final HashMap<String, Object> map = (HashMap<String, Object>) listView.getItemAtPosition(arg2);
 				AlertDialog.Builder builder = new AlertDialog.Builder(RecordActivity.this);
@@ -188,9 +188,10 @@ public class RecordActivity extends Activity implements InitView {
 										RecordActivity.this.runOnUiThread(new Runnable() {
 											@Override
 											public void run() {
-												arg1.setVisibility(View.GONE);
 												Toast.makeText(RecordActivity.this,
 														"É¾³ý³É¹¦£¡", Toast.LENGTH_SHORT).show();
+												dataList.remove(map);
+												simpleAdapter.notifyDataSetChanged();
 											}
 										});
 									}

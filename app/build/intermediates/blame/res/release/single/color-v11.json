@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    }
+]

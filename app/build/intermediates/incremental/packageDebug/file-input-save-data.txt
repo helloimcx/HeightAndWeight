@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Nov 25 17:01:12 ULAT 2017
+#Sat Nov 25 18:16:23 ULAT 2017
 1007.base=/Users/mac/myprojects/HT_v2/app/build/intermediates/res/resources-debug.ap_
 835.base=/Users/mac/myprojects/HT_v2/app/build/intermediates/res/resources-debug.ap_
 100.set=ANDROID_RESOURCE

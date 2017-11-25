@@ -48,7 +48,7 @@ public class RecordDetail extends Activity implements InitView{
 
 		SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
 		String sex = share.getString("sex", "null");
-		if (sex.equals("M")) {
+		if (sex.equals("ÄÐ")) {
 			if (BMI < 18.5) {
 				imageView.setImageResource(R.drawable.thin);
 			} else if (BMI <= 23.9) {

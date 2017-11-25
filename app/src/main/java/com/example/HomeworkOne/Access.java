@@ -7,41 +7,28 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 
-public class Access extends Activity{
-	private ImageButton accessButton;
+import com.squareup.picasso.Picasso;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+import MyInterface.InitView;
+
+public class Access extends Activity implements InitView{
+	@Bind(R.id.img_welcome)
+	ImageView img_welcome;
+
 	static Access instance;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.access);
-
-		//方便其他Activity关闭当前Activity
-		instance = this;
-
-		accessButton= (ImageButton) findViewById(R.id.accessButton);
-		accessButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				whereToGo();
-				overridePendingTransition(android.R.anim.slide_in_left,
-						android.R.anim.slide_out_right);
-			}
-		});
-
-		new Handler(){
-            public void handleMessage(android.os.Message msg) {
-				whereToGo();
-				overridePendingTransition(android.R.anim.slide_in_left,
-						android.R.anim.slide_out_right);
-            };
-        }.sendEmptyMessageDelayed(0, 1300);
-		
+		initView();
+		initListener();
 	}
 
 	//转到哪一个Activity
@@ -63,4 +50,28 @@ public class Access extends Activity{
 
 	}
 
+	@Override
+	public void initView() {
+		ButterKnife.bind(this);
+		Picasso.with(this).load(R.drawable.pirlo).fit().into(img_welcome);
+
+		//方便其他Activity关闭当前Activity
+		instance = this;
+
+		new Handler(){
+			public void handleMessage(android.os.Message msg) {
+				whereToGo();
+			};
+		}.sendEmptyMessageDelayed(0, 1900);
+	}
+
+	@Override
+	public void initListener() {
+		img_welcome.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				whereToGo();
+			}
+		});
+	}
 }

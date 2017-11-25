@@ -70,7 +70,7 @@ public class TestDetail extends Activity implements InitView{
 					BMI = weight / (Mheight * Mheight);
 					String sex = share.getString("sex", "null");
 					// '1-5' for male , '6-10' for female
-					if (sex.equals("M")) {
+					if (sex.equals("ÄÐ")) {
 						if (BMI < 18.5) {
 							content = "Ì«ÊÝÁË£¡¸Ï½ô³ÔÆðÀ´!";
 							photo = 1;

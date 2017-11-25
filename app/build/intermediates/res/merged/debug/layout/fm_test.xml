@@ -23,12 +23,11 @@
         android:text="点击图片开始测试" />
 
    
-        <ImageButton
+        <ImageView
+            android:id="@+id/image_test"
             android:layout_marginTop="30dp"
-            android:id="@+id/imageButton1"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="#00ffffff"
-            android:src="@drawable/one" />
+             />
     
 </LinearLayout>

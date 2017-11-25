@@ -16,16 +16,16 @@
         "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/layout/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/contact_developer.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/contact_developer.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_image_grid.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/activity_image_grid.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/fragment_dicover.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/fragment_dicover.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_image_grid.xml",
-        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/activity_image_grid.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/contact_developer.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/contact_developer.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
@@ -100,10 +100,6 @@
         "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/layout/design_layout_tab_icon.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/login.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/login.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/bottom.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/bottom.xml"
     },
@@ -128,12 +124,12 @@
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/include_top_bar.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/layout/abc_action_menu_layout.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/webview.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/webview.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/layout/abc_action_menu_layout.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
@@ -238,10 +234,6 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/snackbar.xml",
         "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/layout/snackbar.xml"
-    },
-    {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/factivity.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/factivity.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/ac_register.xml",
@@ -362,6 +354,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/fm_test.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/fm_test.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_image_crop.xml",

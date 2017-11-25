@@ -1,7 +1,9 @@
 package com.example.HomeworkOne;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -33,6 +35,8 @@ import com.zhy.autolayout.AutoLinearLayout;
 public class AccountFragment extends Fragment implements InitView{
 	private IWXAPI api;
 	private static final String APP_ID="wxac23c0af2a986db5";
+	private MyBroadCastReceiver myBroadCastReceiver;
+
 	@Bind(R.id.account_contact)
 	OptionItemView contact;
 	@Bind(R.id.account_record)
@@ -84,9 +88,12 @@ public class AccountFragment extends Fragment implements InitView{
 		String email_str = sharedPreferences.getString("email","null");
 		String header_str = sharedPreferences.getString("header","null");
 		Uri header_uri = Uri.parse(header_str);
-		Picasso.with(getActivity()).load(header_uri).into(header);
+		Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(header);
 		name.setText(name_str);
 		email.setText(email_str);
+
+		//×¢²áBroadcastReceiver
+		registerBroadcastReceiver();
 	}
 
 	@Override
@@ -191,5 +198,30 @@ public class AccountFragment extends Fragment implements InitView{
 				mPopMenu.show();
 			}
 		});
+	}
+
+	//BroadcastReceiver
+	class MyBroadCastReceiver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String header_url = intent.getStringExtra("header_url");
+			Uri header_uri = Uri.parse(header_url);
+			Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(header);
+		}
+	}
+
+	private void registerBroadcastReceiver(){
+		myBroadCastReceiver = new MyBroadCastReceiver();
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction(UserHeader.BROADCAST_ACTION);
+		getActivity().registerReceiver(myBroadCastReceiver, intentFilter);
+	}
+
+	//ÖØÐ´onDestory£¨£©³·ÏúBroadcastReceiverµÄ×¢²á
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		getActivity().unregisterReceiver(myBroadCastReceiver);
 	}
 }

@@ -1,7 +1,10 @@
 package com.example.HomeworkOne;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,6 +48,7 @@ public class UserInfo extends Activity {
     private String nickname_str;
     private String gender_str;
     private String user_header_str;
+    private  MyBroadCastReceiver myBroadCastReceiver;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,7 +69,10 @@ public class UserInfo extends Activity {
         email.setRightText(email_str);
         nickName.setRightText(nickname_str);
         gender.setRightText(gender_str);
-        Picasso.with(UserInfo.this).load(header_uri).into(user_header);
+        Picasso.with(UserInfo.this).load(header_uri).fit().centerCrop().into(user_header);
+
+        //×¢²áBroadcastReceiver
+        registerBroadcastReceiver();
     }
 
     private void initListener() {
@@ -128,5 +135,31 @@ public class UserInfo extends Activity {
                 });
             }
         });
+    }
+
+    //BroadcastReceiver
+    class MyBroadCastReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            user_header_str = intent.getStringExtra("header_url");
+            Uri header_uri = Uri.parse(user_header_str);
+            Picasso.with(UserInfo.this).load(header_uri).fit().centerCrop().into(user_header);
+        }
+    }
+
+    //×¢²áBroadcastReceiver
+    private void registerBroadcastReceiver(){
+        myBroadCastReceiver = new MyBroadCastReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(UserHeader.BROADCAST_ACTION);
+        registerReceiver(myBroadCastReceiver, intentFilter);
+    }
+
+    //ÖØÐ´onDestory£¨£©³·ÏúBroadcastReceiverµÄ×¢²á
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(myBroadCastReceiver);
     }
 }

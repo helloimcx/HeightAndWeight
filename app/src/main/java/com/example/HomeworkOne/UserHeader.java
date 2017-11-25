@@ -61,11 +61,13 @@ public class UserHeader extends Activity implements InitView{
     ImageButton more;
 
     public static Context context;
+    public static final String BROADCAST_ACTION = "CHANGE_HEADER";
     private PopupWindow mPopupWindow;
     public static final int REQUEST_IMAGE_PICKER = 1000;
     private ImagePicker imagePicker;
     private View menu;
     private String signature;
+    private String header_url;
     private OSS oss;
     private OptionItemView album;
     private OptionItemView camera;
@@ -170,10 +172,13 @@ public class UserHeader extends Activity implements InitView{
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
                             //以用户邮箱加图像名作为头像名
                             putToOss(email+imageItem.name,imageItem.path);
-                            String url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
+                            header_url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
                                     +email+imageItem.name;
                                     //+"?x-oss-process=image/resize,m_fixed,h_50,w_50";
-                            setUserHeader(url);
+                            setUserHeader(header_url);
+
+                            //发送广播让其他组件修改头像
+                            sendBroadcast();
                         }
                     }
                 }
@@ -247,7 +252,7 @@ public class UserHeader extends Activity implements InitView{
     }
 
     private void setUserHeader(final String url){
-        //上传用户头像url
+        //上传用户头像url到服务器上
         final SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
         int user_id = sharedPreferences.getInt("user_id",0);
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -280,6 +285,8 @@ public class UserHeader extends Activity implements InitView{
                 UserHeader.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
+                        //把用户头像信息更新到SharedPreferences
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("header",url);
                         editor.apply();
@@ -300,4 +307,11 @@ public class UserHeader extends Activity implements InitView{
         header.enable();
     }
 
+    //发送广播通知其他组件修改头像
+    private void sendBroadcast(){
+        Intent intent = new Intent();
+        intent.setAction(BROADCAST_ACTION);
+        intent.putExtra("header_url",header_url);
+        sendBroadcast(intent);
+    }
 }

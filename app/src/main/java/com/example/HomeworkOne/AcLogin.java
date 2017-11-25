@@ -40,6 +40,10 @@ import com.google.gson.*;
  */
 
 public class AcLogin extends Activity implements InitView{
+    static AcLogin instance;
+    private String emailStr;
+    private String passwordStr;
+    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     @Bind(R.id.edit_email)
     EditText email;
     @Bind(R.id.edit_password)
@@ -50,9 +54,6 @@ public class AcLogin extends Activity implements InitView{
     ButtonRectangle LoginButton;
     @Bind(R.id.ivToolbarNavigation)
     ImageView goback;
-    private String emailStr;
-    private String passwordStr;
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,6 +68,10 @@ public class AcLogin extends Activity implements InitView{
     public void initView() {
         ButterKnife.bind(this);
         goback.setVisibility(View.GONE);
+        instance = this;
+
+        //¹Ø±Õ»¶Ó­Activity
+        Access.instance.finish();
     }
 
     @Override

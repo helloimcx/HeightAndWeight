@@ -114,7 +114,10 @@ public class UserInfo extends Activity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.clear().apply();
                                 MainActivity.sessionid = "null";
+
+                                //关闭这几个Activity
                                 UserInfo.this.finish();
+                                MainActivity.instance.finish();
 
                                 //转到登录界面
                                 Intent intent = new Intent(UserInfo.this, AcLogin.class);

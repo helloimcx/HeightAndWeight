@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 
 public class Access extends Activity{
 	private ImageButton accessButton;
+	static Access instance;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,9 @@ public class Access extends Activity{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.access);
+
+		//方便其他Activity关闭当前Activity
+		instance = this;
 
 		accessButton= (ImageButton) findViewById(R.id.accessButton);
 		accessButton.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +40,7 @@ public class Access extends Activity{
 				overridePendingTransition(android.R.anim.slide_in_left,
 						android.R.anim.slide_out_right);
             };
-        }.sendEmptyMessageDelayed(0, 1000);
+        }.sendEmptyMessageDelayed(0, 1300);
 		
 	}
 

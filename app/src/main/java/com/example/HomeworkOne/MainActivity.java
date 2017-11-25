@@ -2,12 +2,14 @@ package com.example.HomeworkOne;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -43,6 +45,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	public static Fragment tab_transfer;
 	public static OkHttpClient okHttpClient;
 	public static String sessionid;
+	static MainActivity instance;
 
 	@Bind(R.id.ivToolbarNavigation)
 	ImageView goback;
@@ -81,6 +84,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mImgTest = (ImageButton)findViewById(R.id.id_tab_test_img);
 		mImgDiscover = (ImageButton)findViewById(R.id.id_tab_discover_img);
 		mImgAccount = (ImageButton)findViewById(R.id.id_tab_account_img);
+
+		instance = this;
 	}
 
 	@Override

@@ -55,4 +55,6 @@ dependencies {
     compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
     compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
     compile 'com.github.vajro:MaterialDesignLibrary:1.6'
+    compile 'com.tapadoo.android:alerter:2.0.1'
+    compile 'com.github.GrenderG:Toasty:1.2.5'
 }

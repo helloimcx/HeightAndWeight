@@ -21,7 +21,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_slide_in_top.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_in_top.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/top_in.xml",
@@ -45,7 +45,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_slide_out_top.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_out_top.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/view_zoom_in.xml",
@@ -69,7 +69,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_popup_enter.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_popup_enter.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/dialog_root_show_amin.xml",
@@ -97,7 +97,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_fade_in.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_fade_in.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/hide_to_bottom.xml",
@@ -117,7 +117,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_fade_out.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_fade_out.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
@@ -137,7 +137,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_slide_in_bottom.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_in_bottom.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/splash_out.xml",
@@ -145,7 +145,15 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_slide_out_bottom.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/alerter_slide_in_from_top.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/alerter_slide_in_from_top.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/alerter_pulse.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/alerter_pulse.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/view_fade_out.xml",
@@ -157,7 +165,11 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/interpolator_slight_overshoot.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/interpolator_slight_overshoot.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/slide_up.xml",
@@ -213,7 +225,7 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/modal_activity_open_enter.xml",
@@ -253,11 +265,15 @@
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/mac/.android/build-cache/b19fa08eb26f457f40e9c14ea0ce165366570e4b/output/res/anim/abc_popup_exit.xml"
+        "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/anim/abc_popup_exit.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/snackbar_show_animation.xml",
         "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/anim/snackbar_show_animation.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/interpolator_slight_anticipate.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/interpolator_slight_anticipate.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/right_out.xml",
@@ -338,6 +354,10 @@
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/view_slide_down.xml",
         "source": "/Users/mac/.android/build-cache/0369eabc81811f150f1d5eacecb9f59f3da9c2d3/output/res/anim/view_slide_down.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/alerter_slide_out_to_top.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/anim/alerter_slide_out_to_top.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/anim/view_rotate.xml",

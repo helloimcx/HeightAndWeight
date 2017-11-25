@@ -19,9 +19,9 @@ public final class R {
         public static final int app_name = 0x7f07009c;
     }
     public static final class style {
-        public static final int AVLoadingIndicatorView = 0x7f0900a3;
-        public static final int AVLoadingIndicatorView_Large = 0x7f0900a4;
-        public static final int AVLoadingIndicatorView_Small = 0x7f0900a5;
+        public static final int AVLoadingIndicatorView = 0x7f0900a4;
+        public static final int AVLoadingIndicatorView_Large = 0x7f0900a5;
+        public static final int AVLoadingIndicatorView_Small = 0x7f0900a6;
     }
     public static final class styleable {
         public static final int[] AVLoadingIndicatorView = { 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035 };

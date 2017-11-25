@@ -8,23 +8,23 @@ package android.support.v7.gridlayout;
 
 public final class R {
     public static final class attr {
-        public static final int alignmentMode = 0x7f010135;
-        public static final int columnCount = 0x7f010133;
-        public static final int columnOrderPreserved = 0x7f010137;
-        public static final int layout_column = 0x7f01013b;
-        public static final int layout_columnSpan = 0x7f01013c;
-        public static final int layout_columnWeight = 0x7f01013d;
-        public static final int layout_gravity = 0x7f01013e;
-        public static final int layout_row = 0x7f010138;
-        public static final int layout_rowSpan = 0x7f010139;
-        public static final int layout_rowWeight = 0x7f01013a;
-        public static final int orientation = 0x7f010131;
-        public static final int rowCount = 0x7f010132;
-        public static final int rowOrderPreserved = 0x7f010136;
-        public static final int useDefaultMargins = 0x7f010134;
+        public static final int alignmentMode = 0x7f01013a;
+        public static final int columnCount = 0x7f010138;
+        public static final int columnOrderPreserved = 0x7f01013c;
+        public static final int layout_column = 0x7f010140;
+        public static final int layout_columnSpan = 0x7f010141;
+        public static final int layout_columnWeight = 0x7f010142;
+        public static final int layout_gravity = 0x7f010143;
+        public static final int layout_row = 0x7f01013d;
+        public static final int layout_rowSpan = 0x7f01013e;
+        public static final int layout_rowWeight = 0x7f01013f;
+        public static final int orientation = 0x7f010136;
+        public static final int rowCount = 0x7f010137;
+        public static final int rowOrderPreserved = 0x7f01013b;
+        public static final int useDefaultMargins = 0x7f010139;
     }
     public static final class dimen {
-        public static final int default_gap = 0x7f08006c;
+        public static final int default_gap = 0x7f080079;
     }
     public static final class id {
         public static final int alignBounds = 0x7f0d0058;
@@ -47,8 +47,8 @@ public final class R {
         public static final int vertical = 0x7f0d0057;
     }
     public static final class styleable {
-        public static final int[] GridLayout = { 0x7f010131, 0x7f010132, 0x7f010133, 0x7f010134, 0x7f010135, 0x7f010136, 0x7f010137 };
-        public static final int[] GridLayout_Layout = { 0x010100f4, 0x010100f5, 0x010100f6, 0x010100f7, 0x010100f8, 0x010100f9, 0x010100fa, 0x7f010138, 0x7f010139, 0x7f01013a, 0x7f01013b, 0x7f01013c, 0x7f01013d, 0x7f01013e };
+        public static final int[] GridLayout = { 0x7f010136, 0x7f010137, 0x7f010138, 0x7f010139, 0x7f01013a, 0x7f01013b, 0x7f01013c };
+        public static final int[] GridLayout_Layout = { 0x010100f4, 0x010100f5, 0x010100f6, 0x010100f7, 0x010100f8, 0x010100f9, 0x010100fa, 0x7f01013d, 0x7f01013e, 0x7f01013f, 0x7f010140, 0x7f010141, 0x7f010142, 0x7f010143 };
         public static final int GridLayout_Layout_android_layout_height = 1;
         public static final int GridLayout_Layout_android_layout_margin = 2;
         public static final int GridLayout_Layout_android_layout_marginBottom = 6;

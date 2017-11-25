@@ -465,8 +465,8 @@ android/support/v4/app/FragmentManager.class
 android/support/design/widget/CoordinatorLayout$1.class
 android/support/annotation/Px.class
 uk/co/senab/photoview/PhotoView.class
-android/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat.class
 com/squareup/picasso/Picasso.class
+android/support/v4/widget/SearchViewCompat$OnQueryTextListenerCompat.class
 android/support/annotation/AttrRes.class
 android/support/v7/widget/GapWorker.class
 android/support/v4/widget/ResourceCursorAdapter.class

@@ -251,6 +251,10 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
+    <color name="alert_default_error_background">#F44336</color>
+    <color name="alert_default_icon_color">@android:color/white</color>
+    <color name="alert_default_text_color">@android:color/white</color>
+    <color name="alerter_default_success_background">#4CAF50</color>
     <color name="assist_blue">#64a4f4</color>
     <color name="assist_blue_down">#3489ff</color>
     <color name="assist_green">#6ae068</color>
@@ -752,7 +756,9 @@
     <declare-styleable name="ActionMenuView"/>
     <declare-styleable name="ActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/><attr format="reference" name="closeItemLayout"/></declare-styleable>
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
+    <declare-styleable name="Alert"><attr format="reference" name="alertIcon"/><attr format="color" name="alertBackgroundColor"/><attr format="string" name="alertTitle"/><attr format="string" name="alertText"/></declare-styleable>
     <declare-styleable name="AlertDialog"><attr name="android:layout"/><attr format="reference" name="buttonPanelSideLayout"/><attr format="reference" name="listLayout"/><attr format="reference" name="multiChoiceItemLayout"/><attr format="reference" name="singleChoiceItemLayout"/><attr format="reference" name="listItemLayout"/><attr format="boolean" name="showTitle"/></declare-styleable>
+    <declare-styleable name="Alerter"><attr format="reference" name="alertStyle"/></declare-styleable>
     <declare-styleable name="AppBarLayout"><attr name="elevation"/><attr name="android:background"/><attr format="boolean" name="expanded"/></declare-styleable>
     <declare-styleable name="AppBarLayoutStates"><attr format="boolean" name="state_collapsed"/><attr format="boolean" name="state_collapsible"/></declare-styleable>
     <declare-styleable name="AppBarLayout_Layout"><attr name="layout_scrollFlags">
@@ -1150,6 +1156,19 @@
     <dimen name="action_menu_radius">96dp</dimen>
     <dimen name="activity_horizontal_margin">32px</dimen>
     <dimen name="activity_vertical_margin">32px</dimen>
+    <dimen name="alerter_activity_horizontal_margin">18dp</dimen>
+    <dimen name="alerter_activity_vertical_margin">16dp</dimen>
+    <dimen name="alerter_alert_icn_size">38dp</dimen>
+    <dimen name="alerter_alert_max_height">84dp</dimen>
+    <dimen name="alerter_alert_min_height">64dp</dimen>
+    <dimen name="alerter_alert_negative_margin_top">-26dp</dimen>
+    <dimen name="alerter_alert_padding">30dp</dimen>
+    <dimen name="alerter_padding_default">16dp</dimen>
+    <dimen name="alerter_padding_half">8dp</dimen>
+    <dimen name="alerter_padding_small">4dp</dimen>
+    <dimen name="alerter_progress_bar_size">2dp</dimen>
+    <dimen name="alerter_text_medium">18sp</dimen>
+    <dimen name="alerter_text_small">14sp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -1416,6 +1435,7 @@
     <string name="jian_shu">简书</string>
     <string name="join_group">加入了群组</string>
     <string name="join_group_fail">入群失败</string>
+    <string name="lib_name">Alerter</string>
     <string name="load_contacts_error">加载联系人失败</string>
     <string name="load_error">加载失败</string>
     <string name="location">位置</string>
@@ -1424,6 +1444,8 @@
     <string name="me">我</string>
     <string name="message">微信</string>
     <string name="message_free">消息免打扰</string>
+    <string name="msg.alert_cleared">Alert Cleared</string>
+    <string name="msg.no_alert_showing">No Alert Showing</string>
     <string name="my_chat_account">微信号:%1$s</string>
     <string name="my_display_name_in_group">我在本群中的昵称</string>
     <string name="my_location">我的地址</string>
@@ -1696,6 +1718,7 @@ function login(form){
     <string name="tag">标签</string>
     <string name="terms_of_use_and_privacy_policy">使用条款和隐私政策</string>
     <string name="this_account_was_your_friend">该用户已经是您的好友</string>
+    <string name="toast_message">Toast message</string>
     <string name="translate">翻译</string>
     <string name="untitled">未命名</string>
     <string name="user_no_found">该用户不存在</string>
@@ -1738,6 +1761,28 @@ function login(form){
     </style>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
+    <style name="AlertStyle" parent="@android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/alerter_alert_min_height</item>
+        <item name="android:maxHeight">@dimen/alerter_alert_max_height</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingTop">@dimen/alerter_alert_padding</item>
+    </style>
+    <style name="AlertTextAppearance">
+        <item name="android:textColor">@color/alert_default_text_color</item>
+    </style>
+    <style name="AlertTextAppearance.Text">
+        <item name="android:textSize">@dimen/alerter_text_small</item>
+    </style>
+    <style name="AlertTextAppearance.Title">
+        <item name="android:textSize">@dimen/alerter_text_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="AlertTheme" parent="Base.Theme.AppCompat">
+        <item name="alertStyle">@style/AlertStyle</item>
+    </style>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="Animation.Design.BottomSheetDialog" parent="Animation.AppCompat.Dialog">

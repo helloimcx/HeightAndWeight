@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,12 +17,14 @@ import java.io.IOException;
 import java.lang.String;
 
 import MyInterface.InitView;
+import es.dmoral.toasty.Toasty;
 import okhttp3.*;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.views.CheckBox;
 import com.gc.materialdesign.widgets.SnackBar;
+import com.tapadoo.alerter.Alerter;
 
 
 /**
@@ -143,18 +146,27 @@ public class AcRegister extends Activity implements InitView{
                     }
 
                     @Override
-                    public void onResponse(Call call, Response response) throws IOException {
+                    public void onResponse(Call call, final Response response) throws IOException {
                         AcRegister.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final SnackBar snackbar = new SnackBar(AcRegister.this,
-                                        "注册成功!", null, null);
-                                snackbar.show();
+                                if(response.code() == 200){
+                                    Toasty.success(AcRegister.this,
+                                            "注册成功!", Toast.LENGTH_SHORT, true).show();
 
-                                //转到登陆
-                                Intent intent = new Intent(AcRegister.this, AcLogin.class);
-                                intent.putExtra("email", emailStr);
-                                startActivity(intent);
+                                    //转到登陆
+                                    Intent intent = new Intent(AcRegister.this, AcLogin.class);
+                                    intent.putExtra("email", emailStr);
+                                    startActivity(intent);
+                                }
+                                else {
+                                    Alerter.create(AcRegister.this)
+                                            .setText("账号已存在！")
+                                            .setBackgroundColorRes(R.color.Orange)
+                                            .enableSwipeToDismiss()
+                                            .setDuration(3000)
+                                            .show();
+                                }
                             }
                         });
                     }

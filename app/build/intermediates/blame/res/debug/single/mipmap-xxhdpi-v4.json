@@ -44,12 +44,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/abw.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/me_press.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/me_press.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ic_phone.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/ic_phone.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/me_press.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/me_press.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ah7.png",
@@ -64,12 +64,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/checkbox_normal_white.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/toast_bg.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/toast_bg.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/checkbox_normal_black.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/checkbox_normal_black.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/toast_bg.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-xxhdpi/toast_bg.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4/ios_thumb.png",

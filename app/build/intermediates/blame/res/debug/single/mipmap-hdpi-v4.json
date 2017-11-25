@@ -28,24 +28,24 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/nim_image_download_failed.jpg",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/nim_image_download_failed.jpg"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/camera.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/camera.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/nim_image_download_failed.jpg",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/nim_image_download_failed.jpg"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_red_pack.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_red_pack.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_transfer.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_transfer.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_payment_received.png",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_payment_received.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_func_transfer.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_func_transfer.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/message_press.png",
@@ -56,12 +56,12 @@
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_setting_blue.png"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_friend_complain.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_friend_complain.png"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/refresh_loading07.png",
         "source": "/Users/mac/.android/build-cache/f844ec06e9af114e236139fba1ce8cecad3bbc73/output/res/mipmap-hdpi-v4/refresh_loading07.png"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_friend_complain.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/mipmap-hdpi/ic_friend_complain.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_add_team_member.png",

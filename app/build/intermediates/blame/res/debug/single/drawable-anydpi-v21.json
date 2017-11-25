@@ -4,11 +4,19 @@
         "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
     },
     {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/alerter_ic_face.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/drawable-anydpi-v21/alerter_ic_face.xml"
+    },
+    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_camera_enhance_black_24dp.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_camera_enhance_black_24dp.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
         "source": "/Users/mac/.android/build-cache/60d6a1f885f49f57f671af9d8d19e6aea3ab7d19/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/alerter_ic_notifications.xml",
+        "source": "/Users/mac/.android/build-cache/cbc48a3d2ca71d17392cfc0945b5b8d0bd648b66/output/res/drawable-anydpi-v21/alerter_ic_notifications.xml"
     }
 ]

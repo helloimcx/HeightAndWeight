@@ -39,6 +39,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import static com.example.HomeworkOne.AcLogin.JSON;
+import Utils.TimeUtils;
 
 /**
  * Created by mac on 2017/11/23.
@@ -100,8 +101,8 @@ public class DiscoveryPublic extends Activity implements InitView{
         moment_public.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //用户上传的照片以"moment"+email+image_name命名
-                String objectKey = "moment"+email+image_name;
+                //name the moment picture
+                String objectKey = "moment"+email+TimeUtils.getCurrentTime()+".png";
                 putToOss(objectKey, image_path);
                 String content = moment_content.getText().toString();
                 String url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"+objectKey;

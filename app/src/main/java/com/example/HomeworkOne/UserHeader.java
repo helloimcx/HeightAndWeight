@@ -48,9 +48,6 @@ import okhttp3.Response;
 import Utils.OssSecretBean;
 import static com.example.HomeworkOne.AcLogin.JSON;
 
-/**
- * Created by mac on 2017/11/3.
- */
 
 public class UserHeader extends Activity implements InitView{
     @Bind(R.id.pv)
@@ -170,10 +167,11 @@ public class UserHeader extends Activity implements InitView{
                         ArrayList<com.lqr.imagepicker.bean.ImageItem> images = (ArrayList<com.lqr.imagepicker.bean.ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
                         if (images != null && images.size() > 0) {
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
-                            //以用户邮箱加图像名作为头像名
-                            putToOss(email+imageItem.name,imageItem.path);
+                            //name the header
+                            String objectKey = "header"+email+".png";
+                            putToOss(objectKey,imageItem.path);
                             header_url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
-                                    +email+imageItem.name;
+                                    +objectKey;
                                     //+"?x-oss-process=image/resize,m_fixed,h_50,w_50";
                             setUserHeader(header_url);
 

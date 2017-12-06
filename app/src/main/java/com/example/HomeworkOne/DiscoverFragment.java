@@ -39,6 +39,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import MyInterface.InitView;
 import Utils.JsonMomentBean;
 import Utils.PicassoImageLoader;
@@ -179,7 +181,9 @@ public class DiscoverFragment extends Fragment implements InitView {
 
     private void getData(final int page) {
         OkHttpClient okHttpClient = MainActivity.okHttpClient;
-        final Request request = new Request.Builder().url("http://120.78.67.135:8000/moment/?page="+page)
+        MyApplication myApplication = (MyApplication) getActivity().getApplication();
+        String host = myApplication.getHost();
+        final Request request = new Request.Builder().url(host+"/moment/?page="+page)
                 .addHeader("cookie", MainActivity.sessionid)
                 .build();
         Call call = okHttpClient.newCall(request);

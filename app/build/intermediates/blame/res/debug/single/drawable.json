@@ -28,16 +28,16 @@
         "source": "/Users/mac/.android/build-cache/fe432299d5e577632eb37154c3fe753b37744b71/output/res/drawable/background_transparent.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechat.png",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechat.png"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_func_press_bg.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_func_press_bg.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/shape_session_func_press_bg.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/shape_session_func_press_bg.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/ssdk_oks_classic_wechat.png",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/drawable/ssdk_oks_classic_wechat.png"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/drawable/selector_top_ok.xml",

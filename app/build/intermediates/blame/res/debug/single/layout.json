@@ -16,16 +16,16 @@
         "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/layout/notification_action_tombstone.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_image_grid.xml",
-        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/activity_image_grid.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/contact_developer.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/contact_developer.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/fragment_dicover.xml",
         "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/fragment_dicover.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/contact_developer.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/contact_developer.xml"
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/activity_image_grid.xml",
+        "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/activity_image_grid.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
@@ -124,12 +124,12 @@
         "source": "/Users/mac/.android/build-cache/7fd0e77912e987411f19474a4b617f8a2876f12b/output/res/layout/include_top_bar.xml"
     },
     {
-        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/webview.xml",
-        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/webview.xml"
-    },
-    {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
         "source": "/Users/mac/.android/build-cache/0b14d2eaabf6edbca9e91c966cf08517aa39c077/output/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/webview.xml",
+        "source": "/Users/mac/myprojects/HT_v2/app/src/main/res/layout/webview.xml"
     },
     {
         "merged": "/Users/mac/myprojects/HT_v2/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",

@@ -64,6 +64,9 @@ captures/
 *.jks</span>
 .idea/
 .DS_Store
+.gradle/
+gradle/
+
 
 app/build/intermediates/classes/release/com/example/HomeworkOne/AccountFragment$MyBroadCastReceiver.class
 app/build/intermediates/classes/release/com/example/HomeworkOne/DiscoverFragment$MyBroadCastReceiver.class

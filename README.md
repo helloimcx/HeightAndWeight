@@ -1,4 +1,5 @@
 ## HeightAndWeight
+![](https://img.shields.io/hexpm/l/plug.svg)
 ### An app that test your BMI
 ### Main functions:
 * Tell the app your height and your weight and you will be given a result.

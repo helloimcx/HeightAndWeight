@@ -67,10 +67,20 @@ captures/
 .gradle/
 gradle/
 
-
 app/build/intermediates/classes/release/com/example/HomeworkOne/AccountFragment$MyBroadCastReceiver.class
 app/build/intermediates/classes/release/com/example/HomeworkOne/DiscoverFragment$MyBroadCastReceiver.class
 app/build/intermediates/classes/release/com/example/HomeworkOne/UserInfo$MyBroadCastReceiver.class
 app/build/intermediates/pre-dexed/
-app/src/main/java/Utils/currentTime.java
 build/android-profile/profile-2017-11-26-13-55-53-920.rawproto
+app/build/intermediates/classes/debug/GlobalConfig/
+app/build/kotlin/compileDebugAndroidTestKotlin/
+app/build/kotlin/compileDebugUnitTestKotlin/
+app/build/kotlin/compileReleaseKotlin/
+app/build/kotlin/compileReleaseUnitTestKotlin/
+build/android-profile/profile-2017-12-06-21-15-50-991.rawproto
+build/kotlin/
+
+gradlew
+gradlew.bat
+import-summary.txt
+settings.gradle

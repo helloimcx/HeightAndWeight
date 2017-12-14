@@ -42,8 +42,7 @@
             android:id="@+id/moments_list"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:overScrollMode="never"
-            ></ListView>
+            android:overScrollMode="never" />
 
     </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 

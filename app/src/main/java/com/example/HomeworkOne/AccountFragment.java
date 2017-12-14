@@ -21,6 +21,8 @@ import butterknife.ButterKnife;
 import lrq.com.addpopmenu.PopMenu;
 import lrq.com.addpopmenu.PopMenuItem;
 import lrq.com.addpopmenu.PopMenuItemListener;
+
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.lqr.optionitemview.OptionItemView;
 import com.squareup.picasso.Picasso;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
@@ -130,13 +132,16 @@ public class AccountFragment extends Fragment implements InitView{
 		help.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				new FinestWebView.Builder(getActivity()).show("http://kafca.legendh5.com/h5/hthelp.html");
+				new FinestWebView.Builder(getActivity())
+						.show("http://kafca.legendh5.com/h5/test_help.html");
 			}
 		});
 		myWeb.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				new FinestWebView.Builder(getActivity()).show("http://120.78.67.135:8000/home/index");
+				MyApplication myApplication = (MyApplication) getActivity().getApplication();
+				String host = myApplication.getHost();
+				new FinestWebView.Builder(getActivity()).show(host+"/home/index");
 			}
 		});
 		shareApp.setOnClickListener(new View.OnClickListener() {

@@ -3,15 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-
-     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-    </RelativeLayout>
     
     <TextView
         android:layout_marginTop="40dp"
@@ -20,14 +13,49 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textSize="27sp"
-        android:text="点击图片开始测试" />
-
+        android:text="@string/clickImageToTest" />
    
         <ImageView
             android:id="@+id/image_test"
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-             />
+            android:layout_height="250dp"
+            android:contentDescription="@string/clickImageToTest" />
+
+    <com.lqr.optionitemview.OptionItemView
+        android:id="@+id/show_bmi"
+        android:layout_marginTop="5dp"
+        style="@style/OptionItem"
+        android:background="@drawable/selector_common_item"
+        app:left_image_margin_left="@dimen/option_item_margin_left"
+        app:left_image_margin_right="@dimen/option_item_margin_right"
+        app:left_src="@mipmap/bmi"
+        app:left_text="BMI"
+        app:left_text_color="@color/black0"
+        app:left_text_size="16sp"
+        app:right_text_size="16sp"
+        app:right_text_color="@color/black0"
+        />
+
+    <View
+        style="@style/Line"
+        android:layout_marginLeft="@dimen/option_item_margin_left"
+        android:layout_marginRight="@dimen/option_item_margin_right"
+        android:layout_marginStart="@dimen/option_item_margin_left"
+        android:layout_marginEnd="@dimen/option_item_margin_right" />
+
+    <com.lqr.optionitemview.OptionItemView
+        android:id="@+id/compare_with_last_record"
+        style="@style/OptionItem"
+        android:background="@drawable/selector_common_item"
+        app:left_image_margin_left="@dimen/option_item_margin_left"
+        app:left_image_margin_right="@dimen/option_item_margin_right"
+        app:left_src="@mipmap/weight"
+        app:left_text="对比上一次测试"
+        app:left_text_color="@color/black0"
+        app:left_text_size="16sp"
+        app:right_image_margin_right="40dp"
+        app:right_src="@drawable/right_arrow"
+        />
     
 </LinearLayout>

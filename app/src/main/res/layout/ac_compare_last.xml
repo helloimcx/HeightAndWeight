@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray6"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.lqr.optionitemview.OptionItemView
+        android:id="@+id/last_record_time"
+        style="@style/OptionItem"
+        android:background="@drawable/selector_common_item"
+        app:left_image_margin_left="@dimen/option_item_margin_left"
+        app:left_image_margin_right="@dimen/option_item_margin_right"
+        app:left_src="@mipmap/time"
+        app:left_text="上次测试时间"
+        app:left_text_color="@color/black0"
+        app:left_text_size="16sp"
+        app:right_text_size="16sp"
+        app:right_text_color="@color/black0"
+        />
+
+    <View
+        style="@style/Line"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <com.lqr.optionitemview.OptionItemView
+        android:id="@+id/compare_weight"
+        style="@style/OptionItem"
+        android:background="@drawable/selector_common_item"
+        app:left_image_margin_left="@dimen/option_item_margin_left"
+        app:left_image_margin_right="@dimen/option_item_margin_right"
+        app:left_src="@mipmap/weight"
+        app:left_text="体重对比"
+        app:left_text_color="@color/black0"
+        app:left_text_size="16sp"
+        app:right_text_size="16sp"
+        app:right_text_color="@color/black0"
+        />
+
+</com.zhy.autolayout.AutoLinearLayout>

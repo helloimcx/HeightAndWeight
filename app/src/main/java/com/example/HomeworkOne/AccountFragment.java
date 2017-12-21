@@ -141,7 +141,7 @@ public class AccountFragment extends Fragment implements InitView{
 			public void onClick(View view) {
 				MyApplication myApplication = (MyApplication) getActivity().getApplication();
 				String host = myApplication.getHost();
-				new FinestWebView.Builder(getActivity()).show(host+"/home/index");
+				new FinestWebView.Builder(getActivity()).show("http://www.mochuxian.top");
 			}
 		});
 		shareApp.setOnClickListener(new View.OnClickListener() {

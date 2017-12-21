@@ -25,6 +25,8 @@
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/show_bmi"
         android:layout_marginTop="5dp"
+        android:layout_height="45dp"
+        android:visibility="gone"
         style="@style/OptionItem"
         android:background="@drawable/selector_common_item"
         app:left_image_margin_left="@dimen/option_item_margin_left"
@@ -35,17 +37,13 @@
         app:left_text_size="16sp"
         app:right_text_size="16sp"
         app:right_text_color="@color/black0"
+        app:right_text_margin_right="40dp"
         />
-
-    <View
-        style="@style/Line"
-        android:layout_marginLeft="@dimen/option_item_margin_left"
-        android:layout_marginRight="@dimen/option_item_margin_right"
-        android:layout_marginStart="@dimen/option_item_margin_left"
-        android:layout_marginEnd="@dimen/option_item_margin_right" />
 
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/compare_with_last_record"
+        android:layout_height="45dp"
+        android:visibility="gone"
         style="@style/OptionItem"
         android:background="@drawable/selector_common_item"
         app:left_image_margin_left="@dimen/option_item_margin_left"

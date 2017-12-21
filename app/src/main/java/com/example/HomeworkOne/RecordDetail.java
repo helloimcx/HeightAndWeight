@@ -54,11 +54,11 @@ public class RecordDetail extends Activity implements InitView{
 			} else if (BMI <= 23.9) {
 				imageView.setImageResource(R.drawable.good);
 			} else if (BMI <= 27) {
-				imageView.setImageResource(R.drawable.fast);
+				imageView.setImageResource(R.drawable.fat);
 			} else if (BMI <= 32) {
-				imageView.setImageResource(R.drawable.veryfast);
+				imageView.setImageResource(R.drawable.veryfat);
 			} else {
-				imageView.setImageResource(R.drawable.veryveryfast);
+				imageView.setImageResource(R.drawable.veryveryfat);
 			}
 		} else {
 			if (BMI < 18.5) {

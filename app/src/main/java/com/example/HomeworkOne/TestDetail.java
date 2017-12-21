@@ -14,6 +14,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
+
 import MyInterface.InitView;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -146,6 +147,8 @@ public class TestDetail extends Activity implements InitView{
 								Intent intent = new Intent();
 								intent.putExtra("content",content);
 								intent.putExtra("photo",photo);
+								intent.putExtra("weight",weight);
+								intent.putExtra("bmi",BMI);
 								setResult(TEST_RESULT_CODE,intent);
 								finish();
 							}

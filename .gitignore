@@ -32,5 +32,3 @@ build/
 gradlew
 gradlew.bat
 import-summary.txt
-
-app/src/main/java/com/example/HomeworkOne/globalConfig/

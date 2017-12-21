@@ -21,6 +21,7 @@
         app:left_text_size="16sp"
         app:right_text_size="16sp"
         app:right_text_color="@color/black0"
+        app:right_text_margin_right="40dp"
         />
 
     <View
@@ -41,6 +42,7 @@
         app:left_text_size="16sp"
         app:right_text_size="16sp"
         app:right_text_color="@color/black0"
+        app:right_text_margin_right="40dp"
         />
 
 </com.zhy.autolayout.AutoLinearLayout>

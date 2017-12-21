@@ -53,7 +53,7 @@ public class Access extends Activity implements InitView{
 	@Override
 	public void initView() {
 		ButterKnife.bind(this);
-		Picasso.with(this).load(R.drawable.pirlo).fit().into(img_welcome);
+		Picasso.with(this).load(R.mipmap.logo).fit().centerCrop().into(img_welcome);
 
 		//方便其他Activity关闭当前Activity
 		instance = this;

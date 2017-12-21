@@ -33,9 +33,9 @@ import java.util.ArrayList;
 public class JsonRecordBean {
 
     public static class RecordBean{
-        public int record_id;
-        public String record_time;
-        public int android_account_id;
+        int record_id;
+        String record_time;
+        int android_account_id;
         public double height;
         public double weight;
 
@@ -56,8 +56,8 @@ public class JsonRecordBean {
         }
     }
 
-    public ArrayList<RecordBean> records;
-    public int count_record;
+    private ArrayList<RecordBean> records;
+    private int count_record;
 
     public ArrayList<RecordBean> get_records(){
         return records;

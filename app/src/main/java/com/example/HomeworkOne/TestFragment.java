@@ -54,7 +54,7 @@ public class TestFragment extends Fragment implements InitView{
 		super.onActivityResult(requestCode, resultCode, data);
 		switch (requestCode){
 			case REQUEST_TESTDETAIL:
-				if(resultCode == TestDetail.TEST_RESULT_CODE){
+				if(resultCode == AcTest.TEST_RESULT_CODE){
 					compare_last.setVisibility(View.VISIBLE);
 					show_bmi.setVisibility(View.VISIBLE);
 					content = data.getStringExtra("content");
@@ -125,11 +125,11 @@ public class TestFragment extends Fragment implements InitView{
 	@Override
 	public void initListener() {
 
-		// Jump to TestDetail
+		// Jump to AcTest
 		image_test.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent intent = new Intent(getActivity(), TestDetail.class);
+				Intent intent = new Intent(getActivity(), AcTest.class);
 				startActivityForResult(intent,REQUEST_TESTDETAIL);
 			}
 		});

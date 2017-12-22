@@ -8,7 +8,7 @@
 * Record your changes in height and weight
 * Share your heroism with the world.
 
-### Available online platform£º
+### Available online platform:
 * [Huawei appstore](http://appstore.huawei.com/app/C100146073)
 * [Baidu appstore](http://shouji.baidu.com/software/23028355.html)
 * [Anzhi market](http://www.anzhi.com/pkg/6ac0_com.example.HomeworkOne.html)

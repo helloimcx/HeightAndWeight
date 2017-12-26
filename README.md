@@ -9,7 +9,7 @@
 * Share your heroism with the world.
 
 ### ScreenShot
-![](https://gitee.com/databasemcx/HeightAndWeight/attach_files/download?i=110303&u=http%3A%2F%2Ffiles.git.oschina.net%2Fgroup1%2FM00%2F02%2F93%2FPaAvDFpAZ8iATEo5AAUhPrCXtlI889.jpg%3Ftoken%3D19e237f666f89b7a31e16e4e96cf9817%26ts%3D1514170320%26attname%3Dcavor_woman.jpg)
+![](https://github.com/Kafcal/HeightAndWeight/raw/master/screenShot/cavor_woman.png)
 
 ### Available online platform:
 * [Huawei appstore](http://appstore.huawei.com/app/C100146073)

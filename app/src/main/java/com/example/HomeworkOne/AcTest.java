@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +33,7 @@ import static com.example.HomeworkOne.AcLogin.JSON;
 
 public class AcTest extends Activity implements InitView{
 	@Bind(R.id.testButton)
-	Button textButton;
+	ButtonRectangle testButton;
 	@Bind(R.id.height)
 	EditText edit_height;
 	@Bind(R.id.weight)
@@ -63,15 +64,21 @@ public class AcTest extends Activity implements InitView{
 
 	@Override
 	public void initListener() {
-		textButton.setOnClickListener(new OnClickListener() {
+		testButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
-				height = Double.parseDouble(edit_height.getText().toString());
-				Mheight = height / 100;
-				weight = Double.parseDouble(edit_weight.getText().toString());
-				if(height==0||weight==0){
+				try{
+					height = Double.parseDouble(edit_height.getText().toString());
+					Mheight = height / 100;
+					weight = Double.parseDouble(edit_weight.getText().toString());
+				}catch (Exception e){
+					Toasty.error(AcTest.this,"请输入正确的身高和体重值！"
+							,Toast.LENGTH_SHORT,true).show();
+					return;
+				}
+				if(height<=120||weight<=30||weight>=300){
 					Toasty.warning(AcTest.this,"请输入正确的身高和体重值！"
 							,Toast.LENGTH_SHORT,true).show();
 					return;

@@ -45,4 +45,11 @@
         app:right_text_margin_right="40dp"
         />
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        />
+
 </com.zhy.autolayout.AutoLinearLayout>

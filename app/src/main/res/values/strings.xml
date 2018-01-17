@@ -1,23 +1,6 @@
 <resources>
     <string name="app_name">体型测试</string>
 
-    <string name="error_code">异常码：</string>
-    <string name="please_check_net">请检查网络</string>
-    <string name="load_error">加载失败</string>
-    <string name="please_wait">请稍等</string>
-    <string name="content_no_empty">内容不能为空</string>
-    <string name="complete">完成</string>
-    <string name="change_success">修改成功</string>
-    <string name="change_fail">修改失败</string>
-    <string name="set_success">设置成功</string>
-    <string name="set_fail">设置失败</string>
-    <string name="save">保存</string>
-    <string name="save_success">保存成功</string>
-    <string name="save_fail">保存失败</string>
-    <string name="cancel">取消</string>
-    <string name="sure">确定</string>
-    <string name="sure_with_count">确定(%1$d)</string>
-
     <!--闪屏页-->
     <string name="login">登录</string>
     <string name="register">注册</string>
@@ -269,4 +252,10 @@
     <string name="CSDN_LQR_personal_development">CSDN_LQR个人开发</string>
     <string name="fun_and_enjoy">兴趣使然</string>
     <string name="clickImageToTest">点击图片开始测试</string>
+    <string name="email">邮箱</string>
+    <string name="height">身高</string>
+    <string name="your_height">你的身高(cm)</string>
+    <string name="weight">体重</string>
+    <string name="your_weight">你的体重(kg)</string>
+    <string name="test">测试</string>
 </resources>

@@ -11,7 +11,7 @@ import android.app.Application
 class MyApplication : Application() {
     lateinit var host: String
     override fun onCreate() {
-        host = "http://120.78.67.135:8000"
+        host = "http://120.78.199.2:8000"
         super.onCreate()
     }
 }

@@ -21,7 +21,10 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
+import com.example.HomeworkOne.Activity.RecordGraph;
 import com.google.gson.Gson;
+import com.lqr.optionitemview.OptionItemView;
 import com.wang.avi.AVLoadingIndicatorView;
 import MyInterface.InitView;
 import Utils.JsonRecordBean;
@@ -119,7 +122,7 @@ public class RecordActivity extends Activity implements InitView {
 							result = "∑ ≈÷";
 							result_label = R.mipmap.fat_label;
 						}
-						Map<String, Object> map = new HashMap<String, Object>();
+						Map<String, Object> map = new HashMap<>();
 						map.put("record_id", records.get(i).get_record_id());
 						map.put("height", height * 100);
 						map.put("weight", weight);
@@ -205,7 +208,6 @@ public class RecordActivity extends Activity implements InitView {
 						.setNegativeButton("»°œ˚", new DialogInterface.OnClickListener(){
 							@Override
 							public void onClick(DialogInterface arg0, int arg1) {
-								// TODO Auto-generated method stub
 							}
 						});
 				builder.setCancelable(true);

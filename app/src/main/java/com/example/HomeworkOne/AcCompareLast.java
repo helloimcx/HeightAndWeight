@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.lang.reflect.GenericSignatureFormatError;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -157,8 +158,11 @@ public class AcCompareLast extends AcHttpRequest {
                             };
 
                             final String date = records.get(count_record - 2).get_record_time();
-                            final Double last_weight = records.get(count_record - 2).get_weight();
-                            final double compare = getWeight() - last_weight;
+                            Double last_weight = records.get(count_record - 2).get_weight();
+                            double compare_temp = getWeight() - last_weight;
+                            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                            decimalFormat.format(compare_temp);
+                            final double compare = compare_temp;
 
                             AcCompareLast.this.runOnUiThread(new Runnable() {
                                 @Override
@@ -176,11 +180,11 @@ public class AcCompareLast extends AcHttpRequest {
 
                                     last_time.setRightText(date.substring(0, 10));
                                     if (compare < 0) {
-                                        compare_weight.setRightText("瘦了：" + ((-compare)+"").substring(0,4) + "kg");
+                                        compare_weight.setRightText("瘦了：" + (-compare)+"kg");
                                     } else if (compare == 0) {
                                         compare_weight.setRightText("无变化");
                                     } else
-                                        compare_weight.setRightText("增重了：" + (compare+"").substring(0,4) + "kg");
+                                        compare_weight.setRightText("重了：" + compare+"kg");
                                     avLoadingIndicatorView.setVisibility(View.GONE);
                                 }
                             });

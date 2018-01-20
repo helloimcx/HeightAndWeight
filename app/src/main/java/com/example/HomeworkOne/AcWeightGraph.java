@@ -130,7 +130,12 @@ public class AcWeightGraph extends AcHttpRequest{
                             formatter = new IAxisValueFormatter() {
                                 @Override
                                 public String getFormattedValue(float value, AxisBase axis) {
-                                    return xValues[(int) value];
+                                    int index = (int) value;
+                                    if(index==-1)
+                                        index=0;
+                                    else if(index==count_record)
+                                        index = index - 1;
+                                    return xValues[index];
                                 }
                             };
                         }

@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="27sp"
+        android:textSize="25sp"
         android:text="@string/clickImageToTest" />
    
         <ImageView
             android:id="@+id/image_test"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="270dp"
             android:contentDescription="@string/clickImageToTest" />
 
     <com.lqr.optionitemview.OptionItemView
@@ -33,10 +33,10 @@
         app:left_image_margin_right="@dimen/option_item_margin_right"
         app:left_src="@mipmap/bmi"
         app:left_text="BMI"
-        app:left_text_color="@color/black0"
+        app:left_text_color="@color/gray0"
         app:left_text_size="16sp"
         app:right_text_size="16sp"
-        app:right_text_color="@color/black0"
+        app:right_text_color="@color/gray0"
         app:right_text_margin_right="40dp"
         />
 
@@ -50,7 +50,7 @@
         app:left_image_margin_right="@dimen/option_item_margin_right"
         app:left_src="@mipmap/weight"
         app:left_text="对比上一次测试"
-        app:left_text_color="@color/black0"
+        app:left_text_color="@color/gray0"
         app:left_text_size="16sp"
         app:right_image_margin_right="40dp"
         app:right_src="@drawable/right_arrow"

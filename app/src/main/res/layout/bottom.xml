@@ -4,14 +4,14 @@
     android:layout_height="55dp"
     android:background="@color/gray4"
     android:orientation="horizontal" >
-    <LinearLayout 
+    <LinearLayout
         android:id="@+id/id_tab_test"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_weight="1">
-        <ImageButton 
+        <ImageButton
             android:id="@+id/id_tab_test_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,14 +26,36 @@
             android:text="测试"/>
     </LinearLayout>
 
-    <LinearLayout 
+    <LinearLayout
+        android:id="@+id/id_tab_data"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1">
+        <ImageButton
+            android:id="@+id/id_tab_data_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:src="@mipmap/data_normal"
+            android:background="#00000000"/>
+        <TextView
+            android:id="@+id/id_text_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray0"
+            android:text="@string/data"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/id_tab_discover"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_weight="1">
-        <ImageButton 
+        <ImageButton
             android:id="@+id/id_tab_discover_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

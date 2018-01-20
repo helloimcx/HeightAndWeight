@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <com.lqr.optionitemview.OptionItemView
+        android:id="@+id/data_weight"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        materialdesign:left_src="@mipmap/data_weight"
+        materialdesign:left_text="体重变化曲线"
+        materialdesign:left_text_color="@color/gray0"
+        materialdesign:left_text_size="14sp"
+        materialdesign:right_src="@drawable/right_arrow"
+        />
+
+    <View
+        style="@style/Line"
+        android:layout_marginLeft="@dimen/option_item_margin_left"
+        android:layout_marginRight="@dimen/option_item_margin_right"
+        android:layout_marginStart="@dimen/option_item_margin_left"
+        android:layout_marginEnd="@dimen/option_item_margin_right" />
+
+
+</com.zhy.autolayout.AutoLinearLayout>

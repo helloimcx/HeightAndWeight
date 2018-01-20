@@ -17,10 +17,10 @@
         app:left_image_margin_right="@dimen/option_item_margin_right"
         app:left_src="@mipmap/time"
         app:left_text="上次测试时间"
-        app:left_text_color="@color/black0"
-        app:left_text_size="16sp"
-        app:right_text_size="16sp"
-        app:right_text_color="@color/black0"
+        app:left_text_color="@color/gray0"
+        app:left_text_size="15sp"
+        app:right_text_size="15sp"
+        app:right_text_color="@color/gray0"
         app:right_text_margin_right="40dp"
         />
 
@@ -38,10 +38,10 @@
         app:left_image_margin_right="@dimen/option_item_margin_right"
         app:left_src="@mipmap/weight"
         app:left_text="体重对比"
-        app:left_text_color="@color/black0"
-        app:left_text_size="16sp"
-        app:right_text_size="16sp"
-        app:right_text_color="@color/black0"
+        app:left_text_color="@color/gray0"
+        app:left_text_size="15sp"
+        app:right_text_size="15sp"
+        app:right_text_color="@color/gray0"
         app:right_text_margin_right="40dp"
         />
 
@@ -49,7 +49,10 @@
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="5dp"
         />
 
 </com.zhy.autolayout.AutoLinearLayout>

@@ -32,16 +32,21 @@ import butterknife.ButterKnife;
 public class MainActivity extends FragmentActivity implements OnClickListener{
 	//底部的4个导航控件
 	private LinearLayout mTabTest;
+	@Bind(R.id.id_tab_data)
+	LinearLayout mTabData;
 	private LinearLayout mTabDiscover;
 	private LinearLayout mTabAccount;
 	//底部4个导航控件中的图片按钮
 	private ImageButton mImgTest;
+	@Bind(R.id.id_tab_data_img)
+	ImageButton mImgData;
 	private ImageButton mImgDiscover;
 	private ImageButton mImgAccount;
 	//初始化4个Fragment
 	private Fragment tab01;
 	private Fragment tab02;
 	private Fragment tab03;
+	private Fragment tabData;
 	public static Fragment tab_transfer;
 	public static OkHttpClient okHttpClient;
 	public static String sessionid;
@@ -51,6 +56,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	ImageView goback;
 	@Bind(R.id.id_text_test)
 	TextView test_tv;
+	@Bind(R.id.id_text_data)
+	TextView data_tv;
 	@Bind(R.id.id_text_discover)
 	TextView discover_tv;
 	@Bind(R.id.id_text_account)
@@ -71,6 +78,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
 	private void initEvents() {
 		mTabTest.setOnClickListener(this);
+		mTabData.setOnClickListener(this);
 		mTabDiscover.setOnClickListener(this);
 		mTabAccount.setOnClickListener(this);
 	}
@@ -95,6 +103,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		case R.id.id_tab_test://当点击测试按钮时，切换图片为亮色，切换fragment为微信聊天界面
 			setSelect(0);
 			break;
+			case R.id.id_tab_data:
+				setSelect(3);
+				break;
 		case R.id.id_tab_discover:
 			setSelect(1);
 			break;
@@ -146,6 +157,17 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			mImgAccount.setImageResource(R.drawable.account_pressed);
 			account_tv.setTextColor(getResources().getColor(R.color.blue));
 			break;
+			case 3:
+				if (tabData == null){
+					tabData = new FmData();
+					transaction.add(R.id.id_content,tabData);
+				}
+				else {
+					transaction.show(tabData);
+				}
+				mImgData.setImageResource(R.mipmap.data_pressed);
+				data_tv.setTextColor(getResources().getColor(R.color.blue));
+				break;
 		default:
 			break;
 		}
@@ -168,13 +190,18 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		if (tab_transfer != null) {
 			transaction.hide(tab_transfer);
 		}
+		if (tabData != null) {
+			transaction.hide(tabData);
+		}
 	}
 
 	private void resetImgAndText() {
 		mImgTest.setImageResource(R.drawable.test_normal);
+		mImgData.setImageResource(R.mipmap.data_normal);
 		mImgDiscover.setImageResource(R.drawable.discover_normal);
 		mImgAccount.setImageResource(R.drawable.account_normal);
 		test_tv.setTextColor(getResources().getColor(R.color.gray0));
+		data_tv.setTextColor(getResources().getColor(R.color.gray0));
 		discover_tv.setTextColor(getResources().getColor(R.color.gray0));
 		account_tv.setTextColor(getResources().getColor(R.color.gray0));
 	}

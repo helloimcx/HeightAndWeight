@@ -22,9 +22,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import com.example.HomeworkOne.Activity.RecordGraph;
 import com.google.gson.Gson;
-import com.lqr.optionitemview.OptionItemView;
 import com.wang.avi.AVLoadingIndicatorView;
 import MyInterface.InitView;
 import Utils.JsonRecordBean;

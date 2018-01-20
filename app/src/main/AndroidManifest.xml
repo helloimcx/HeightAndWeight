@@ -101,7 +101,7 @@
         </activity>
 
         <activity
-            android:name=".Activity.RecordGraph"
+            android:name=".AcWeightGraph"
             android:label="@string/app_name" >
         </activity>
 

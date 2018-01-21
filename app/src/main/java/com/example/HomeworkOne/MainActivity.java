@@ -1,6 +1,7 @@
 package com.example.HomeworkOne;
 
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -64,6 +65,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		initView();//初始化所有的view
 		initEvents();
 		setSelect(0);//默认显示测试界面

@@ -14,16 +14,18 @@
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="96px"
+            android:layout_height="56dp"
             android:background="@color/colorPrimary">
 
             <ImageView
                 android:id="@+id/ivToolbarNavigation"
-                android:layout_width="40px"
-                android:layout_height="40px"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20px"
-                android:src="@mipmap/ic_back"/>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_back"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/goback" />
 
             <View
                 android:id="@+id/vToolbarDivision"

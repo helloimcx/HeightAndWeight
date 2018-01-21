@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
     android {compileOptions.encoding = "GBK"}
 
     aaptOptions.cruncherEnabled = false
@@ -12,13 +12,24 @@ android {
     defaultConfig {
         applicationId "com.example.HomeworkOne"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         multiDexEnabled true
     }
 
     buildTypes {
+        debug {
+            //开启代码混淆
+            minifyEnabled false
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.debug
+        }
         release {
-            minifyEnabled true
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //开启代码混淆
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -29,23 +40,19 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-    compile 'com.squareup.okio:okio:1.7.0'
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    compile 'com.squareup.okio:okio:1.12.0'
     compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.4.0'
     compile files('libs/libammsdk.jar')
-    compile 'com.leon:lsettingviewlibrary:1.5.0'
     compile 'com.zhy:autolayout:1.4.5'
-    compile 'com.lqr.adapter:library:1.0.2'
-    compile 'com.lqr.recyclerview:library:1.0.2'
     compile 'com.lqr.imagepicker:library:1.0.0'
     compile 'com.lqr.ninegridimageview:library:1.0.0'
     compile 'com.lqr.optionitemview:library:1.0.7'
     compile 'com.lqr.emoji:library:1.0.2'
-    compile 'com.lqr.audio:library:1.0.0'
     compile 'com.lqr.imagepicker:library:1.0.0'
     compile 'com.lrq.menu:addpopmenu:1.0.5'
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.bm.photoview:library:1.4.1'
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
@@ -61,7 +68,6 @@ dependencies {
     compile 'com.github.GrenderG:Toasty:1.2.5'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 repositories {
     mavenCentral()

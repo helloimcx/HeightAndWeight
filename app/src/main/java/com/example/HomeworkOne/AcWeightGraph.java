@@ -1,6 +1,7 @@
 package com.example.HomeworkOne;
 
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -56,6 +57,7 @@ public class AcWeightGraph extends AcHttpRequest{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.ac_weight_graph);
         initView();
         initListener();

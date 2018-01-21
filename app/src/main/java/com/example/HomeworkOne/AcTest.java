@@ -3,6 +3,7 @@ package com.example.HomeworkOne;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -52,6 +53,7 @@ public class AcTest extends Activity implements InitView{
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.test_detail);
 		initView();
 		initListener();
@@ -89,36 +91,36 @@ public class AcTest extends Activity implements InitView{
 					// '1-5' for male , '6-10' for female
 					if (sex.equals("男")) {
 						if (BMI < 18.5) {
-							content = "太瘦了！赶紧吃起来!";
+							content = "太瘦了!";
 							photo = 1;
 						} else if (BMI <= 23.9) {
-							content = "你的身材太棒了！请继续保持！";
+							content = "你的身材太棒了!";
 							photo = 2;
 						} else if (BMI <= 27) {
-							content = "有点胖了！多多运动吧！";
+							content = "有点胖了!";
 							photo = 3;
 						} else if (BMI <= 32) {
-							content = "胖子！赶紧减肥吧！";
+							content = "赶紧减肥吧！";
 							photo = 4;
 						} else {
-							content = "终极胖子！能不能少吃点？";
+							content = "能不能少吃点？";
 							photo = 5;
 						}
 					} else {
 						if (BMI < 18.5) {
-							content = "太瘦了！赶紧吃起来!";
+							content = "太瘦了!";
 							photo = 6;
 						} else if (BMI <= 23.9) {
-							content = "你的身材太棒了！请继续保持！";
+							content = "你的身材太棒了!";
 							photo = 7;
 						} else if (BMI <= 27) {
-							content = "有点胖了！多多运动吧！";
+							content = "有点胖了！";
 							photo = 8;
 						} else if (BMI <= 32) {
-							content = "胖妞！赶紧减肥吧！";
+							content = "赶紧减肥吧！";
 							photo = 9;
 						} else {
-							content = "终极胖妞！能不能少吃点？";
+							content = "能不能少吃点？";
 							photo = 10;
 						}
 					}

@@ -159,11 +159,7 @@ public class AcCompareLast extends AcHttpRequest {
 
                             final String date = records.get(count_record - 2).get_record_time();
                             Double last_weight = records.get(count_record - 2).get_weight();
-                            double compare_temp = getWeight() - last_weight;
-                            DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                            decimalFormat.format(compare_temp);
-                            final double compare = compare_temp;
-
+                            final double compare = getWeight() - last_weight;
                             AcCompareLast.this.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -180,11 +176,18 @@ public class AcCompareLast extends AcHttpRequest {
 
                                     last_time.setRightText(date.substring(0, 10));
                                     if (compare < 0) {
-                                        compare_weight.setRightText("瘦了：" + (-compare)+"kg");
+                                        String str = -compare+"";
+                                        if (str.length()>=4)
+                                            str = str.substring(0,4);
+                                        compare_weight.setRightText("瘦了：" +str+"kg");
                                     } else if (compare == 0) {
                                         compare_weight.setRightText("无变化");
-                                    } else
-                                        compare_weight.setRightText("重了：" + compare+"kg");
+                                    } else{
+                                        String str = compare+"";
+                                        if (str.length()>=4)
+                                            str = str.substring(0,4);
+                                        compare_weight.setRightText("重了：" +str+"kg");
+                                    }
                                     avLoadingIndicatorView.setVisibility(View.GONE);
                                 }
                             });

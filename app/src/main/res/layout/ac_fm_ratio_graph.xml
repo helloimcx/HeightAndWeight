@@ -9,14 +9,14 @@
 
     <include layout="@layout/include_toolbar"/>
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/chart_weight"
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart_fm_ratio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="30dp"
-       />
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="40dp"
+        />
 
 </LinearLayout>

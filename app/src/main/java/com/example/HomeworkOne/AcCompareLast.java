@@ -14,6 +14,7 @@ import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -146,7 +147,7 @@ public class AcCompareLast extends AcHttpRequest {
                                 dataList.add(new Entry((float)i,(float)weight));
                                 xValues[i] = date;
                             }
-                            LineDataSet dataSet = new LineDataSet(dataList, "体重kg"); // add entries to dataset
+                            LineDataSet dataSet = new LineDataSet(dataList, "体重kg");
                             dataSet.setColor(getResources().getColor(R.color.blue));
                             dataSet.setValueTextColor(Color.BLACK);
                             lineData = new LineData(dataSet);
@@ -163,10 +164,14 @@ public class AcCompareLast extends AcHttpRequest {
                             AcCompareLast.this.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    Legend legend = lineChart.getLegend();
+                                    legend.setTextSize(14f);
+                                    legend.setTextColor(getResources().getColor(R.color.gray0));
                                     lineChart.setData(lineData);
                                     Description description = new Description();
                                     description.setText("体重随时间变化曲线");
                                     description.setTextSize(14);
+                                    description.setTextColor(getResources().getColor(R.color.gray0));
                                     lineChart.setDescription(description);
                                     lineChart.setMinimumWidth(50);
                                     lineChart.invalidate();

@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +20,7 @@ import MyInterface.InitView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TestFragment extends Fragment implements InitView{
+public class FmTest extends Fragment implements InitView{
 	private int photo;
 	private double weight;
 	private double bmi;
@@ -38,8 +38,7 @@ public class TestFragment extends Fragment implements InitView{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View v=inflater.inflate(R.layout.fm_test, container, false);
-		return v;
+		return inflater.inflate(R.layout.fm_test, container, false);
 	}
 
 	@Override

@@ -10,15 +10,18 @@ import android.widget.Toast;
 
 import com.example.HomeworkOne.BaseActivity.AcHttpRequest;
 import com.example.HomeworkOne.globalConfig.MyApplication;
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.google.gson.Gson;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -47,6 +50,9 @@ public class AcWeightGraph extends AcHttpRequest{
     LineChart lineChart;
     @Bind(R.id.ivToolbarNavigation)
     ImageView go_back;
+    @Bind(R.id.avi)
+    AVLoadingIndicatorView avLoadingIndicatorView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +66,7 @@ public class AcWeightGraph extends AcHttpRequest{
         super.initView();
         ButterKnife.bind(this);
         dataList = new ArrayList<>();
+        avLoadingIndicatorView.setVisibility(View.VISIBLE);
         SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
         int user_id = sharedPreferences.getInt("user_id", 0);
         MyApplication myApplication = (MyApplication) getApplication();
@@ -143,16 +150,21 @@ public class AcWeightGraph extends AcHttpRequest{
                     AcWeightGraph.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            Legend legend = lineChart.getLegend();
+                            legend.setTextSize(14f);
+                            legend.setTextColor(getResources().getColor(R.color.gray0));
                             lineChart.setData(lineData);
                             Description description = new Description();
                             description.setText("体重随时间变化曲线");
                             description.setTextSize(14);
+                            description.setTextColor(getResources().getColor(R.color.gray0));
                             lineChart.setDescription(description);
                             lineChart.setMinimumWidth(50);
                             lineChart.invalidate();
                             XAxis xAxis = lineChart.getXAxis();
                             xAxis.setGranularity(1f);
                             xAxis.setValueFormatter(formatter);
+                            avLoadingIndicatorView.setVisibility(View.GONE);
                         }
                     });
                 }
@@ -162,6 +174,7 @@ public class AcWeightGraph extends AcHttpRequest{
                         public void run() {
                             Toasty.warning(AcWeightGraph.this,"服务器出错！",
                                     Toast.LENGTH_SHORT).show();
+                            avLoadingIndicatorView.setVisibility(View.GONE);
                         }
                     });
                 }

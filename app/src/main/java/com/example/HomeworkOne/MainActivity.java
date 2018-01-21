@@ -1,15 +1,11 @@
 package com.example.HomeworkOne;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -127,7 +123,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		switch (i) {
 		case 0:
 			if (tab01 == null) {
-				tab01 = new TestFragment();
+				tab01 = new FmTest();
 				transaction.add(R.id.id_content, tab01);
 			}else {
 				transaction.show(tab01);

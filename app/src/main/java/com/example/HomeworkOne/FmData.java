@@ -23,6 +23,8 @@ import butterknife.ButterKnife;
 public class FmData extends Fragment implements InitView{
     @Bind(R.id.data_weight)
     OptionItemView data_weight;
+    @Bind(R.id.data_fm_ratio)
+    OptionItemView fm_ratio;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,6 +48,13 @@ public class FmData extends Fragment implements InitView{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), AcWeightGraph.class);
+                startActivity(intent);
+            }
+        });
+        fm_ratio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AcFMRatioGraph.class);
                 startActivity(intent);
             }
         });

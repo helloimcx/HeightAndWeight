@@ -202,55 +202,6 @@
     <!--地图-->
     <string name="fetching">获取中......</string>
 
-    <!--创建群-->
-    <string name="select_one_group">选择一个群</string>
-    <string name="create_group_success">创建群成功</string>
-    <string name="create_group_fail">创建群失败</string>
-    <string name="no_group_now">暂无群聊</string>
-
-    <!--群信息-->
-    <string name="group_name">群聊名称</string>
-    <string name="untitled">未命名</string>
-    <string name="group_qr_code">群二维码</string>
-    <string name="group_announcement">群公告</string>
-    <string name="message_free">消息免打扰</string>
-    <string name="my_nickname_in_this_group">我在本群的昵称</string>
-    <string name="show_group_member_name">显示群成员昵称</string>
-    <string name="clear_chat_log">清空聊天记录</string>
-    <string name="delete_and_exit">删除并退出</string>
-    <string name="dismiss_this_group">解散该群</string>
-    <string name="add_member_success">添加群成员成功</string>
-    <string name="add_member_fail">添加群成员失败</string>
-    <string name="del_member_success">删除群成员成功</string>
-    <string name="del_member_fail">删除群成员失败</string>
-    <string name="are_you_sure_to_clear_msg_record">确定删除群的聊天记录吗？</string>
-    <string name="clear">清空</string>
-    <string name="you_will_never_receive_any_msg_after_quit">删除并退出后，将不再接收此群聊信息</string>
-    <string name="are_you_sure_to_dismiss_this_group">你确定要解散该群吗?</string>
-    <string name="my_display_name_in_group">我在本群中的昵称</string>
-    <string name="set_your_display_name_in_group">设置你在群里的昵称，这个昵称只会在这个群内显示</string>
-    <string name="exit_group_fail">退出失败</string>
-
-    <!--设置-->
-    <string name="new_message_remind">新消息提醒</string>
-    <string name="do_not_disturb_mode">勿扰模式</string>
-    <string name="chat">聊天</string>
-    <string name="privacy">隐私</string>
-    <string name="currency">通用</string>
-    <string name="account_and_safe">账号与安全</string>
-    <string name="about">关于微信</string>
-    <string name="exit">退出</string>
-    <string name="exit_account">退出当前账号</string>
-    <string name="exit_app">关闭微信</string>
-
-    <!--关于-->
-    <string name="app_name_in_about">高仿微信 6.5.7 (融云版)</string>
-    <string name="function_introduction">功能介绍</string>
-    <string name="complaint">投诉</string>
-    <string name="check_update">检查更新</string>
-    <string name="terms_of_use_and_privacy_policy">使用条款和隐私政策</string>
-    <string name="CSDN_LQR_personal_development">CSDN_LQR个人开发</string>
-    <string name="fun_and_enjoy">兴趣使然</string>
     <string name="clickImageToTest">点击图片开始测试</string>
     <string name="email">邮箱</string>
     <string name="height">身高</string>
@@ -260,4 +211,5 @@
     <string name="test">测试</string>
     <string name="data">数据</string>
     <string name="goback">返回</string>
+    <string name="fabu">发布</string>
 </resources>

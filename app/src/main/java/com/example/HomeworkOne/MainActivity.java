@@ -14,10 +14,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.tapadoo.alerter.Alerter;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import es.dmoral.toasty.Toasty;
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.HttpUrl;
@@ -92,26 +99,35 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mImgAccount = (ImageButton)findViewById(R.id.id_tab_account_img);
 
 		instance = this;
+
+		if (isLate()){
+			Alerter.create(this)
+					.setTitle("注意休息")
+					.setText("夜已深，请注意休息...")
+					.setBackgroundColorRes(R.color.Color_DarkBlue)
+					.setIcon(R.mipmap.sleep)
+					.show();
+		}
 	}
 
 	@Override
 	public void onClick(View v) {
 		resetImgAndText();
 		switch (v.getId()) {
-		case R.id.id_tab_test://当点击测试按钮时，切换图片为亮色，切换fragment为微信聊天界面
-			setSelect(0);
-			break;
+			case R.id.id_tab_test://当点击测试按钮时，切换图片为亮色，切换fragment为微信聊天界面
+				setSelect(0);
+				break;
 			case R.id.id_tab_data:
 				setSelect(3);
 				break;
-		case R.id.id_tab_discover:
-			setSelect(1);
-			break;
-		case R.id.id_tab_account:
-			setSelect(2);
-			break;
-		default:
-			break;
+			case R.id.id_tab_discover:
+				setSelect(1);
+				break;
+			case R.id.id_tab_account:
+				setSelect(2);
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -123,38 +139,38 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		FragmentTransaction transaction = fm.beginTransaction();//创建一个事务
 		hideFragment(transaction);//我们先把所有的Fragment隐藏了，然后下面再开始处理具体要显示的Fragment
 		switch (i) {
-		case 0:
-			if (tab01 == null) {
-				tab01 = new FmTest();
-				transaction.add(R.id.id_content, tab01);
-			}else {
-				transaction.show(tab01);
-			}
-			mImgTest.setImageResource(R.drawable.test_pressed);
-			test_tv.setTextColor(getResources().getColor(R.color.blue));
-			break;
-		case 1:
-			if(tab02 == null){
-				tab02 = new DiscoverFragment();
-				transaction.add(R.id.id_content,tab02);
-			}
-			else {
-				transaction.show(tab02);
-			}
-			mImgDiscover.setImageResource(R.drawable.discover_pressed);
-			discover_tv.setTextColor(getResources().getColor(R.color.blue));
-			break;
-		case 2:
-			if (tab03 == null){
-				tab03 = new AccountFragment();
-				transaction.add(R.id.id_content,tab03);
-			}
-			else {
-				transaction.show(tab03);
-			}
-			mImgAccount.setImageResource(R.drawable.account_pressed);
-			account_tv.setTextColor(getResources().getColor(R.color.blue));
-			break;
+			case 0:
+				if (tab01 == null) {
+					tab01 = new FmTest();
+					transaction.add(R.id.id_content, tab01);
+				}else {
+					transaction.show(tab01);
+				}
+				mImgTest.setImageResource(R.drawable.test_pressed);
+				test_tv.setTextColor(getResources().getColor(R.color.blue));
+				break;
+			case 1:
+				if(tab02 == null){
+					tab02 = new DiscoverFragment();
+					transaction.add(R.id.id_content,tab02);
+				}
+				else {
+					transaction.show(tab02);
+				}
+				mImgDiscover.setImageResource(R.drawable.discover_pressed);
+				discover_tv.setTextColor(getResources().getColor(R.color.blue));
+				break;
+			case 2:
+				if (tab03 == null){
+					tab03 = new AccountFragment();
+					transaction.add(R.id.id_content,tab03);
+				}
+				else {
+					transaction.show(tab03);
+				}
+				mImgAccount.setImageResource(R.drawable.account_pressed);
+				account_tv.setTextColor(getResources().getColor(R.color.blue));
+				break;
 			case 3:
 				if (tabData == null){
 					tabData = new FmData();
@@ -166,8 +182,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 				mImgData.setImageResource(R.mipmap.data_pressed);
 				data_tv.setTextColor(getResources().getColor(R.color.blue));
 				break;
-		default:
-			break;
+			default:
+				break;
 		}
 		transaction.commit();
 	}
@@ -204,23 +220,29 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		account_tv.setTextColor(getResources().getColor(R.color.gray0));
 	}
 
+	void  createHttpClient() {
+		okHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJar() {
+			private final HashMap<String, List<Cookie>> cookieStore = new HashMap<String, List<Cookie>>();
+			@Override
+			public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
+				cookieStore.put(url.host(), cookies);
+			}
 
+			@Override
+			public List<Cookie> loadForRequest(HttpUrl url) {
+				List<Cookie> cookies = cookieStore.get(url.host());
+				return cookies != null ? cookies : new ArrayList<Cookie>();
+			}
+		}).connectTimeout(5, TimeUnit.SECONDS)
+				.readTimeout(10, TimeUnit.SECONDS)
+				.build();
+	}
 
-		 void  createHttpClient() {
-			okHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJar() {
-				private final HashMap<String, List<Cookie>> cookieStore = new HashMap<String, List<Cookie>>();
-				@Override
-				public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
-					cookieStore.put(url.host(), cookies);
-				}
-
-				@Override
-				public List<Cookie> loadForRequest(HttpUrl url) {
-					List<Cookie> cookies = cookieStore.get(url.host());
-					return cookies != null ? cookies : new ArrayList<Cookie>();
-				}
-			}).connectTimeout(5, TimeUnit.SECONDS)
-					.readTimeout(10, TimeUnit.SECONDS)
-					.build();
-		}
+	boolean isLate(){
+		long time = System.currentTimeMillis();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTimeInMillis(time);
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		return hour >= 0 && hour <= 5 || hour >= 23;
+	}
 }

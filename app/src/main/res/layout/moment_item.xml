@@ -28,9 +28,8 @@
             android:id="@+id/moment_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:singleLine="true"
-            android:text="Usrname"
+            android:text="Username"
             android:textColor="@color/blue0"
             android:textSize="15sp"/>
     </com.zhy.autolayout.AutoLinearLayout>
@@ -52,8 +51,8 @@
         <ImageView
             android:id="@+id/moment_image"
             android:layout_marginTop="5dp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             />
 
     </com.zhy.autolayout.AutoLinearLayout>

@@ -56,13 +56,14 @@ import butterknife.ButterKnife;
 import static android.content.Context.MODE_PRIVATE;
 
 /**
- * Created by mac on 2017/11/18.
+ * Author: kafca
+ * Date: 2017/11/18
+ * Description: Discover Fragment
  */
 
 public class DiscoverFragment extends Fragment implements InitView {
     private List<Map<String, Object>> dataList;
     private int count_moment;
-    private MyBroadCastReceiver myBroadCastReceiver;
 
     //请求的数据所在的页数
     private int request_page = 1;
@@ -77,8 +78,6 @@ public class DiscoverFragment extends Fragment implements InitView {
     public static final int REQUEST_IMAGE_PICKER = 1001;
     public static final int REQUEST_DISCOVERY_PUBLIC = 1002;
     private ImagePicker imagePicker;
-    @Bind(R.id.moments_header)
-    ImageView moment_header;
     @Bind(R.id.moments_list)
     ListView listView;
     @Bind(R.id.refreshLayout)
@@ -88,8 +87,7 @@ public class DiscoverFragment extends Fragment implements InitView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_dicover, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_dicover, container, false);
     }
 
     @Override
@@ -102,12 +100,6 @@ public class DiscoverFragment extends Fragment implements InitView {
     @Override
     public void initView() {
         dataList = new ArrayList<Map<String, Object>>();
-
-        //显示用户头像
-        SharedPreferences share = getActivity().getSharedPreferences("Session", MODE_PRIVATE);
-        String user_header_str = share.getString("header","null");
-        Uri header_uri = Uri.parse(user_header_str);
-        Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(moment_header);
 
         //获取moment数据
         getData(1);
@@ -145,14 +137,11 @@ public class DiscoverFragment extends Fragment implements InitView {
 
         LayoutInflater factory = LayoutInflater.from(getActivity());
         menu = factory.inflate(R.layout.popup_moment, null);
-        camera = (ImageButton) getActivity().findViewById(R.id.moment_camera);
+        camera = getActivity().findViewById(R.id.moment_camera);
         camera.setVisibility(View.VISIBLE);
-        item_camera = (OptionItemView) menu.findViewById(R.id.moment_public);
-        item_cancel = (OptionItemView) menu.findViewById(R.id.moment_cancel);
+        item_camera = menu.findViewById(R.id.moment_public);
+        item_cancel = menu.findViewById(R.id.moment_cancel);
         initImagePicker();
-
-        //注册BroadcastReceiver
-        registerBroadcastReceiver();
     }
 
     @Override
@@ -359,30 +348,5 @@ public class DiscoverFragment extends Fragment implements InitView {
                 //刷新moment列表
                 refreshLayout.startRefresh();
         }
-    }
-
-    //BroadcastReceiver
-    class MyBroadCastReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String header_url = intent.getStringExtra("header_url");
-            Uri header_uri = Uri.parse(header_url);
-            Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(moment_header);
-        }
-    }
-
-    private void registerBroadcastReceiver(){
-        myBroadCastReceiver = new MyBroadCastReceiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(UserHeader.BROADCAST_ACTION);
-        getActivity().registerReceiver(myBroadCastReceiver, intentFilter);
-    }
-
-    //重写onDestory（）撤销BroadcastReceiver的注册
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        getActivity().unregisterReceiver(myBroadCastReceiver);
     }
 }

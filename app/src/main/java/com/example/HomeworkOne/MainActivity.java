@@ -14,7 +14,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.tapadoo.alerter.Alerter;
 
@@ -24,7 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import es.dmoral.toasty.Toasty;
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.HttpUrl;
@@ -151,7 +149,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 				break;
 			case 1:
 				if(tab02 == null){
-					tab02 = new DiscoverFragment();
+					tab02 = new FmDiscover();
 					transaction.add(R.id.id_content,tab02);
 				}
 				else {

@@ -67,6 +67,7 @@ dependencies {
     compile 'com.tapadoo.android:alerter:2.0.1'
     compile 'com.github.GrenderG:Toasty:1.2.5'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {

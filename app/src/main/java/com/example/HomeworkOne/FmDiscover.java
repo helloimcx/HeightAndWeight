@@ -1,10 +1,7 @@
 package com.example.HomeworkOne;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +12,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -53,15 +51,13 @@ import okhttp3.Response;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static android.content.Context.MODE_PRIVATE;
-
 /**
  * Author: kafca
  * Date: 2017/11/18
  * Description: Discover Fragment
  */
 
-public class DiscoverFragment extends Fragment implements InitView {
+public class FmDiscover extends Fragment implements InitView {
     private List<Map<String, Object>> dataList;
     private int count_moment;
 
@@ -247,20 +243,21 @@ public class DiscoverFragment extends Fragment implements InitView {
                                     try {
                                         header_url = stringObjectMap.get("header").toString();
                                     }catch (Exception e){
-                                        //若用户没有设置头像，头像url置为"null"
-                                        header_url = "null";
+                                        //若用户没有设置头像，头像url置为default header
+                                        header_url = "https://ws1.sinaimg.cn/large/006bShEGly1forsphz7zaj3069069wea.jpg";
                                     }
                                     String name = stringObjectMap.get("name").toString();
                                     String content = stringObjectMap.get("content").toString();
                                     String image_url = stringObjectMap.get("url").toString();
                                     ImageView header = viewHolder.getView(R.id.moment_header);
                                     Uri header_uri = Uri.parse(header_url);
-                                    Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(header);
+                                    Picasso.with(getActivity()).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(header);
                                     viewHolder.setText(R.id.moment_name,name);
                                     viewHolder.setText(R.id.moment_content,content);
                                     ImageView image = viewHolder.getView(R.id.moment_image);
                                     Uri image_uri = Uri.parse(image_url);
-                                    Picasso.with(getActivity()).load(image_uri).fit().centerCrop().into(image);
+                                    Picasso.with(getActivity()).load(image_uri).placeholder(R.mipmap.default_moment)
+                                            .fit().centerCrop().into(image);
                                 }
                             };
                             listView.setAdapter(commonAdapter);
@@ -313,6 +310,9 @@ public class DiscoverFragment extends Fragment implements InitView {
     }
 
     private void initImagePicker(){
+        WindowManager wm = getActivity().getWindowManager();
+        int width = wm.getDefaultDisplay().getWidth();
+        int height = wm.getDefaultDisplay().getHeight();
         imagePicker = ImagePicker.getInstance();
         imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
         imagePicker.setMultiMode(false);
@@ -321,10 +321,10 @@ public class DiscoverFragment extends Fragment implements InitView {
         imagePicker.setSaveRectangle(true); //是否按矩形区域保存
         imagePicker.setSelectLimit(1);    //选中数量限制
         imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
-        imagePicker.setFocusWidth(600);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setFocusHeight(600);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setOutPutX(1000);//保存文件的宽度。单位像素
-        imagePicker.setOutPutY(1000);//保存文件的高度。单位像素
+        imagePicker.setFocusWidth(width);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusHeight(height);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setOutPutX(width);//保存文件的宽度。单位像素
+        imagePicker.setOutPutY(height);//保存文件的高度。单位像素
     }
 
     @Override

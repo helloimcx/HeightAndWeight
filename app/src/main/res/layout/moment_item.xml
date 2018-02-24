@@ -16,29 +16,44 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-        <ImageView
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/moment_header"
-            android:layout_width="80px"
-            android:layout_height="80px"
-            android:layout_marginLeft="30px"
-            android:layout_marginRight="@dimen/option_item_margin_right"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/header"/>
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:civ_border_width="2dp"
+            android:src="@mipmap/header"
+            app:civ_border_color="#FFFFFF"/>
+        <View
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
         <TextView
             android:id="@+id/moment_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:singleLine="true"
             android:text="Username"
             android:textColor="@color/blue0"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
     </com.zhy.autolayout.AutoLinearLayout>
+
+    <ImageView
+        android:id="@+id/moment_image"
+        android:layout_marginTop="5dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        />
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="150px"
+        android:layout_marginLeft="45dp"
         android:layout_marginRight="@dimen/option_item_margin_right"
         >
         <TextView
@@ -48,12 +63,6 @@
             android:layout_marginTop="5dp"
             android:text="这是我的第一次分享..."
             android:textSize="15sp"/>
-        <ImageView
-            android:id="@+id/moment_image"
-            android:layout_marginTop="5dp"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            />
 
     </com.zhy.autolayout.AutoLinearLayout>
 

@@ -133,7 +133,7 @@ public class AccountFragment extends Fragment implements InitView{
 			@Override
 			public void onClick(View view) {
 				new FinestWebView.Builder(getActivity())
-						.show("http://kafca.legendh5.com/h5/test_help.html");
+						.show("http://kafca.legendh5.com/h5/_help.html");
 			}
 		});
 		myWeb.setOnClickListener(new View.OnClickListener() {

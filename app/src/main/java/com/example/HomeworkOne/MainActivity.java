@@ -149,7 +149,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 				break;
 			case 1:
 				if(tab02 == null){
-					tab02 = new FmDiscover();
+					tab02 = new FmDiscoverNav();
 					transaction.add(R.id.id_content,tab02);
 				}
 				else {

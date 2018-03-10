@@ -95,7 +95,7 @@ public class FmDiscover extends Fragment implements InitView {
 
     @Override
     public void initView() {
-        dataList = new ArrayList<Map<String, Object>>();
+        dataList = new ArrayList<>();
 
         //获取moment数据
         getData(1);

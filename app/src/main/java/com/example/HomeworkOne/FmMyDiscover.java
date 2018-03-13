@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.google.gson.Gson;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
@@ -26,16 +27,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.example.HomeworkOne.globalConfig.MyApplication;
 import MyInterface.InitView;
 import Utils.JsonMomentBean;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Author: kafca
@@ -43,7 +43,7 @@ import butterknife.ButterKnife;
  * Description: Discover Fragment
  */
 
-public class FmDiscover extends Fragment implements InitView {
+public class FmMyDiscover extends Fragment implements InitView {
     private List<Map<String, Object>> dataList;
     private int count_moment;
 
@@ -120,7 +120,7 @@ public class FmDiscover extends Fragment implements InitView {
         MyApplication myApplication = (MyApplication) getActivity().getApplication();
         String host = myApplication.getHost();
         boolean all = new Bundler().get().getBoolean("all");
-        String url = url = host+"/moment/?page="+page;
+        String url = url = host+"/moment/me/?page="+page;
         final Request request = new Request.Builder().url(url)
                 .addHeader("cookie", MainActivity.sessionid)
                 .build();

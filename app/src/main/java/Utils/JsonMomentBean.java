@@ -18,7 +18,7 @@ import java.util.ArrayList;
  "moment_content": "这是我的第一次分享...",
  "moment_url": "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1511009236&di=e549945bbb23ca682722e4fdd5eb42a6&src=http://www.pp3.cn/uploads/201606/20160617016.jpg",
  "moment_time": "2017-11-18T20:50:38.860179",
- "moment_upvote_count": 0,
+ "is_public": 1,
  "account_name": "卡夫卡",
  "account_header": "http://ht-data.oss-cn-shenzhen.aliyuncs.com/31161dc322651e330802cbd401104507.jpg"
  }
@@ -34,7 +34,7 @@ public class JsonMomentBean {
         public String moment_content;
         public String moment_url;
         public String moment_time;
-        public int moment_upvote_count;
+        public boolean is_public;
         public String account_name;
         public String account_header;
 
@@ -53,9 +53,7 @@ public class JsonMomentBean {
         public String getMoment_time(){
             return moment_time;
         }
-        public int getMoment_upvote_count(){
-            return moment_upvote_count;
-        }
+        public boolean getMomentIsPublic() {return is_public;}
         public String getAccount_name(){
             return account_name;
         }

@@ -90,7 +90,7 @@ public class AccountFragment extends Fragment implements InitView{
 		String email_str = sharedPreferences.getString("email","null");
 		String header_str = sharedPreferences.getString("header","null");
 		Uri header_uri = Uri.parse(header_str);
-		Picasso.with(getActivity()).load(header_uri).fit().centerCrop().into(header);
+		Picasso.with(getActivity()).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(header);
 		name.setText(name_str);
 		email.setText(email_str);
 

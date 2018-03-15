@@ -71,7 +71,7 @@ public class UserInfo extends Activity {
         email.setRightText(email_str);
         nickName.setRightText(nickname_str);
         gender.setRightText(gender_str);
-        Picasso.with(UserInfo.this).load(header_uri).fit().centerCrop().into(user_header);
+        Picasso.with(UserInfo.this).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(user_header);
 
         //×¢²áBroadcastReceiver
         registerBroadcastReceiver();

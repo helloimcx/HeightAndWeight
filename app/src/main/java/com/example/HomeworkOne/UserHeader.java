@@ -40,6 +40,7 @@ import butterknife.ButterKnife;
 import java.io.IOException;
 import java.util.ArrayList;
 import Utils.PicassoImageLoader;
+import Utils.TimeUtils;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -171,7 +172,7 @@ public class UserHeader extends Activity implements InitView{
                         if (images != null && images.size() > 0) {
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
                             //name the header
-                            String objectKey = "header"+email+".png";
+                            String objectKey = "header"+email+ TimeUtils.getCurrentTime() +".png";
                             putToOss(objectKey,imageItem.path);
                             header_url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
                                     +objectKey;

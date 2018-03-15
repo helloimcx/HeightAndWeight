@@ -20,6 +20,8 @@ import com.alibaba.sdk.android.oss.ServiceException;
 import com.alibaba.sdk.android.oss.common.auth.OSSCustomSignerCredentialProvider;
 import com.alibaba.sdk.android.oss.model.PutObjectRequest;
 import com.alibaba.sdk.android.oss.model.PutObjectResult;
+import com.example.HomeworkOne.globalConfig.MyApplication;
+import com.gc.materialdesign.views.CheckBox;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -61,6 +63,8 @@ public class DiscoveryPublic extends Activity implements InitView{
     ImageView image;
     @Bind(R.id.moment_content)
     EditText moment_content;
+    @Bind(R.id.checkBox)
+    CheckBox checkBox;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -107,20 +111,25 @@ public class DiscoveryPublic extends Activity implements InitView{
                 String objectKey = "moment"+email+TimeUtils.getCurrentTime()+".png";
                 putToOss(objectKey, image_path);
                 String content = moment_content.getText().toString();
+                boolean is_public = checkBox.isCheck();
                 String url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"+objectKey;
 
                 //∑¢≤º∑÷œÌ
                 OkHttpClient okHttpClient = new OkHttpClient();
                 JSONObject param = new JSONObject();
                 try {
-                    param.put("moment_content", content);
+                    if(!content.trim().isEmpty()){
+                        param.put("moment_content", content);
+                    }
                     param.put("moment_url", url);
+                    param.put("is_public", is_public);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 RequestBody requestBody = RequestBody.create(JSON, param.toString());
+                MyApplication myApplication = (MyApplication) getApplication();
                 Request request = new Request.Builder()
-                        .url("http://120.78.67.135:8000/moment/")
+                        .url(myApplication.getHost()+"/moment/")
                         .addHeader("cookie", MainActivity.sessionid)
                         .post(requestBody)
                         .build();
@@ -158,7 +167,8 @@ public class DiscoveryPublic extends Activity implements InitView{
                 //return "OSS " + AccessKeyId + ":" + base64(hmac-sha1(AccessKeySecret, content));
                 SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
                 String sessionid = sharedPreferences.getString("sessionid","null");
-                String url = "http://120.78.67.135:8000/oss/android_signature/";
+                MyApplication myApplication = (MyApplication) getApplication();
+                String url = myApplication.getHost()+"/oss/android_signature/";
                 OkHttpClient okHttpClient = new OkHttpClient();
                 try {
                     JSONObject param = new JSONObject();

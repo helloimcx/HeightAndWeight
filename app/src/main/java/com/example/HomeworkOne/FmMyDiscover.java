@@ -1,25 +1,24 @@
 package com.example.HomeworkOne;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.google.gson.Gson;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.ogaclejapan.smarttablayout.utils.v4.Bundler;
+import com.like.LikeButton;
 import com.squareup.picasso.Picasso;
-import com.zhy.adapter.abslistview.CommonAdapter;
-import com.zhy.adapter.abslistview.ViewHolder;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,15 +26,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
+import com.zhy.adapter.recyclerview.CommonAdapter;
+import com.zhy.adapter.recyclerview.base.ViewHolder;
+
 import MyInterface.InitView;
+import Utils.JsonLikeBean;
 import Utils.JsonMomentBean;
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Author: kafca
@@ -53,10 +58,9 @@ public class FmMyDiscover extends Fragment implements InitView {
     private ArrayList<JsonMomentBean.MomentBean> results;
     private CommonAdapter<Map<String, Object>> commonAdapter;
     @Bind(R.id.moments_list)
-    ListView listView;
+    RecyclerView recyclerView;
     @Bind(R.id.refreshLayout)
     TwinklingRefreshLayout refreshLayout;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,7 +81,10 @@ public class FmMyDiscover extends Fragment implements InitView {
 
         //获取moment数据
         getData(1);
+    }
 
+    @Override
+    public void initListener() {
         refreshLayout.setOnRefreshListener(new RefreshListenerAdapter(){
             //下拉刷新
             @Override
@@ -110,16 +117,10 @@ public class FmMyDiscover extends Fragment implements InitView {
         });
     }
 
-    @Override
-    public void initListener() {
-
-    }
-
     private void getData(final int page) {
-        OkHttpClient okHttpClient = MainActivity.okHttpClient;
+        final OkHttpClient okHttpClient = MainActivity.okHttpClient;
         MyApplication myApplication = (MyApplication) getActivity().getApplication();
-        String host = myApplication.getHost();
-        boolean all = new Bundler().get().getBoolean("all");
+        final String host = myApplication.getHost();
         String url = url = host+"/moment/me/?page="+page;
         final Request request = new Request.Builder().url(url)
                 .addHeader("cookie", MainActivity.sessionid)
@@ -138,8 +139,8 @@ public class FmMyDiscover extends Fragment implements InitView {
             }
 
             @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-                Gson gson = new Gson();
+            public void onResponse(final Call call, final Response response) throws IOException {
+                final Gson gson = new Gson();
                 try {
                     int response_code = response.code();
                     //若下一页数据为空，回到当前页
@@ -167,19 +168,26 @@ public class FmMyDiscover extends Fragment implements InitView {
                     }
 
                     for (int i = 0; i <= count-1; i++) {
+                        int moment_id = results.get(i).getMoment_id();
                         String header = results.get(i).getAccount_header();
                         String name = results.get(i).getAccount_name();
                         String content = results.get(i).getMoment_content();
                         String url = results.get(i).getMoment_url();
                         boolean is_public = results.get(i).getMomentIsPublic();
-                        if(is_public){
-                            Map<String, Object> map = new HashMap<>();
-                            map.put("header", header);
-                            map.put("name", name);
-                            map.put("content", content);
-                            map.put("url", url);
-                            dataList.add(map);
-                        }
+                        boolean has_liked = results.get(i).get_has_liked();
+                        int likes_count = results.get(i).getLikes_count();
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(moment_id+"", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("has_liked", has_liked);
+                        editor.putInt("likes_count", likes_count);
+                        editor.apply();
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("moment_id", moment_id);
+                        map.put("header", header);
+                        map.put("name", name);
+                        map.put("content", content);
+                        map.put("url", url);
+                        dataList.add(map);
                     }
                 }
 
@@ -193,7 +201,7 @@ public class FmMyDiscover extends Fragment implements InitView {
                                     dataList
                             ) {
                                 @Override
-                                protected void convert(ViewHolder viewHolder, Map<String, Object> stringObjectMap, int i) {
+                                protected void convert(final ViewHolder viewHolder, Map<String, Object> stringObjectMap, int i) {
                                     String header_url = "";
                                     try {
                                         header_url = stringObjectMap.get("header").toString();
@@ -201,8 +209,13 @@ public class FmMyDiscover extends Fragment implements InitView {
                                         //若用户没有设置头像，头像url置为default header
                                         header_url = "https://ws1.sinaimg.cn/large/006bShEGly1forsphz7zaj3069069wea.jpg";
                                     }
-                                    String name = stringObjectMap.get("name").toString();
-                                    String content = stringObjectMap.get("content").toString();
+                                    final String name = stringObjectMap.get("name").toString();
+                                    String content;
+                                    try{
+                                        content = stringObjectMap.get("content").toString();
+                                    }catch (Exception e){
+                                        content = "";
+                                    }
                                     String image_url = stringObjectMap.get("url").toString();
                                     ImageView header = viewHolder.getView(R.id.moment_header);
                                     Uri header_uri = Uri.parse(header_url);
@@ -213,9 +226,69 @@ public class FmMyDiscover extends Fragment implements InitView {
                                     Uri image_uri = Uri.parse(image_url);
                                     Picasso.with(getActivity()).load(image_uri).placeholder(R.mipmap.default_moment)
                                             .fit().centerCrop().into(image);
+
+                                    final int moment_id = (int) stringObjectMap.get("moment_id");
+                                    final LikeButton likeButton = viewHolder.getView(R.id.star_button);
+                                    final SharedPreferences sharedPreferences = getActivity().getSharedPreferences(moment_id+"",Context.MODE_PRIVATE);
+                                    final boolean has_liked = sharedPreferences.getBoolean("has_liked", false);
+                                    int likes_count = sharedPreferences.getInt("likes_count", 0);
+                                    if(has_liked)
+                                        likeButton.setLiked(true);
+                                    else
+                                        likeButton.setLiked(false);
+                                    viewHolder.setText(R.id.likes_count, likes_count+"");
+
+                                    // 点赞和取消点赞
+                                    likeButton.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            final Request request_like = new Request.Builder()
+                                                    .url(host+"/moment/like/"+moment_id+"/")
+                                                    .addHeader("cookie", MainActivity.sessionid)
+                                                    .build();
+                                            Call call_like = okHttpClient.newCall(request_like);
+                                            call_like.enqueue(new Callback() {
+                                                @Override
+                                                public void onFailure(Call call, IOException e) {
+                                                    getActivity().runOnUiThread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            Toasty.warning(getActivity(),"网络异常").show();
+                                                        }
+                                                    });
+                                                }
+
+                                                @Override
+                                                public void onResponse(Call call, final Response response) throws IOException {
+                                                    if (response.code()!=200 && response.code()!=202)
+                                                        return;
+                                                    JsonLikeBean jsonLikeBean = gson.fromJson(response.body().string(), JsonLikeBean.class);
+                                                    final int likes_count = jsonLikeBean.getCount();
+                                                    getActivity().runOnUiThread(new Runnable() {
+                                                        @Override
+                                                        public void run() {
+                                                            viewHolder.setText(R.id.likes_count, likes_count+"");
+                                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                            if(response.code()==200){
+                                                                likeButton.setLiked(true);
+                                                                editor.putBoolean("has_liked", true);
+                                                            }
+                                                            else{
+                                                                likeButton.setLiked(false);
+                                                                editor.putBoolean("has_liked", false);
+                                                            }
+                                                            editor.putInt("likes_count", likes_count);
+                                                            editor.apply();
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                        }
+                                    });
                                 }
                             };
-                            listView.setAdapter(commonAdapter);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                            recyclerView.setAdapter(commonAdapter);
                         }
                     });
                 }

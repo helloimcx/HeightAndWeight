@@ -29,14 +29,16 @@ import java.util.ArrayList;
 public class JsonMomentBean {
 
     public static class MomentBean{
-        public int moment_id;
-        public int account_id;
-        public String moment_content;
-        public String moment_url;
-        public String moment_time;
-        public boolean is_public;
-        public String account_name;
-        public String account_header;
+        private int moment_id;
+        private int account_id;
+        private String moment_content;
+        private String moment_url;
+        private String moment_time;
+        private boolean is_public;
+        private String account_name;
+        private String account_header;
+        private boolean has_liked;
+        private int likes_count;
 
         public int getMoment_id(){
             return moment_id;
@@ -60,12 +62,16 @@ public class JsonMomentBean {
         public String getAccount_header(){
             return account_header;
         }
+        public boolean get_has_liked() {return has_liked;}
+        public int getLikes_count() {
+            return likes_count;
+        }
     }
 
-    public int count;
-    public String next;
-    public String previous;
-    public ArrayList<MomentBean> results;
+    private int count;
+    private String next;
+    private String previous;
+    private ArrayList<MomentBean> results;
 
     public int getCount(){
         return count;

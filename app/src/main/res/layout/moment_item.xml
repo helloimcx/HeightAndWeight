@@ -27,7 +27,7 @@
             android:src="@mipmap/header"
             app:civ_border_color="#FFFFFF"/>
         <View
-            android:layout_width="30dp"
+            android:layout_width="20dp"
             android:layout_height="30dp"/>
         <TextView
             android:id="@+id/moment_name"
@@ -43,25 +43,51 @@
     <ImageView
         android:id="@+id/moment_image"
         android:layout_marginTop="5dp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="215dp"
+        android:layout_height="260dp"
         android:layout_gravity="center"
         />
+
+    <TextView
+        android:id="@+id/moment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp"
+        android:text="这是我的第一次分享..."
+        android:textSize="15sp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="40dp" />
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/moment_bottom"
+        android:orientation="horizontal"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="@dimen/option_item_margin_right"
         >
+
+        <com.like.LikeButton
+            app:icon_type="heart"
+            app:icon_size="25dp"
+            android:id="@+id/star_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp">
+        </View>
+
         <TextView
-            android:id="@+id/moment_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="这是我的第一次分享..."
-            android:textSize="15sp"/>
+            android:id="@+id/likes_count"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
 
     </com.zhy.autolayout.AutoLinearLayout>
 

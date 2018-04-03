@@ -23,6 +23,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.google.gson.Gson;
 import com.wang.avi.AVLoadingIndicatorView;
 import MyInterface.InitView;
@@ -44,9 +45,9 @@ public class RecordActivity extends Activity implements InitView {
 
 	private SimpleAdapter simpleAdapter;
 	private List<Map<String, Object>> dataList;
-	private int user_id;
 	private int count_record;
 	private int result_label;
+	private String host;
 	private ArrayList<JsonRecordBean.RecordBean> records;
 
 	@Override
@@ -61,9 +62,9 @@ public class RecordActivity extends Activity implements InitView {
 	private void getData() {
 		SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
 		String session_id = share.getString("sessionid", "null");
-		user_id = share.getInt("user_id", 0);
+		int user_id = share.getInt("user_id", 0);
 		OkHttpClient okHttpClient = new OkHttpClient();
-		Request request = new Request.Builder().url("http://120.78.67.135:8000/android_health_test/record/user/"
+		Request request = new Request.Builder().url(host+"/android_health_test/record/user/"
 				+ user_id + "/")
 				.addHeader("cookie", session_id)
 				.build();
@@ -111,7 +112,7 @@ public class RecordActivity extends Activity implements InitView {
 							result_label = R.mipmap.thin_label;
 						} else if (BMI <= 23.9) {
 							result = "Õý³£";
-							result_label = R.mipmap.health_label;
+							result_label = R.mipmap.fitness;
 						} else if (BMI <= 27) {
 							result = "Î¢ÅÖ";
 							result_label = R.mipmap.fat_label;
@@ -127,7 +128,8 @@ public class RecordActivity extends Activity implements InitView {
 						map.put("height", height * 100);
 						map.put("weight", weight);
 						map.put("BMI", BMI);
-						map.put("date", records.get(i).get_record_time());
+						map.put("date", records.get(i).get_record_time().substring(0,9)+ ' '+
+								records.get(i).get_record_time().substring(11,18));
 						map.put("result", result);
 						map.put("result_label",result_label);
 						dataList.add(map);
@@ -152,7 +154,9 @@ public class RecordActivity extends Activity implements InitView {
 	public void initView() {
 		ButterKnife.bind(this);
 		avLoadingIndicatorView.setVisibility(View.VISIBLE);
-		dataList = new ArrayList<Map<String, Object>>();
+		dataList = new ArrayList<>();
+		MyApplication myApplication = (MyApplication) getApplication();
+		host = myApplication.getHost();
 		getData();
 	}
 
@@ -173,7 +177,7 @@ public class RecordActivity extends Activity implements InitView {
 								// TODO Auto-generated method stub
 								final int record_id = (Integer) map.get("record_id");
 								OkHttpClient okHttpClient = new OkHttpClient();
-								Request request = new Request.Builder().url("http://120.78.67.135:8000/" +
+								Request request = new Request.Builder().url(host +
 										"android_health_test/record/"
 										+ record_id + "/").addHeader("cookie", MainActivity.sessionid)
 										.delete().build();
@@ -224,12 +228,12 @@ public class RecordActivity extends Activity implements InitView {
 				// TODO Auto-generated method stub
 				ListView listView = (ListView) arg0;
 				HashMap<String, Object> map = (HashMap<String, Object>) listView.getItemAtPosition(arg2);
-				RecordDetail.height = (Double) map.get("height");
-				RecordDetail.weight = (Double) map.get("weight");
-				RecordDetail.BMI = (Double) map.get("BMI");
-				RecordDetail.time = (String) map.get("date");
-				RecordDetail.result = (String) map.get("result");
 				Intent intent = new Intent(RecordActivity.this,RecordDetail.class);
+				intent.putExtra("height", (Double) map.get("height"));
+				intent.putExtra("weight", (Double) map.get("weight"));
+				intent.putExtra("bmi", map.get("BMI").toString().substring(0,4));
+				intent.putExtra("date", (String) map.get("date"));
+				intent.putExtra("result", (String) map.get("result"));
 				startActivity(intent);
 			}
 		});

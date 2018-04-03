@@ -213,4 +213,8 @@
     <string name="goback">返回</string>
     <string name="fabu">发布</string>
     <string name="like">喜欢</string>
+    <string name="bmi">BMI</string>
+    <string name="result">结果</string>
+    <string name="time">时间</string>
+    <string name="yourEmail">你的邮箱</string>
 </resources>

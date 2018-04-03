@@ -2,9 +2,11 @@
 <com.zhy.autolayout.AutoLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <include layout="@layout/include_toolbar"/>
 
@@ -62,14 +64,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="30px"
-                android:layout_marginRight="30px"
-                android:layout_marginTop="50px"
-                android:background="@android:drawable/edit_text"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="25dp"
+                android:background="@null"
                 android:drawableBottom="@drawable/shape_bottom_green"
-                android:drawablePadding="10px"
+                android:drawablePadding="5dp"
                 android:maxLength="255"
-                android:padding="10px"
+                android:padding="5dp"
                 android:textSize="16sp"
                 android:inputType="textMultiLine"
                 android:gravity="left|top"
@@ -77,19 +79,18 @@
                 android:minLines="6"
                 android:maxLines="6"
                 android:scrollbars="vertical"
-                />
+                tools:ignore="RtlHardcoded" />
 
-            <Button
+            <com.gc.materialdesign.views.ButtonRectangle
                 android:id="@+id/contact_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30px"
-                android:layout_marginRight="30px"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
-                android:text="发送"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:background="@color/blue"
+                android:text="@string/send"
+                android:textSize="12sp"
+                android:background="#1E88E5"
                 />
 
         </com.zhy.autolayout.AutoLinearLayout>

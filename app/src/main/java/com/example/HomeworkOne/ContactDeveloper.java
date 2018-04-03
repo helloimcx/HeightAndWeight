@@ -1,20 +1,16 @@
 package com.example.HomeworkOne;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONObject;
 
@@ -38,7 +34,7 @@ public class ContactDeveloper extends Activity {
     @Bind(R.id.contact_content)
     EditText content;
     @Bind(R.id.contact_button)
-    Button button;
+    ButtonRectangle button;
     @Bind(R.id.ivToolbarNavigation)
     ImageView goback;
 

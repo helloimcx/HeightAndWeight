@@ -1,142 +1,159 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@color/gray5" >
+     >
 
     <include layout="@layout/include_toolbar"/>
-
-
 
     <ImageView
         android:id="@+id/record_image"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="80dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
         />
 
-
-    <EditText
-        android:id="@+id/record_height"
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dip"
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="30dip"
-        android:layout_marginTop="10dip"
-        android:paddingLeft="50dip"
+        android:layout_height="45dp"
         android:layout_below="@id/record_image"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:editable="false"
-        android:background="#ffffff"/>
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="身高"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_alignLeft="@id/record_height"
-        android:layout_alignTop="@id/record_height"
-        android:layout_marginTop="9dip"
-        android:layout_marginLeft="3dip"/>
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/height"
+            android:textColor="@color/black0"
+            android:textSize="17sp"/>
 
-    <EditText
-        android:id="@+id/record_weight"
+        <TextView
+            android:id="@+id/record_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColorHint="@color/gray3"
+            android:textSize="17sp"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dip"
-        android:paddingLeft="50dip"
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="30dip"
-        android:layout_below="@id/record_height"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:editable="false"
-        android:background="#ffffff"/>
+        android:layout_height="45dp"
+        android:layout_below="@id/record_image"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="体重"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_alignLeft="@id/record_weight"
-        android:layout_alignTop="@id/record_weight"
-        android:layout_marginTop="9dip"
-        android:layout_marginLeft="3dip"/>
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"
+            android:textColor="@color/black0"
+            android:textSize="17sp"/>
 
-    <EditText
-        android:id="@+id/record_bmi"
+        <TextView
+            android:id="@+id/record_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColorHint="@color/gray3"
+            android:textSize="17sp"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dip"
-        android:paddingLeft="50dip"
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="30dip"
-        android:layout_below="@id/record_weight"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:editable="false"
-        android:background="#ffffff"/>
+        android:layout_height="45dp"
+        android:layout_below="@id/record_image"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BMI"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_alignLeft="@id/record_bmi"
-        android:layout_alignTop="@id/record_bmi"
-        android:layout_marginTop="9dip"
-        android:layout_marginLeft="3dip"
-        android:id="@+id/textView2" />
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi"
+            android:textColor="@color/black0"
+            android:textSize="17sp"/>
 
-    <EditText
-        android:id="@+id/record_result"
+        <TextView
+            android:id="@+id/record_bmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColorHint="@color/gray3"
+            android:textSize="17sp"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dip"
-        android:paddingLeft="50dip"
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="30dip"
-        android:layout_below="@id/record_bmi"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:editable="false"
-        android:background="#ffffff"/>
+        android:layout_height="45dp"
+        android:layout_below="@id/record_image"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="结果"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_alignLeft="@id/record_result"
-        android:layout_alignTop="@id/record_result"
-        android:layout_marginTop="9dip"
-        android:layout_marginLeft="3dip"/>
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            android:textColor="@color/black0"
+            android:textSize="17sp"/>
 
-    <EditText
-        android:id="@+id/record_time"
+        <TextView
+            android:id="@+id/record_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColorHint="@color/gray3"
+            android:textSize="17sp"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dip"
-        android:paddingLeft="50dip"
-        android:layout_marginLeft="30dip"
-        android:layout_marginRight="30dip"
-        android:layout_below="@id/record_result"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:editable="false"
-        android:background="#ffffff"/>
+        android:layout_height="45dp"
+        android:layout_below="@id/record_image"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="时间"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_alignLeft="@id/record_time"
-        android:layout_alignTop="@id/record_time"
-        android:layout_marginTop="9dip"
-        android:layout_marginLeft="3dip" />
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:textColor="@color/black0"
+            android:textSize="17sp"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/record_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColorHint="@color/gray3"
+            android:textSize="17sp"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View style="@style/Line" />
+
+</com.zhy.autolayout.AutoLinearLayout>

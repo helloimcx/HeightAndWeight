@@ -122,9 +122,9 @@ public class FmDiscoverNav extends Fragment implements InitView {
         imagePicker.setSaveRectangle(true); //是否按矩形区域保存
         imagePicker.setSelectLimit(1);    //选中数量限制
         imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
-        imagePicker.setFocusWidth(width);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusWidth(width+100);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
         imagePicker.setFocusHeight(height);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setOutPutX(width);//保存文件的宽度。单位像素
+        imagePicker.setOutPutX(width+100);//保存文件的宽度。单位像素
         imagePicker.setOutPutY(height);//保存文件的高度。单位像素
     }
 

@@ -128,8 +128,8 @@ public class RecordActivity extends Activity implements InitView {
 						map.put("height", height * 100);
 						map.put("weight", weight);
 						map.put("BMI", BMI);
-						map.put("date", records.get(i).get_record_time().substring(0,9)+ ' '+
-								records.get(i).get_record_time().substring(11,18));
+						map.put("date", records.get(i).get_record_time().substring(0,10)+ ' '+
+								records.get(i).get_record_time().substring(11,19));
 						map.put("result", result);
 						map.put("result_label",result_label);
 						dataList.add(map);
@@ -178,7 +178,7 @@ public class RecordActivity extends Activity implements InitView {
 								final int record_id = (Integer) map.get("record_id");
 								OkHttpClient okHttpClient = new OkHttpClient();
 								Request request = new Request.Builder().url(host +
-										"android_health_test/record/"
+										"/android_health_test/record/"
 										+ record_id + "/").addHeader("cookie", MainActivity.sessionid)
 										.delete().build();
 								Call call = okHttpClient.newCall(request);

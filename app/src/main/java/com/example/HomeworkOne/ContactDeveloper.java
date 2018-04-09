@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONObject;
@@ -62,7 +63,9 @@ public class ContactDeveloper extends Activity {
                 String sessionid = bundle.getString("sessionid");
                 String title_str = title.getText().toString();
                 String content_str = content.getText().toString();
-                String url = "http://120.78.67.135:8000/android_health_test/email_developer/"+user_id+"/";
+                MyApplication myApplication = (MyApplication) getApplication();
+                String host = myApplication.getHost();
+                String url = host+"/android_health_test/email_developer/"+user_id+"/";
                 OkHttpClient okHttpClient = new OkHttpClient();
                 try{
                     JSONObject param = new JSONObject();

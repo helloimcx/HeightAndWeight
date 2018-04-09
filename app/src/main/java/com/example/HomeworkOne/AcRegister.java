@@ -22,6 +22,8 @@ import es.dmoral.toasty.Toasty;
 import okhttp3.*;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.views.CheckBox;
 import com.gc.materialdesign.widgets.SnackBar;
@@ -129,8 +131,10 @@ public class AcRegister extends Activity implements InitView{
                     e.printStackTrace();
                 }
                 RequestBody requestBody = RequestBody.create(JSON, param.toString());
+                MyApplication myApplication = (MyApplication) getApplication();
+                String host = myApplication.getHost();
                 Request request = new Request.Builder()
-                        .url("http://120.78.67.135:8000/android_account/register")
+                        .url(host+"/android_account/register")
                         .post(requestBody)
                         .build();
                 Call call = okHttpClient.newCall(request);

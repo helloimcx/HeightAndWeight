@@ -29,6 +29,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.widgets.SnackBar;
 import com.google.gson.*;
@@ -110,9 +111,11 @@ public class AcLogin extends Activity implements InitView{
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                MyApplication myApplication = (MyApplication) getApplication();
+                String host = myApplication.getHost();
                 RequestBody requestBody = RequestBody.create(JSON, param.toString());
                 Request request = new Request.Builder()
-                        .url("http://120.78.67.135:8000/android_account/login")
+                        .url(host+"/android_account/login")
                         .post(requestBody)
                         .build();
                 Call call = okHttpClient.newCall(request);

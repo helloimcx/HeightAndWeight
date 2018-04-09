@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONException;
@@ -80,7 +81,7 @@ public class AcTest extends Activity implements InitView{
 							,Toast.LENGTH_SHORT,true).show();
 					return;
 				}
-				if(height<=120||weight<=30||weight>=300){
+				if(height<=120||weight<=30||weight>=250){
 					Toasty.warning(AcTest.this,"请输入正确的身高和体重值！"
 							,Toast.LENGTH_SHORT,true).show();
 					return;
@@ -136,8 +137,10 @@ public class AcTest extends Activity implements InitView{
 					e.printStackTrace();
 				}
 				RequestBody requestBody = RequestBody.create(JSON, param.toString());
+				MyApplication myApplication = (MyApplication) getApplication();
+				String host = myApplication.getHost();
 				Request request = new Request.Builder()
-						.url("http://120.78.67.135:8000/android_health_test/")
+						.url(host+"/android_health_test/")
 						.addHeader("cookie", MainActivity.sessionid)
 						.post(requestBody)
 						.build();

@@ -19,6 +19,8 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.lqr.optionitemview.OptionItemView;
@@ -94,8 +96,10 @@ public class UserInfo extends Activity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MyApplication myApplication = (MyApplication) getApplication();
+                String host = myApplication.getHost();
                 OkHttpClient okHttpClient = new OkHttpClient();
-                Request request =new Request.Builder().url("http://120.78.67.135:8000/android_account/logout")
+                Request request =new Request.Builder().url(host+"/android_account/logout")
                         .build();
                 Call call = okHttpClient.newCall(request);
                 call.enqueue(new Callback() {

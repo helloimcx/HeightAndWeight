@@ -27,6 +27,8 @@ import com.alibaba.sdk.android.oss.model.PutObjectResult;
 import com.bm.library.PhotoView;
 import MyInterface.InitView;
 import Utils.PopupWindowUtils;
+
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.google.gson.Gson;
 import com.lqr.imagepicker.ui.ImageGridActivity;
 import com.lqr.imagepicker.*;
@@ -265,8 +267,10 @@ public class UserHeader extends Activity implements InitView{
             e.printStackTrace();
         }
         RequestBody requestBody = RequestBody.create(JSON, param.toString());
+        MyApplication myApplication = (MyApplication) getApplication();
+        String host = myApplication.getHost();
         Request request = new Request.Builder()
-                .url("http://120.78.67.135:8000/android_account/header/"+user_id+"/")
+                .url(host+"/android_account/header/"+user_id+"/")
                 .addHeader("cookie", MainActivity.sessionid)
                 .post(requestBody)
                 .build();

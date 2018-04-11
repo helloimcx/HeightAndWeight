@@ -126,11 +126,9 @@ public class AcTest extends Activity implements InitView{
 						}
 					}
 				}
-				int user_id = share.getInt("user_id", 0);
 				OkHttpClient okHttpClient = new OkHttpClient();
 				JSONObject param = new JSONObject();
 				try {
-					param.put("android_account_id", user_id);
 					param.put("height", height);
 					param.put("weight", weight);
 				} catch (JSONException e) {

@@ -218,7 +218,7 @@ public class FmDiscover extends Fragment implements InitView {
                                     }catch (Exception e){
                                         content = "";
                                     }
-                                    String image_url = stringObjectMap.get("url").toString();
+                                    String image_url = stringObjectMap.get("url").toString()+"?x-oss-process=image/resize,w_400";
                                     ImageView header = viewHolder.getView(R.id.moment_header);
                                     Uri header_uri = Uri.parse(header_url);
                                     Picasso.with(getActivity()).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(header);
@@ -227,7 +227,8 @@ public class FmDiscover extends Fragment implements InitView {
                                     ImageView image = viewHolder.getView(R.id.moment_image);
                                     Uri image_uri = Uri.parse(image_url);
                                     Picasso.with(getActivity()).load(image_uri).placeholder(R.mipmap.default_moment)
-                                            .fit().centerCrop().into(image);
+                                            .fit()
+                                            .centerCrop().into(image);
 
                                     final int moment_id = (int) stringObjectMap.get("moment_id");
                                     final LikeButton likeButton = viewHolder.getView(R.id.star_button);

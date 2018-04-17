@@ -35,6 +35,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.thefinestartist.utils.content.ContextUtil.getSharedPreferences;
+
 public class RecordActivity extends Activity implements InitView {
 	@Bind(R.id.record_list)
 	ListView listView;
@@ -92,7 +94,23 @@ public class RecordActivity extends Activity implements InitView {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				if (count_record == 0) {
+				if(response.code() != 200){
+					RecordActivity.this.runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							Toasty.warning(RecordActivity.this,"登录信息过期，请重新登录!",
+									Toast.LENGTH_SHORT).show();
+							SharedPreferences sharedPreferences =
+									getSharedPreferences("Session",MODE_PRIVATE);
+							SharedPreferences.Editor editor = sharedPreferences.edit();
+							editor.clear().apply();
+							MainActivity.sessionid = "null";
+							Intent intent = new Intent(RecordActivity.this, AcLogin.class);
+							startActivity(intent);
+						}
+					});
+				}
+				else if (count_record == 0) {
 					RecordActivity.this.runOnUiThread(new Runnable() {
 						@Override
 						public void run() {

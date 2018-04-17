@@ -1,5 +1,6 @@
 package com.example.HomeworkOne;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -174,9 +175,15 @@ public class AcWeightGraph extends AcHttpRequest{
                     AcWeightGraph.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toasty.warning(AcWeightGraph.this,"服务器出错！",
+                            Toasty.warning(AcWeightGraph.this,"登录信息过期，请重新登录!",
                                     Toast.LENGTH_SHORT).show();
-                            avLoadingIndicatorView.setVisibility(View.GONE);
+                            SharedPreferences sharedPreferences =
+                                    getSharedPreferences("Session",MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.clear().apply();
+                            MainActivity.sessionid = "null";
+                            Intent intent = new Intent(AcWeightGraph.this, AcLogin.class);
+                            startActivity(intent);
                         }
                     });
                 }

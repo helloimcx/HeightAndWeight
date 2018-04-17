@@ -44,6 +44,9 @@ import okhttp3.Response;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.thefinestartist.utils.content.ContextUtil.getSharedPreferences;
+
 /**
  * Author: kafca
  * Date: 2017/11/18
@@ -150,6 +153,22 @@ public class FmDiscover extends Fragment implements InitView {
                         request_page--;
                         return;
                     }
+                    else if (response_code == 400 || response_code == 403){
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toasty.warning(getActivity(),"登录信息过期，请重新登录!",
+                                        Toast.LENGTH_SHORT).show();
+                                SharedPreferences sharedPreferences =
+                                        getSharedPreferences("Session",MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.clear().apply();
+                                MainActivity.sessionid = "null";
+                                Intent intent = new Intent(getActivity(), AcLogin.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
                     JsonMomentBean jsonMomentBean = gson.fromJson(response.body().string(),
                             JsonMomentBean.class);
                     count_moment = jsonMomentBean.getCount();
@@ -178,7 +197,7 @@ public class FmDiscover extends Fragment implements InitView {
                         boolean is_public = results.get(i).getMomentIsPublic();
                         boolean has_liked = results.get(i).get_has_liked();
                         int likes_count = results.get(i).getLikes_count();
-                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(moment_id+"", Context.MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(moment_id+"", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putBoolean("has_liked", has_liked);
                         editor.putInt("likes_count", likes_count);
@@ -243,7 +262,7 @@ public class FmDiscover extends Fragment implements InitView {
 
                                     final int moment_id = (int) stringObjectMap.get("moment_id");
                                     final LikeButton likeButton = viewHolder.getView(R.id.star_button);
-                                    final SharedPreferences sharedPreferences = getActivity().getSharedPreferences(moment_id+"",Context.MODE_PRIVATE);
+                                    final SharedPreferences sharedPreferences = getActivity().getSharedPreferences(moment_id+"", MODE_PRIVATE);
                                     final boolean has_liked = sharedPreferences.getBoolean("has_liked", false);
                                     int likes_count = sharedPreferences.getInt("likes_count", 0);
                                     if(has_liked)

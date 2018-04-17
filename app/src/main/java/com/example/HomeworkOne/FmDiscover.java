@@ -1,6 +1,7 @@
 package com.example.HomeworkOne;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
@@ -218,17 +220,26 @@ public class FmDiscover extends Fragment implements InitView {
                                     }catch (Exception e){
                                         content = "";
                                     }
-                                    String image_url = stringObjectMap.get("url").toString()+"?x-oss-process=image/resize,w_400";
+                                    final String image_url = stringObjectMap.get("url").toString();
                                     ImageView header = viewHolder.getView(R.id.moment_header);
                                     Uri header_uri = Uri.parse(header_url);
                                     Picasso.with(getActivity()).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(header);
                                     viewHolder.setText(R.id.moment_name,name);
                                     viewHolder.setText(R.id.moment_content,content);
-                                    ImageView image = viewHolder.getView(R.id.moment_image);
-                                    Uri image_uri = Uri.parse(image_url);
+                                    final ImageView image = viewHolder.getView(R.id.moment_image);
+                                    final Uri image_uri = Uri.parse(image_url);
                                     Picasso.with(getActivity()).load(image_uri).placeholder(R.mipmap.default_moment)
                                             .fit()
                                             .centerCrop().into(image);
+                                    //Í¼Æ¬µã»÷·Å´ó
+                                    image.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(getActivity(), AcShowPhotos.class);
+                                            intent.putExtra("image_url", image_url);
+                                            startActivity(intent);
+                                        }
+                                    });
 
                                     final int moment_id = (int) stringObjectMap.get("moment_id");
                                     final LikeButton likeButton = viewHolder.getView(R.id.star_button);

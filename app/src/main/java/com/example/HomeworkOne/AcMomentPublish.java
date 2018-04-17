@@ -35,6 +35,7 @@ import Utils.OssSecretBean;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import MyInterface.InitView;
+import es.dmoral.toasty.Toasty;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -43,12 +44,14 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import static com.example.HomeworkOne.AcLogin.JSON;
 import Utils.TimeUtils;
+import top.zibin.luban.Luban;
+import top.zibin.luban.OnCompressListener;
 
 /**
  * Created by mac on 2017/11/23.
  */
 
-public class DiscoveryPublic extends Activity implements InitView{
+public class AcMomentPublish extends Activity implements InitView{
     private String signature;
     private OSS oss;
     private RequestBody requestBody;
@@ -108,8 +111,29 @@ public class DiscoveryPublic extends Activity implements InitView{
             @Override
             public void onClick(View view) {
                 //name the moment picture
-                String objectKey = "moment"+email+TimeUtils.getCurrentTime()+".png";
-                putToOss(objectKey, image_path);
+                final String objectKey = "moment"+email+TimeUtils.getCurrentTime()+".jpg";
+
+                // 压缩图片
+                Luban.with(AcMomentPublish.this)
+                        .load(new File(image_path))                     // 传人要压缩的图片列表
+                        .ignoreBy(100)                                  // 忽略不压缩图片的大小
+                        .setCompressListener(new OnCompressListener() { //设置回调
+                            @Override
+                            public void onStart() {
+                                Toasty.info(AcMomentPublish.this, "正在上传").show();
+                            }
+
+                            @Override
+                            public void onSuccess(File file) {
+                                putToOss(objectKey, file.getPath());
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                Toasty.error(AcMomentPublish.this, "压缩失败").show();
+                            }
+                        }).launch();    //启动压缩
+
                 String content = moment_content.getText().toString();
                 boolean is_public = checkBox.isCheck();
                 String url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"+objectKey;
@@ -137,10 +161,10 @@ public class DiscoveryPublic extends Activity implements InitView{
                 call.enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
-                        DiscoveryPublic.this.runOnUiThread(new Runnable() {
+                        AcMomentPublish.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(DiscoveryPublic.this,"您的网络似乎开小差了...",Toast.LENGTH_SHORT)
+                                Toast.makeText(AcMomentPublish.this,"您的网络似乎开小差了...",Toast.LENGTH_SHORT)
                                 .show();
                             }
                         });

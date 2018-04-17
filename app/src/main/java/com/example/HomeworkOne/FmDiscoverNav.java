@@ -116,9 +116,9 @@ public class FmDiscoverNav extends Fragment implements InitView {
         int height = wm.getDefaultDisplay().getHeight();
         ImagePicker imagePicker = ImagePicker.getInstance();
         imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
-        imagePicker.setMultiMode(false);
+        imagePicker.setMultiMode(true);
         imagePicker.setShowCamera(true);  //显示拍照按钮
-        imagePicker.setCrop(true);        //允许裁剪（单选才有效）
+        imagePicker.setCrop(false);        //允许裁剪（单选才有效）
         imagePicker.setSaveRectangle(true); //是否按矩形区域保存
         imagePicker.setSelectLimit(1);    //选中数量限制
         imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
@@ -151,7 +151,7 @@ public class FmDiscoverNav extends Fragment implements InitView {
                         ArrayList<ImageItem> images = (ArrayList<com.lqr.imagepicker.bean.ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
                         if (images != null && images.size() > 0) {
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
-                            Intent intent = new Intent(getActivity(),DiscoveryPublic.class);
+                            Intent intent = new Intent(getActivity(),AcMomentPublish.class);
                             intent.putExtra("path", imageItem.path);
                             intent.putExtra("name", imageItem.name);
                             startActivityForResult(intent, REQUEST_DISCOVERY_PUBLIC);
@@ -166,5 +166,4 @@ public class FmDiscoverNav extends Fragment implements InitView {
                 refreshLayout.startRefresh();
         }
     }
-
 }

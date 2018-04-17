@@ -1,6 +1,7 @@
 package com.example.HomeworkOne;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -216,7 +217,7 @@ public class FmMyDiscover extends Fragment implements InitView {
                                     }catch (Exception e){
                                         content = "";
                                     }
-                                    String image_url = stringObjectMap.get("url").toString();
+                                    final String image_url = stringObjectMap.get("url").toString();
                                     ImageView header = viewHolder.getView(R.id.moment_header);
                                     Uri header_uri = Uri.parse(header_url);
                                     Picasso.with(getActivity()).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(header);
@@ -226,6 +227,15 @@ public class FmMyDiscover extends Fragment implements InitView {
                                     Uri image_uri = Uri.parse(image_url);
                                     Picasso.with(getActivity()).load(image_uri).placeholder(R.mipmap.default_moment)
                                             .fit().centerCrop().into(image);
+                                    //Í¼Æ¬µã»÷·Å´ó
+                                    image.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(getActivity(), AcShowPhotos.class);
+                                            intent.putExtra("image_url", image_url);
+                                            startActivity(intent);
+                                        }
+                                    });
 
                                     final int moment_id = (int) stringObjectMap.get("moment_id");
                                     final LikeButton likeButton = viewHolder.getView(R.id.star_button);

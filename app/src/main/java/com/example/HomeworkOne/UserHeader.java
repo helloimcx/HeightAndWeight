@@ -89,9 +89,9 @@ public class UserHeader extends Activity implements InitView{
         context = getApplicationContext();
         LayoutInflater factory = LayoutInflater.from(this);
         menu = factory.inflate(R.layout.popup_header, null);
-        album = (OptionItemView) menu.findViewById(R.id.choose_from_album);
-        camera = (OptionItemView) menu.findViewById(R.id.choose_from_camera);
-        cancel = (OptionItemView) menu.findViewById(R.id.header_cancel);
+        album = menu.findViewById(R.id.choose_from_album);
+        camera = menu.findViewById(R.id.choose_from_camera);
+        cancel = menu.findViewById(R.id.header_cancel);
         ButterKnife.bind(this);
         more.setVisibility(View.VISIBLE);
         initHeader();

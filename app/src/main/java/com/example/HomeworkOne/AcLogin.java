@@ -10,29 +10,24 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import MyInterface.InitView;
 import Utils.JsonUserBean;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import okhttp3.Call;
-import okhttp3.Callback;
+import es.dmoral.toasty.Toasty;
 import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
-import com.gc.materialdesign.widgets.SnackBar;
 import com.google.gson.*;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 
 
 /**
@@ -41,11 +36,11 @@ import com.google.gson.*;
 
 public class AcLogin extends Activity implements InitView{
     static AcLogin instance;
-    private String emailStr;
+    private String accountStr;
     private String passwordStr;
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    @Bind(R.id.edit_email)
-    EditText email;
+    @Bind(R.id.edit_account)
+    EditText account;
     @Bind(R.id.edit_password)
     EditText password;
     @Bind(R.id.tv_no_account)
@@ -93,51 +88,32 @@ public class AcLogin extends Activity implements InitView{
             public void onClick(View view) {
 
                 //获取登录表单
-                try{
-                    emailStr = email.getText().toString();
-                    passwordStr = password.getText().toString();
-                }catch (Exception e){
-                    final SnackBar snackbar = new SnackBar(AcLogin.this,
-                            "请输入正确的登录信息...", null, null);
-                    snackbar.show();
+                accountStr = account.getText().toString();
+                passwordStr = password.getText().toString();
+                if (accountStr.length() * password.length() == 0){
+                    Toasty.warning(AcLogin.this, "请输入账号和密码!",
+                            Toast.LENGTH_SHORT, true).show();
+                    return;
                 }
 
                 //登录请求
-                OkHttpClient okHttpClient = new OkHttpClient();
                 JSONObject param = new JSONObject();
                 try {
-                    param.put("email", emailStr);
+                    if (accountStr.contains("@"))
+                        param.put("email", accountStr);
+                    else
+                        param.put("phone", accountStr);
                     param.put("password", passwordStr);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                MyApplication myApplication = (MyApplication) getApplication();
-                String host = myApplication.getHost();
-                RequestBody requestBody = RequestBody.create(JSON, param.toString());
-                Request request = new Request.Builder()
-                        .url(host+"/android_account/login")
-                        .post(requestBody)
-                        .build();
-                Call call = okHttpClient.newCall(request);
-                call.enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        AcLogin.this.runOnUiThread(new Runnable() {
+                OkGo.<String>post("https://api.mochuxian.top/android_account/token/")
+                        .upJson(param)
+                        .execute(new StringCallback() {
                             @Override
-                            public void run() {
-
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onResponse(Call call, final Response response) throws IOException {
-                        AcLogin.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-
+                            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
                                 //登陆成功
-                                if(response.code() == 200){
+                                if (response.code() == 200) {
 
                                     //获取sessionid
                                     List<String> cookies = response.headers().values("Set-Cookie");
@@ -145,57 +121,56 @@ public class AcLogin extends Activity implements InitView{
                                     String sessionid = session.substring(0, session.indexOf(";"));
 
                                     //每次登录都要更新sessionid
-                                    MainActivity.sessionid=sessionid;
+                                    MainActivity.sessionid = sessionid;
 
                                     //解析用户数据并保存
                                     Gson gson = new Gson();
                                     try {
-                                        JsonUserBean jsonUserBean = gson.fromJson(response.body().string(),
+                                        JsonUserBean jsonUserBean = gson.fromJson(response.body(),
                                                 JsonUserBean.class);
-                                        int user_id = jsonUserBean.get_id();
-                                        String email = jsonUserBean.get_email();
-                                        String username = jsonUserBean.get_username();
-                                        String sex = jsonUserBean.get_sex();
-                                        String header = jsonUserBean.get_header();
-                                        sex = (sex.equals("M")) ? "男":"女";
-                                        SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
+                                        int user_id = jsonUserBean.getUser_id();
+                                        String email = jsonUserBean.getEmail();
+                                        String username = jsonUserBean.getUsername();
+                                        String sex = jsonUserBean.getSex();
+                                        String header = jsonUserBean.getHeader();
+                                        String phone = jsonUserBean.getPhone();
+                                        String token = jsonUserBean.getToken();
+                                        sex = (sex.equals("M")) ? "男" : "女";
+                                        SharedPreferences share = getSharedPreferences("Session",
+                                                MODE_PRIVATE);
                                         SharedPreferences.Editor edit = share.edit();
                                         edit.putString("sessionid", sessionid);
-                                        edit.putInt("user_id",user_id);
+                                        edit.putInt("user_id", user_id);
+                                        edit.putString("phone", phone);
                                         edit.putString("email", email);
                                         edit.putString("username", username);
                                         edit.putString("sex", sex);
-                                        edit.putString("header",header);
+                                        edit.putString("header", header);
+                                        edit.putString("token", token);
                                         edit.apply();
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }
-
                                     //登陆成功，跳转主页面
                                     Intent intent = new Intent(AcLogin.this, MainActivity.class);
                                     startActivity(intent);
-                                }
 
+                                }
                                 //登录错误处理
-                                else if (response.code() == 400){
-                                    final SnackBar snackbar = new SnackBar(AcLogin.this,
-                                            "密码错误!", null, null);
-                                    snackbar.show();
-                                }
-                                else if (response.code() == 500){
-                                    final SnackBar snackbar = new SnackBar(AcLogin.this,
-                                            "账号不存在!", null, null);
-                                    snackbar.show();
-                                }
-                                else {
-                                    final SnackBar snackbar = new SnackBar(AcLogin.this,
-                                            "请求出错!", null, null);
-                                    snackbar.show();
+                                else if (response.code() == 400) {
+                                    Toasty.warning(AcLogin.this, "密码错误!").show();
+                                } else if (response.code() == 404) {
+                                    Toasty.warning(AcLogin.this, "账号不存在!").show();
+                                } else {
+                                    Toasty.error(AcLogin.this, "请求错误!"+response.code()).show();
                                 }
                             }
+
+                            @Override
+                            public void onError(com.lzy.okgo.model.Response<String> response) {
+                                Toasty.error(AcLogin.this, "账号不存在!").show();
+                            }
                         });
-                    }
-                });
             }
         });
     }

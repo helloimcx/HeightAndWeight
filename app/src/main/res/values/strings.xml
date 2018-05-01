@@ -217,4 +217,16 @@
     <string name="result">结果</string>
     <string name="time">时间</string>
     <string name="yourEmail">你的邮箱</string>
+    <string name="monica">例如：Monica</string>
+    <string name="phone">手机</string>
+    <string name="yourPhone">你的手机号</string>
+    <string name="sex">性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="inputPassword">填写密码</string>
+    <string name="seePassword">明文输入</string>
+    <string name="alreadyHaveAccount">已有账号?</string>
+    <string name="hasNoAccount">还没有账号?</string>
+    <string name="account">账号</string>
+    <string name="phoneOrEmail">手机号/邮箱</string>
 </resources>

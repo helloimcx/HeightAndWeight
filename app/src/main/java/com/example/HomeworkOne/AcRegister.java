@@ -14,20 +14,17 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.lang.String;
 
 import MyInterface.InitView;
 import es.dmoral.toasty.Toasty;
-import okhttp3.*;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.views.CheckBox;
-import com.gc.materialdesign.widgets.SnackBar;
-import com.tapadoo.alerter.Alerter;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 
 
 /**
@@ -37,6 +34,8 @@ import com.tapadoo.alerter.Alerter;
 public class AcRegister extends Activity implements InitView{
     @Bind(R.id.edit_email)
     EditText email;
+    @Bind(R.id.edit_phone)
+    EditText phone;
     @Bind(R.id.edit_username)
     EditText username;
     @Bind(R.id.edit_password)
@@ -52,11 +51,10 @@ public class AcRegister extends Activity implements InitView{
     @Bind(R.id.ivToolbarNavigation)
     ImageView goback;
     private String emailStr;
+    private String phoneStr;
     private String usernameStr;
     private String passwordStr;
     private String sex="F";
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-    private int register_flag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,6 +68,8 @@ public class AcRegister extends Activity implements InitView{
     @Override
     public void initView() {
         ButterKnife.bind(this);
+        Toasty.info(this, "手机号和邮箱至少要填写一项哦",
+                Toast.LENGTH_LONG, true).show();
     }
 
     @Override
@@ -105,58 +105,52 @@ public class AcRegister extends Activity implements InitView{
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //获取注册信息
-                try{
-                    emailStr=email.getText().toString();
-                    usernameStr=username.getText().toString();
-                    passwordStr=password.getText().toString();
-                    if(male.isCheck()){
-                        sex = "M";
-                    }
-                }catch (Exception e){
-                    final SnackBar snackbar = new SnackBar(AcRegister.this,
-                            "请输入正确的注册信息...", null, null);
-                    snackbar.show();
+                int email_length = email.getText().length();
+                int phone_length = phone.getText().length();
+                int username_length = username.getText().length();
+                int password_length = password.getText().length();
+                if (email_length == 0 && phone_length == 0){
+                    Toasty.warning(AcRegister.this, "手机号和邮箱至少要填写一项哦",
+                            Toast.LENGTH_SHORT, true).show();
+                    return;
                 }
-
-                OkHttpClient okHttpClient = new OkHttpClient();
+                if (username_length * password_length == 0){
+                    Toasty.warning(AcRegister.this, "请输入正确的注册信息!",
+                            Toast.LENGTH_SHORT, true).show();
+                    return;
+                }
+                //获取注册信息
+                if (email_length > 0){
+                    emailStr = email.getText().toString();
+                }
+                if (phone_length > 0){
+                    phoneStr = phone.getText().toString();
+                }
+                usernameStr = username.getText().toString();
+                passwordStr = password.getText().toString();
+                if(male.isCheck()){
+                    sex = "M";
+                }
                 JSONObject param = new JSONObject();
                 try {
-                    param.put("email", emailStr);
+                    if (email_length > 0){
+                        param.put("email", emailStr);
+                    }
+                    if (phone_length > 0){
+                        param.put("phone", phoneStr);
+                    }
                     param.put("username", usernameStr);
                     param.put("sex", sex);
                     param.put("password", passwordStr);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                RequestBody requestBody = RequestBody.create(JSON, param.toString());
-                MyApplication myApplication = (MyApplication) getApplication();
-                String host = myApplication.getHost();
-                Request request = new Request.Builder()
-                        .url(host+"/android_account/register")
-                        .post(requestBody)
-                        .build();
-                Call call = okHttpClient.newCall(request);
-                call.enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        AcRegister.this.runOnUiThread(new Runnable() {
+                OkGo.<String>post("https://api.mochuxian.top/android_account/create/")
+                        .upJson(param)
+                        .execute(new StringCallback() {
                             @Override
-                            public void run() {
-                                final SnackBar snackbar = new SnackBar(AcRegister.this,
-                                        "您的网络似乎开小差了...", null, null);
-                                snackbar.show();
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onResponse(Call call, final Response response) throws IOException {
-                        AcRegister.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if(response.code() == 200){
+                            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                                if(response.code() == 201){
                                     Toasty.success(AcRegister.this,
                                             "注册成功!", Toast.LENGTH_SHORT, true).show();
 
@@ -166,17 +160,16 @@ public class AcRegister extends Activity implements InitView{
                                     startActivity(intent);
                                 }
                                 else {
-                                    Alerter.create(AcRegister.this)
-                                            .setText("账号已存在！")
-                                            .setBackgroundColorRes(R.color.Orange)
-                                            .enableSwipeToDismiss()
-                                            .setDuration(3000)
-                                            .show();
+                                    Toasty.warning(AcRegister.this, "账号已存在",
+                                            Toast.LENGTH_SHORT, true).show();
                                 }
                             }
+
+                            @Override
+                            public void onError(com.lzy.okgo.model.Response<String> response) {
+                                Toasty.error(AcRegister.this, "请求错误").show();
+                            }
                         });
-                    }
-                });
             }
         });
 
@@ -188,6 +181,5 @@ public class AcRegister extends Activity implements InitView{
                 startActivity(intent);
             }
         });
-
     }
 }

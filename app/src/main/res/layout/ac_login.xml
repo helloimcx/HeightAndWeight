@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,34 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="30px"
-        android:paddingRight="30px">
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100px"
+            android:layout_height="50dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="30px"
-            android:paddingRight="30px">
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <TextView
-                android:layout_width="120px"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="邮箱"
+                android:text="@string/account"
                 android:textColor="@color/black0"
-                android:textSize="28px"/>
+                android:textSize="14sp"/>
 
             <EditText
-                android:id="@+id/edit_email"
+                android:id="@+id/edit_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:hint="你的邮箱"
-                android:inputType="textEmailAddress"
+                android:hint="@string/phoneOrEmail"
+                android:inputType="text"
                 android:textColorHint="@color/gray3"
-                android:textSize="28px"/>
+                android:textSize="14sp"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -50,29 +49,29 @@
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100px"
+            android:layout_height="50dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="30px"
-            android:paddingRight="30px">
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <TextView
-                android:layout_width="120px"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="密码"
+                android:text="@string/password"
                 android:textColor="@color/black0"
-                android:textSize="28px"/>
+                android:textSize="14sp"/>
 
             <EditText
                 android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:hint="填写密码"
+                android:hint="@string/inputPassword"
                 android:inputType="textPassword"
                 android:text=""
                 android:textColorHint="@color/gray3"
-                android:textSize="28px"/>
+                android:textSize="14sp"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -85,10 +84,10 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginBottom="30px"
-            android:layout_marginTop="40px"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"
             android:background="#1E88E5"
-            android:text="登录"
+            android:text="@string/login"
             />
 
 
@@ -103,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40px"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
 
@@ -113,10 +112,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="10px"
-                android:text="还没有账号?"
+                android:padding="5dp"
+                android:text="@string/hasNoAccount"
                 android:textColor="@color/blue0"
-                android:textSize="28px"/>
+                android:textSize="14sp"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoRelativeLayout>

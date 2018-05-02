@@ -154,7 +154,6 @@ public class AcMomentPublish extends Activity implements InitView{
                 MyApplication myApplication = (MyApplication) getApplication();
                 Request request = new Request.Builder()
                         .url(myApplication.getHost()+"/moment/")
-                        .addHeader("cookie", MainActivity.sessionid)
                         .post(requestBody)
                         .build();
                 Call call = okHttpClient.newCall(request);

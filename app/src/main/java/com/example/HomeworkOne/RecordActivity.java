@@ -104,7 +104,6 @@ public class RecordActivity extends Activity implements InitView {
 									getSharedPreferences("Session",MODE_PRIVATE);
 							SharedPreferences.Editor editor = sharedPreferences.edit();
 							editor.clear().apply();
-							MainActivity.sessionid = "null";
 							Intent intent = new Intent(RecordActivity.this, AcLogin.class);
 							startActivity(intent);
 						}
@@ -197,7 +196,7 @@ public class RecordActivity extends Activity implements InitView {
 								OkHttpClient okHttpClient = new OkHttpClient();
 								Request request = new Request.Builder().url(host +
 										"/android_health_test/record/"
-										+ record_id + "/").addHeader("cookie", MainActivity.sessionid)
+										+ record_id + "/")
 										.delete().build();
 								Call call = okHttpClient.newCall(request);
 								call.enqueue(new Callback() {

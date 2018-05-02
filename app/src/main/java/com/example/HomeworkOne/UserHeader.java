@@ -271,7 +271,6 @@ public class UserHeader extends Activity implements InitView{
         String host = myApplication.getHost();
         Request request = new Request.Builder()
                 .url(host+"/android_account/header/"+user_id+"/")
-                .addHeader("cookie", MainActivity.sessionid)
                 .post(requestBody)
                 .build();
         Call call = okHttpClient.newCall(request);

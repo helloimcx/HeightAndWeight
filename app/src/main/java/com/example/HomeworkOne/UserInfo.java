@@ -126,7 +126,6 @@ public class UserInfo extends Activity {
                                         getSharedPreferences("Session",MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.clear().apply();
-                                MainActivity.sessionid = "null";
 
                                 //关闭这几个Activity
                                 UserInfo.this.finish();

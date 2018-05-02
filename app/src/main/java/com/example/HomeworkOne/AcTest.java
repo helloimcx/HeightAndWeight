@@ -12,26 +12,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 
 import MyInterface.InitView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-
-import static com.example.HomeworkOne.AcLogin.JSON;
 
 public class AcTest extends Activity implements InitView{
 	@Bind(R.id.testButton)
@@ -67,8 +59,11 @@ public class AcTest extends Activity implements InitView{
 
 	@Override
 	public void initListener() {
-		testButton.setOnClickListener(new OnClickListener() {
 
+		/*
+		创建测试记录
+		 */
+		testButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
@@ -126,7 +121,7 @@ public class AcTest extends Activity implements InitView{
 						}
 					}
 				}
-				OkHttpClient okHttpClient = new OkHttpClient();
+
 				JSONObject param = new JSONObject();
 				try {
 					param.put("height", height);
@@ -134,46 +129,38 @@ public class AcTest extends Activity implements InitView{
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
-				RequestBody requestBody = RequestBody.create(JSON, param.toString());
-				MyApplication myApplication = (MyApplication) getApplication();
-				String host = myApplication.getHost();
-				Request request = new Request.Builder()
-						.url(host+"/android_health_test/")
-						.addHeader("cookie", MainActivity.sessionid)
-						.post(requestBody)
-						.build();
-				Call call = okHttpClient.newCall(request);
-				call.enqueue(new Callback() {
-					@Override
-					public void onFailure(Call call, IOException e) {
-						AcTest.this.runOnUiThread(new Runnable() {
-							@Override
-							public void run() {
-								Toast.makeText(AcTest.this, "您的网络似乎开小差了...",
-										Toast.LENGTH_SHORT).show();
-							}
-						});
-					}
 
-					@Override
-					public void onResponse(Call call, Response response) throws IOException {
-						AcTest.this.runOnUiThread(new Runnable() {
+				OkGo.<String>post("https://api.mochuxian.top/android_health_test/create/")
+						.headers("Authorization", "Token " + share.getString("token", "null"))
+						.upJson(param)
+						.execute(new StringCallback() {
 							@Override
-							public void run() {
-								Intent intent = new Intent();
-								intent.putExtra("content",content);
-								intent.putExtra("photo",photo);
-								intent.putExtra("weight",weight);
-								intent.putExtra("bmi",BMI);
-								setResult(TEST_RESULT_CODE,intent);
-								finish();
+							public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+								if (response.code() == 201) {
+									Intent intent = new Intent();
+									intent.putExtra("content", content);
+									intent.putExtra("photo", photo);
+									intent.putExtra("weight", weight);
+									intent.putExtra("bmi", BMI);
+									setResult(TEST_RESULT_CODE, intent);
+									finish();
+								} else {
+									Toasty.error(AcTest.this, "请求错误!").show();
+								}
+							}
+
+							@Override
+							public void onError(com.lzy.okgo.model.Response<String> response) {
+								Toasty.error(AcTest.this, "请求错误!").show();
 							}
 						});
-					}
-				});
 
 			}
 		});
+
+		/*
+		返回
+		 */
 		goback.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -182,4 +169,3 @@ public class AcTest extends Activity implements InitView{
 		});
 	}
 }
-

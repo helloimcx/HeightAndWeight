@@ -181,7 +181,6 @@ public class AcWeightGraph extends AcHttpRequest{
                                     getSharedPreferences("Session",MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.clear().apply();
-                            MainActivity.sessionid = "null";
                             Intent intent = new Intent(AcWeightGraph.this, AcLogin.class);
                             startActivity(intent);
                         }

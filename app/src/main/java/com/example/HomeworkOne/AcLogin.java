@@ -19,8 +19,6 @@ import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
 import okhttp3.MediaType;
 
-import java.util.List;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -65,9 +63,6 @@ public class AcLogin extends Activity implements InitView{
         ButterKnife.bind(this);
         goback.setVisibility(View.GONE);
         instance = this;
-
-        //关闭欢迎Activity
-        Access.instance.finish();
     }
 
     @Override
@@ -114,15 +109,6 @@ public class AcLogin extends Activity implements InitView{
                             public void onSuccess(com.lzy.okgo.model.Response<String> response) {
                                 //登陆成功
                                 if (response.code() == 200) {
-
-                                    //获取sessionid
-                                    List<String> cookies = response.headers().values("Set-Cookie");
-                                    String session = cookies.get(0);
-                                    String sessionid = session.substring(0, session.indexOf(";"));
-
-                                    //每次登录都要更新sessionid
-                                    MainActivity.sessionid = sessionid;
-
                                     //解析用户数据并保存
                                     Gson gson = new Gson();
                                     try {
@@ -139,7 +125,6 @@ public class AcLogin extends Activity implements InitView{
                                         SharedPreferences share = getSharedPreferences("Session",
                                                 MODE_PRIVATE);
                                         SharedPreferences.Editor edit = share.edit();
-                                        edit.putString("sessionid", sessionid);
                                         edit.putInt("user_id", user_id);
                                         edit.putString("phone", phone);
                                         edit.putString("email", email);

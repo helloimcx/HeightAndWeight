@@ -1,6 +1,7 @@
 package com.example.HomeworkOne.globalConfig
 
 import android.app.Application
+import android.content.SharedPreferences
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.cache.CacheEntity
 import com.lzy.okgo.cookie.CookieJarImpl
@@ -21,8 +22,10 @@ import com.lzy.okgo.https.HttpsUtils
 
 class MyApplication : Application() {
     lateinit var host: String
+    lateinit var share: SharedPreferences
     override fun onCreate() {
-        host = "http://120.78.199.2:8000"
+        host = "https://api.mochuxian.top"
+        share = getSharedPreferences("Session", MODE_PRIVATE)
         val builder = OkHttpClient.Builder()
         val loggingInterceptor = HttpLoggingInterceptor("OkGo")
         //log打印级别，决定了log显示的详细程度

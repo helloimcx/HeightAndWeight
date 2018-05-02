@@ -1,5 +1,6 @@
 package com.example.HomeworkOne;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -17,16 +18,8 @@ import android.widget.TextView;
 
 import com.tapadoo.alerter.Alerter;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import okhttp3.Cookie;
-import okhttp3.CookieJar;
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -50,8 +43,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	private Fragment tab03;
 	private Fragment tabData;
 	public static Fragment tab_transfer;
-	public static OkHttpClient okHttpClient;
-	public static String sessionid;
 	static MainActivity instance;
 
 	@Bind(R.id.ivToolbarNavigation)
@@ -74,9 +65,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		initView();//初始化所有的view
 		initEvents();
 		setSelect(0);//默认显示测试界面
-		createHttpClient();
-		SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
-		sessionid = share.getString("sessionid","null");
 	}
 
 	private void initEvents() {
@@ -87,14 +75,15 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	}
 
 	private void initView() {
+		whereToGo();
 		ButterKnife.bind(this);
 		goback.setVisibility(View.GONE);
-		mTabTest = (LinearLayout)findViewById(R.id.id_tab_test);
-		mTabDiscover = (LinearLayout)findViewById(R.id.id_tab_discover);
-		mTabAccount = (LinearLayout)findViewById(R.id.id_tab_account);
-		mImgTest = (ImageButton)findViewById(R.id.id_tab_test_img);
-		mImgDiscover = (ImageButton)findViewById(R.id.id_tab_discover_img);
-		mImgAccount = (ImageButton)findViewById(R.id.id_tab_account_img);
+		mTabTest = findViewById(R.id.id_tab_test);
+		mTabDiscover = findViewById(R.id.id_tab_discover);
+		mTabAccount = findViewById(R.id.id_tab_account);
+		mImgTest = findViewById(R.id.id_tab_test_img);
+		mImgDiscover = findViewById(R.id.id_tab_discover_img);
+		mImgAccount = findViewById(R.id.id_tab_account_img);
 
 		instance = this;
 
@@ -218,29 +207,25 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		account_tv.setTextColor(getResources().getColor(R.color.gray0));
 	}
 
-	void  createHttpClient() {
-		okHttpClient = new OkHttpClient.Builder().cookieJar(new CookieJar() {
-			private final HashMap<String, List<Cookie>> cookieStore = new HashMap<String, List<Cookie>>();
-			@Override
-			public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
-				cookieStore.put(url.host(), cookies);
-			}
-
-			@Override
-			public List<Cookie> loadForRequest(HttpUrl url) {
-				List<Cookie> cookies = cookieStore.get(url.host());
-				return cookies != null ? cookies : new ArrayList<Cookie>();
-			}
-		}).connectTimeout(5, TimeUnit.SECONDS)
-				.readTimeout(10, TimeUnit.SECONDS)
-				.build();
-	}
-
 	boolean isLate(){
 		long time = System.currentTimeMillis();
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(time);
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
 		return hour >= 0 && hour <= 5 || hour >= 23;
+	}
+
+	/**
+	 * 判断是否已经登录
+	 */
+	private void whereToGo(){
+		//尝试获取token
+		SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
+		String token = sharedPreferences.getString("token","null");
+		//若用户没有登录，则进入AcLogin
+		if(token.equals("null")){
+			Intent intent = new Intent(MainActivity.this, AcLogin.class);
+			startActivity(intent);
+		}
 	}
 }

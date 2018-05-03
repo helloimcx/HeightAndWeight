@@ -1,16 +1,14 @@
 package com.example.HomeworkOne;
 
-import android.content.SharedPreferences;
+import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.HomeworkOne.BaseActivity.AcHttpRequest;
 import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -23,26 +21,18 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.google.gson.Gson;
 import com.lqr.optionitemview.OptionItemView;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 import com.wang.avi.AVLoadingIndicatorView;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
-import java.lang.reflect.GenericSignatureFormatError;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import MyInterface.InitView;
 import Utils.JsonRecordBean;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 /**
  * Author: kafca
@@ -50,7 +40,7 @@ import okhttp3.Response;
  * Description: Manage the comparison between the last two records
  */
 
-public class AcCompareLast extends AcHttpRequest {
+public class AcCompareLast extends Activity implements InitView {
     private double weight;
     List<Entry> dataList;
     private LineData lineData;
@@ -77,23 +67,15 @@ public class AcCompareLast extends AcHttpRequest {
 
     @Override
     public void initView() {
-        super.initView();
         ButterKnife.bind(this);
         setWeight(getIntent().getDoubleExtra("weight",0));
         dataList = new ArrayList<>();
-
-        //request for last record
-        SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
-        int user_id = sharedPreferences.getInt("user_id", 0);
-        MyApplication myApplication = (MyApplication) getApplication();
-        String url = myApplication.getHost()+"/android_health_test/record/user/" + user_id + "/";
         avLoadingIndicatorView.setVisibility(View.VISIBLE);
-        httpGet(url);
+        getData();
     }
 
     @Override
     public void initListener() {
-        super.initListener();
 
         // go back to MainActivity
         go_back.setOnClickListener(new View.OnClickListener() {
@@ -104,114 +86,105 @@ public class AcCompareLast extends AcHttpRequest {
         });
     }
 
-    @Override
-    public void httpGet(@NotNull String url) {
-        super.httpGet(url);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                AcCompareLast.this.runOnUiThread(new Runnable() {
+    private void getData(){
+        MyApplication myApplication = (MyApplication) getApplication();
+        String url = myApplication.getHost()+"/android_health_test/user/";
+        OkGo.<String>get(url)
+                .execute(new StringCallback() {
                     @Override
-                    public void run() {
+                    public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                        if (response.code() == 200) {
+                            Gson gson = new Gson();
+                            JsonRecordBean jsonRecordBean = gson.fromJson(response.body(),
+                                    JsonRecordBean.class);
+                            if (jsonRecordBean != null) {
+                                ArrayList<JsonRecordBean.RecordBean> records = jsonRecordBean.get_records();
+                                final int count_record = jsonRecordBean.get_count_record();
+                                if (count_record <= 1) {
+                                    AcCompareLast.this.runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toasty.warning(AcCompareLast.this, "还没有上一条记录哦~",
+                                                    Toast.LENGTH_SHORT, true).show();
+                                        }
+                                    });
+                                } else {
+                                    final String []xValues = new String[count_record];
+                                    for (int i = 0; i <= count_record - 1; i++) {
+                                        double weight = records.get(i).get_weight();
+                                        String date = records.get(i).get_record_time().substring(5, 10);
+                                        dataList.add(new Entry((float)i,(float)weight));
+                                        xValues[i] = date;
+                                    }
+                                    LineDataSet dataSet = new LineDataSet(dataList, "体重kg");
+                                    dataSet.setColor(getResources().getColor(R.color.blue));
+                                    dataSet.setValueTextColor(Color.BLACK);
+                                    lineData = new LineData(dataSet);
+                                    formatter = new IAxisValueFormatter() {
+                                        @Override
+                                        public String getFormattedValue(float value, AxisBase axis) {
+                                            return xValues[(int) value];
+                                        }
+                                    };
+
+                                    final String date = records.get(count_record - 2).get_record_time();
+                                    Double last_weight = records.get(count_record - 2).get_weight();
+                                    final double compare = getWeight() - last_weight;
+                                    AcCompareLast.this.runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Legend legend = lineChart.getLegend();
+                                            legend.setTextSize(14f);
+                                            legend.setTextColor(getResources().getColor(R.color.gray0));
+                                            lineChart.setData(lineData);
+                                            Description description = new Description();
+                                            description.setText("体重随时间变化曲线");
+                                            description.setTextSize(14);
+                                            description.setTextColor(getResources().getColor(R.color.gray0));
+                                            lineChart.setDescription(description);
+                                            lineChart.setMinimumWidth(50);
+                                            lineChart.invalidate();
+                                            XAxis xAxis = lineChart.getXAxis();
+                                            xAxis.setGranularity(1f);
+                                            xAxis.setValueFormatter(formatter);
+
+                                            last_time.setRightText(date.substring(0, 10));
+                                            if (compare < 0) {
+                                                String str = -compare+"";
+                                                if (str.length()>=4)
+                                                    str = str.substring(0,4);
+                                                compare_weight.setRightText("瘦了：" +str+"kg");
+                                            } else if (compare == 0) {
+                                                compare_weight.setRightText("无变化");
+                                            } else{
+                                                String str = compare+"";
+                                                if (str.length()>=4)
+                                                    str = str.substring(0,4);
+                                                compare_weight.setRightText("重了：" +str+"kg");
+                                            }
+                                            avLoadingIndicatorView.setVisibility(View.GONE);
+                                        }
+                                    });
+                                }
+                            } else {
+                                AcCompareLast.this.runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toasty.warning(AcCompareLast.this, "还没有上一条记录哦~",
+                                                Toast.LENGTH_SHORT, true).show();
+                                        avLoadingIndicatorView.setVisibility(View.GONE);
+                                    }
+                                });
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(com.lzy.okgo.model.Response<String> response) {
                         Toasty.warning(AcCompareLast.this,
                                 "您的网络似乎开小差了...", Toast.LENGTH_SHORT, true).show();
                     }
                 });
-            }
-
-            @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-                if (response.code() == 200) {
-                    Gson gson = new Gson();
-                    JsonRecordBean jsonRecordBean = null;
-                    try {
-                        jsonRecordBean = gson.fromJson(response.body().string(),
-                                JsonRecordBean.class);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    if (jsonRecordBean != null) {
-                        ArrayList<JsonRecordBean.RecordBean> records = jsonRecordBean.get_records();
-                        final int count_record = jsonRecordBean.get_count_record();
-                        if (count_record <= 1) {
-                            AcCompareLast.this.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toasty.warning(AcCompareLast.this, "还没有上一条记录哦~",
-                                            Toast.LENGTH_SHORT, true).show();
-                                }
-                            });
-                        } else {
-                            final String []xValues = new String[count_record];
-                            for (int i = 0; i <= count_record - 1; i++) {
-                                double weight = records.get(i).get_weight();
-                                String date = records.get(i).get_record_time().substring(5, 10);
-                                dataList.add(new Entry((float)i,(float)weight));
-                                xValues[i] = date;
-                            }
-                            LineDataSet dataSet = new LineDataSet(dataList, "体重kg");
-                            dataSet.setColor(getResources().getColor(R.color.blue));
-                            dataSet.setValueTextColor(Color.BLACK);
-                            lineData = new LineData(dataSet);
-                            formatter = new IAxisValueFormatter() {
-                                @Override
-                                public String getFormattedValue(float value, AxisBase axis) {
-                                    return xValues[(int) value];
-                                }
-                            };
-
-                            final String date = records.get(count_record - 2).get_record_time();
-                            Double last_weight = records.get(count_record - 2).get_weight();
-                            final double compare = getWeight() - last_weight;
-                            AcCompareLast.this.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Legend legend = lineChart.getLegend();
-                                    legend.setTextSize(14f);
-                                    legend.setTextColor(getResources().getColor(R.color.gray0));
-                                    lineChart.setData(lineData);
-                                    Description description = new Description();
-                                    description.setText("体重随时间变化曲线");
-                                    description.setTextSize(14);
-                                    description.setTextColor(getResources().getColor(R.color.gray0));
-                                    lineChart.setDescription(description);
-                                    lineChart.setMinimumWidth(50);
-                                    lineChart.invalidate();
-                                    XAxis xAxis = lineChart.getXAxis();
-                                    xAxis.setGranularity(1f);
-                                    xAxis.setValueFormatter(formatter);
-
-                                    last_time.setRightText(date.substring(0, 10));
-                                    if (compare < 0) {
-                                        String str = -compare+"";
-                                        if (str.length()>=4)
-                                            str = str.substring(0,4);
-                                        compare_weight.setRightText("瘦了：" +str+"kg");
-                                    } else if (compare == 0) {
-                                        compare_weight.setRightText("无变化");
-                                    } else{
-                                        String str = compare+"";
-                                        if (str.length()>=4)
-                                            str = str.substring(0,4);
-                                        compare_weight.setRightText("重了：" +str+"kg");
-                                    }
-                                    avLoadingIndicatorView.setVisibility(View.GONE);
-                                }
-                            });
-                        }
-                    } else {
-                        AcCompareLast.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toasty.warning(AcCompareLast.this, "还没有上一条记录哦~",
-                                        Toast.LENGTH_SHORT, true).show();
-                                avLoadingIndicatorView.setVisibility(View.GONE);
-                            }
-                        });
-                    }
-                }
-            }
-        });
     }
 
     public double getWeight() {

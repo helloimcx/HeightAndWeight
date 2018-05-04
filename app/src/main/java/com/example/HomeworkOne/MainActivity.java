@@ -43,7 +43,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	private Fragment tab03;
 	private Fragment tabData;
 	public static Fragment tab_transfer;
-	static MainActivity instance;
 
 	@Bind(R.id.ivToolbarNavigation)
 	ImageView goback;
@@ -84,8 +83,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mImgTest = findViewById(R.id.id_tab_test_img);
 		mImgDiscover = findViewById(R.id.id_tab_discover_img);
 		mImgAccount = findViewById(R.id.id_tab_account_img);
-
-		instance = this;
 
 		if (isLate()){
 			Alerter.create(this)

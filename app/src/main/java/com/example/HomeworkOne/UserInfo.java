@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import es.dmoral.toasty.Toasty;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -21,6 +22,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import com.example.HomeworkOne.globalConfig.MyApplication;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 import com.squareup.picasso.Picasso;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.lqr.optionitemview.OptionItemView;
@@ -47,9 +50,6 @@ public class UserInfo extends Activity {
     @Bind(R.id.ivHeader)
     ImageView user_header;
 
-    private String email_str;
-    private String nickname_str;
-    private String gender_str;
     private String user_header_str;
     private  MyBroadCastReceiver myBroadCastReceiver;
 
@@ -65,9 +65,9 @@ public class UserInfo extends Activity {
 
     private void initView() {
         SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
-        email_str = share.getString("email", "null");
-        nickname_str = share.getString("username", "null");
-        gender_str = share.getString("sex", "null");
+        String email_str = share.getString("email", "null");
+        String nickname_str = share.getString("username", "null");
+        String gender_str = share.getString("sex", "null");
         user_header_str = share.getString("header","null");
         Uri header_uri = Uri.parse(user_header_str);
         email.setRightText(email_str);
@@ -93,35 +93,20 @@ public class UserInfo extends Activity {
                 UserInfo.this.finish();
             }
         });
+
+        /*
+        退出登录
+         */
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MyApplication myApplication = (MyApplication) getApplication();
                 String host = myApplication.getHost();
-                OkHttpClient okHttpClient = new OkHttpClient();
-                Request request =new Request.Builder().url(host+"/android_account/logout")
-                        .build();
-                Call call = okHttpClient.newCall(request);
-                call.enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        UserInfo.this.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(UserInfo.this);
-                                builder.setMessage("请求超时!");
-                                builder.setCancelable(true);
-                                AlertDialog dialog = builder.create();
-                                dialog.show();
-                            }
-                        });
-                    }
 
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        UserInfo.this.runOnUiThread(new Runnable() {
+                OkGo.<String>get(host+"/android_account/sign-out/")
+                        .execute(new StringCallback() {
                             @Override
-                            public void run() {
+                            public void onSuccess(com.lzy.okgo.model.Response<String> response) {
                                 SharedPreferences sharedPreferences =
                                         getSharedPreferences("Session",MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -129,14 +114,16 @@ public class UserInfo extends Activity {
 
                                 //关闭这几个Activity
                                 UserInfo.this.finish();
-                                MainActivity.instance.finish();
 
                                 //转到登录界面
                                 Intent intent = new Intent(UserInfo.this, AcLogin.class);
                                 startActivity(intent);
                             }
-                        });
-                    }
+
+                            @Override
+                            public void onError(com.lzy.okgo.model.Response<String> response) {
+                                Toasty.error(UserInfo.this, "请求超时").show();
+                            }
                 });
             }
         });

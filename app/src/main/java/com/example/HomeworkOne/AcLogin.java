@@ -22,6 +22,7 @@ import okhttp3.MediaType;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.google.gson.*;
 import com.lzy.okgo.OkGo;
@@ -102,7 +103,8 @@ public class AcLogin extends Activity implements InitView{
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                OkGo.<String>post("https://api.mochuxian.top/android_account/token/")
+                MyApplication myApplication = (MyApplication) getApplication();
+                OkGo.<String>post(myApplication.getHost() + "/android_account/token/")
                         .upJson(param)
                         .execute(new StringCallback() {
                             @Override

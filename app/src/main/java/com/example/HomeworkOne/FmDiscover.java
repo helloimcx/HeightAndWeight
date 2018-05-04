@@ -121,10 +121,8 @@ public class FmDiscover extends Fragment implements InitView {
     private void getData(final int page) {
         MyApplication myApplication = (MyApplication) getActivity().getApplication();
         final String host = myApplication.getHost();
-        SharedPreferences share = myApplication.getShare();
-        final String token = share.getString("token", "null");
         OkGo.<String>get(host + "/moment/list/?page=" + page)
-                .headers("Authorization", "Token " + token)
+                .headers(myApplication.header())
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {
@@ -248,7 +246,6 @@ public class FmDiscover extends Fragment implements InitView {
                                                 @Override
                                                 public void onClick(View v) {
                                                     OkGo.<String>post(host + "/moment/like/" + moment_id + "/")
-                                                            .headers("Authorization", "Token " + token)
                                                             .execute(new StringCallback() {
                                                                 @Override
                                                                 public void onSuccess(final com.lzy.okgo.model.Response<String> response) {

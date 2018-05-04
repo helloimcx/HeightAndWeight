@@ -21,6 +21,7 @@ import es.dmoral.toasty.Toasty;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.views.CheckBox;
 import com.lzy.okgo.OkGo;
@@ -145,7 +146,8 @@ public class AcRegister extends Activity implements InitView{
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                OkGo.<String>post("https://api.mochuxian.top/android_account/create/")
+                MyApplication myApplication = (MyApplication) getApplication();
+                OkGo.<String>post(myApplication.getHost() + "/android_account/create/")
                         .upJson(param)
                         .execute(new StringCallback() {
                             @Override

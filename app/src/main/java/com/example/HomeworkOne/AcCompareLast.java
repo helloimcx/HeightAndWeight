@@ -90,6 +90,7 @@ public class AcCompareLast extends Activity implements InitView {
         MyApplication myApplication = (MyApplication) getApplication();
         String url = myApplication.getHost()+"/android_health_test/user/";
         OkGo.<String>get(url)
+                .headers(myApplication.header())
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(com.lzy.okgo.model.Response<String> response) {

@@ -104,6 +104,7 @@ public class UserInfo extends Activity {
                 String host = myApplication.getHost();
 
                 OkGo.<String>get(host+"/android_account/sign-out/")
+                        .headers(myApplication.header())
                         .execute(new StringCallback() {
                             @Override
                             public void onSuccess(com.lzy.okgo.model.Response<String> response) {

@@ -69,7 +69,7 @@ public class FmTest extends Fragment implements InitView{
 	}
 
 	private void showResult(){
-		/**
+		/*
 		* @Method: showResult
 		* @Params: []
 		* @Return: void

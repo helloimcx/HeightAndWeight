@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -66,7 +67,8 @@ public class AcTest extends Activity implements InitView{
 		testButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				SharedPreferences share = getSharedPreferences("Session", MODE_PRIVATE);
+				MyApplication myApplication = (MyApplication) getApplication();
+				SharedPreferences share = myApplication.getShare();
 				try{
 					height = Double.parseDouble(edit_height.getText().toString());
 					Mheight = height / 100;
@@ -130,8 +132,8 @@ public class AcTest extends Activity implements InitView{
 					e.printStackTrace();
 				}
 
-				OkGo.<String>post("https://api.mochuxian.top/android_health_test/create/")
-						.headers("Authorization", "Token " + share.getString("token", "null"))
+				OkGo.<String>post(myApplication.getHost() + "/android_health_test/create/")
+						.headers(myApplication.header())
 						.upJson(param)
 						.execute(new StringCallback() {
 							@Override

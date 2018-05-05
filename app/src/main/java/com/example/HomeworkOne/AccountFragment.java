@@ -78,8 +78,8 @@ public class AccountFragment extends Fragment implements InitView{
 		api.registerApp(APP_ID);
 	}
 
-	private static String buildTransaction(final String type) {
-		return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+	private static String buildTransaction() {
+		return "webpage" + System.currentTimeMillis();
 	}
 
 	@Override
@@ -100,16 +100,14 @@ public class AccountFragment extends Fragment implements InitView{
 
 	@Override
 	public void initListener() {
+		MyApplication myApplication = (MyApplication) getActivity().getApplication();
+		final SharedPreferences share = myApplication.getShare();
 		contact.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				SharedPreferences share = getActivity().getSharedPreferences("Session",
-						getActivity().MODE_PRIVATE);
 				int user_id = share.getInt("user_id",0);
-				String sessionid = share.getString("sessionid","null");
 				Bundle bundle = new Bundle();
 				bundle.putInt("user_id",user_id);
-				bundle.putString("sessionid",sessionid);
 				Intent intent = new Intent(getActivity(),ContactDeveloper.class);
 				intent.putExtras(bundle);
 				startActivity(intent);
@@ -139,9 +137,7 @@ public class AccountFragment extends Fragment implements InitView{
 		myWeb.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				MyApplication myApplication = (MyApplication) getActivity().getApplication();
-				String host = myApplication.getHost();
-				new FinestWebView.Builder(getActivity()).show("http://www.mochuxian.top");
+				new FinestWebView.Builder(getActivity()).show("https://mochuxian.top");
 			}
 		});
 		shareApp.setOnClickListener(new View.OnClickListener() {
@@ -169,7 +165,7 @@ public class AccountFragment extends Fragment implements InitView{
 										msg.thumbData= Util.bmpToByteArray(thump,true);
 
 										SendMessageToWX.Req req=new SendMessageToWX.Req();
-										req.transaction =buildTransaction("webpage");
+										req.transaction =buildTransaction();
 										req.message=msg;
 										req.scene = SendMessageToWX.Req.WXSceneSession;
 										api.sendReq(req);
@@ -187,7 +183,7 @@ public class AccountFragment extends Fragment implements InitView{
 										msg1.thumbData=Util.bmpToByteArray(thump1,true);
 
 										SendMessageToWX.Req req1=new SendMessageToWX.Req();
-										req1.transaction =buildTransaction("webpage");
+										req1.transaction =buildTransaction();
 										req1.message=msg1;
 										req1.scene = SendMessageToWX.Req.WXSceneTimeline;
 										api.sendReq(req1);

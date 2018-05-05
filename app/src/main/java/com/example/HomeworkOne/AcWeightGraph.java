@@ -1,7 +1,5 @@
 package com.example.HomeworkOne;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,9 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.HomeworkOne.BaseActivity.AcHttpRequest;
+import com.example.HomeworkOne.BaseActivity.BaseActivity;
 import com.example.HomeworkOne.globalConfig.MyApplication;
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
@@ -23,11 +20,9 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.google.gson.Gson;
-import com.wang.avi.AVLoadingIndicatorView;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,16 +30,12 @@ import Utils.JsonRecordBean;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
-
 /**
  * Author: kafca
  * Date: 2018/1/17
  * Description: Show personal records graph
  */
-public class AcWeightGraph extends AcHttpRequest{
+public class AcWeightGraph extends BaseActivity{
     List<Entry> dataList;
     private LineData lineData;
     private IAxisValueFormatter formatter;
@@ -52,8 +43,6 @@ public class AcWeightGraph extends AcHttpRequest{
     LineChart lineChart;
     @Bind(R.id.ivToolbarNavigation)
     ImageView go_back;
-    @Bind(R.id.avi)
-    AVLoadingIndicatorView avLoadingIndicatorView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,20 +55,14 @@ public class AcWeightGraph extends AcHttpRequest{
 
     @Override
     public void initView() {
-        super.initView();
+        showLoading();
         ButterKnife.bind(this);
         dataList = new ArrayList<>();
-        avLoadingIndicatorView.setVisibility(View.VISIBLE);
-        SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
-        int user_id = sharedPreferences.getInt("user_id", 0);
-        MyApplication myApplication = (MyApplication) getApplication();
-        String url = myApplication.getHost()+"/android_health_test/record/user/" + user_id + "/";
-        httpGet(url);
+        getData();
     }
 
     @Override
     public void initListener() {
-        super.initListener();
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,71 +71,54 @@ public class AcWeightGraph extends AcHttpRequest{
         });
     }
 
-    @Override
-    public void httpGet(@NotNull String url) {
-        super.httpGet(url);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                AcWeightGraph.this.runOnUiThread(new Runnable() {
+    private void getData() {
+        MyApplication myApplication = (MyApplication) getApplication();
+        String url = myApplication.getHost()+"/android_health_test/user/";
+        OkGo.<String>get(url)
+                .headers(myApplication.header())
+                .execute(new StringCallback() {
                     @Override
-                    public void run() {
-                        Toasty.warning(AcWeightGraph.this,"您的网络似乎开小差了...",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if(response.code()==200){
-                    Gson gson = new Gson();
-                    JsonRecordBean jsonRecordBean = null;
-                    try {
-                        jsonRecordBean = gson.fromJson(response.body().string(),
-                                JsonRecordBean.class);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    if (jsonRecordBean != null) {
-                        ArrayList<JsonRecordBean.RecordBean> records = jsonRecordBean.get_records();
-                        final int count_record = jsonRecordBean.get_count_record();
-                        if (count_record <= 0) {
-                            AcWeightGraph.this.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toasty.warning(AcWeightGraph.this, "还没有记录哦~",
-                                            Toast.LENGTH_SHORT, true).show();
+                    public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                        if(response.code()==200){
+                            Gson gson = new Gson();
+                            JsonRecordBean jsonRecordBean = gson.fromJson(response.body(),
+                                    JsonRecordBean.class);
+                            if (jsonRecordBean != null) {
+                                ArrayList<JsonRecordBean.RecordBean> records = jsonRecordBean.get_records();
+                                final int count_record = jsonRecordBean.get_count_record();
+                                if (count_record <= 0) {
+                                    AcWeightGraph.this.runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toasty.warning(AcWeightGraph.this, "还没有记录哦~",
+                                                    Toast.LENGTH_SHORT, true).show();
+                                        }
+                                    });
+                                } else {
+                                    final String[] xValues = new String[count_record];
+                                    for (int i = 0; i <= count_record - 1; i++) {
+                                        double weight = records.get(i).get_weight();
+                                        String date = records.get(i).get_record_time().substring(5, 10);
+                                        dataList.add(new Entry((float) i, (float) weight));
+                                        xValues[i] = date;
+                                    }
+                                    LineDataSet dataSet = new LineDataSet(dataList, "体重kg"); // add entries to dataset
+                                    dataSet.setColor(getResources().getColor(R.color.blue));
+                                    dataSet.setValueTextColor(Color.BLACK);
+                                    lineData = new LineData(dataSet);
+                                    formatter = new IAxisValueFormatter() {
+                                        @Override
+                                        public String getFormattedValue(float value, AxisBase axis) {
+                                            int index = (int) value;
+                                            if(index==-1)
+                                                index=0;
+                                            else if(index==count_record)
+                                                index = index - 1;
+                                            return xValues[index];
+                                        }
+                                    };
                                 }
-                            });
-                        } else {
-                            final String[] xValues = new String[count_record];
-                            for (int i = 0; i <= count_record - 1; i++) {
-                                double weight = records.get(i).get_weight();
-                                String date = records.get(i).get_record_time().substring(5, 10);
-                                dataList.add(new Entry((float) i, (float) weight));
-                                xValues[i] = date;
                             }
-                            LineDataSet dataSet = new LineDataSet(dataList, "体重kg"); // add entries to dataset
-                            dataSet.setColor(getResources().getColor(R.color.blue));
-                            dataSet.setValueTextColor(Color.BLACK);
-                            lineData = new LineData(dataSet);
-                            formatter = new IAxisValueFormatter() {
-                                @Override
-                                public String getFormattedValue(float value, AxisBase axis) {
-                                    int index = (int) value;
-                                    if(index==-1)
-                                        index=0;
-                                    else if(index==count_record)
-                                        index = index - 1;
-                                    return xValues[index];
-                                }
-                            };
-                        }
-                    }
-                    AcWeightGraph.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
                             Legend legend = lineChart.getLegend();
                             legend.setTextSize(14f);
                             legend.setTextColor(getResources().getColor(R.color.gray0));
@@ -167,26 +133,21 @@ public class AcWeightGraph extends AcHttpRequest{
                             XAxis xAxis = lineChart.getXAxis();
                             xAxis.setGranularity(1f);
                             xAxis.setValueFormatter(formatter);
-                            avLoadingIndicatorView.setVisibility(View.GONE);
+                            hideLoading();
                         }
-                    });
-                }
-                else {
-                    AcWeightGraph.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toasty.warning(AcWeightGraph.this,"登录信息过期，请重新登录!",
+                        else {
+                            Toasty.warning(AcWeightGraph.this,"请求失败!",
                                     Toast.LENGTH_SHORT).show();
-                            SharedPreferences sharedPreferences =
-                                    getSharedPreferences("Session",MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.clear().apply();
-                            Intent intent = new Intent(AcWeightGraph.this, AcLogin.class);
-                            startActivity(intent);
+                            hideLoading();
                         }
-                    });
-                }
-            }
-        });
+                    }
+
+                    @Override
+                    public void onError(com.lzy.okgo.model.Response<String> response) {
+                        Toasty.warning(AcWeightGraph.this,"您的网络似乎开小差了...",
+                                Toast.LENGTH_SHORT).show();
+                        hideLoading();
+                    }
+                });
     }
 }

@@ -1,5 +1,6 @@
 package com.example.HomeworkOne;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +10,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
 
@@ -17,11 +17,9 @@ import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lqr.imagepicker.ImagePicker;
 import com.lqr.imagepicker.bean.ImageItem;
 import com.lqr.imagepicker.ui.ImageGridActivity;
-import com.lqr.imagepicker.view.CropImageView;
 import com.lqr.optionitemview.OptionItemView;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import MyInterface.InitView;
-import Utils.PicassoImageLoader;
 import Utils.PopupWindowUtils;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -67,6 +65,7 @@ public class FmDiscoverNav extends Fragment implements InitView {
     }
 
 
+    @SuppressLint("InflateParams")
     @Override
     public void initView() {
         LayoutInflater factory = LayoutInflater.from(getActivity());
@@ -75,7 +74,6 @@ public class FmDiscoverNav extends Fragment implements InitView {
         camera.setVisibility(View.VISIBLE);
         item_camera = menu.findViewById(R.id.moment_public);
         item_cancel = menu.findViewById(R.id.moment_cancel);
-        initImagePicker();
 
         adapter = new FragmentPagerItemAdapter(
                 getActivity().getSupportFragmentManager(), FragmentPagerItems.with(getActivity())
@@ -110,24 +108,6 @@ public class FmDiscoverNav extends Fragment implements InitView {
         });
     }
 
-    private void initImagePicker(){
-        WindowManager wm = getActivity().getWindowManager();
-        int width = wm.getDefaultDisplay().getWidth();
-        int height = wm.getDefaultDisplay().getHeight();
-        ImagePicker imagePicker = ImagePicker.getInstance();
-        imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
-        imagePicker.setMultiMode(true);
-        imagePicker.setShowCamera(true);  //显示拍照按钮
-        imagePicker.setCrop(false);        //允许裁剪（单选才有效）
-        imagePicker.setSaveRectangle(true); //是否按矩形区域保存
-        imagePicker.setSelectLimit(1);    //选中数量限制
-        imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
-        imagePicker.setFocusWidth(width+100);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setFocusHeight(height);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setOutPutX(width+100);//保存文件的宽度。单位像素
-        imagePicker.setOutPutY(height);//保存文件的高度。单位像素
-    }
-
     private void showPopupMenu() {
         mPopupWindow = PopupWindowUtils.getPopupWindowAtLocation(
                 menu, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, getActivity().getWindow().getDecorView().getRootView(), Gravity.BOTTOM, 0, 0);
@@ -148,7 +128,8 @@ public class FmDiscoverNav extends Fragment implements InitView {
             case REQUEST_IMAGE_PICKER:
                 if (resultCode == ImagePicker.RESULT_CODE_ITEMS) {
                     if (data != null) {
-                        ArrayList<ImageItem> images = (ArrayList<com.lqr.imagepicker.bean.ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
+                        ArrayList<ImageItem> images = (ArrayList<com.lqr.imagepicker.bean.ImageItem>) data
+                                .getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
                         if (images != null && images.size() > 0) {
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
                             Intent intent = new Intent(getActivity(),AcMomentPublish.class);

@@ -1,14 +1,12 @@
 package com.example.HomeworkOne;
 
-import android.app.Activity;
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,44 +14,27 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-import android.widget.Toast;
-import com.alibaba.sdk.android.oss.ClientException;
-import com.alibaba.sdk.android.oss.OSS;
-import com.alibaba.sdk.android.oss.OSSClient;
-import com.alibaba.sdk.android.oss.ServiceException;
-import com.alibaba.sdk.android.oss.common.auth.OSSCustomSignerCredentialProvider;
-import com.alibaba.sdk.android.oss.model.PutObjectRequest;
-import com.alibaba.sdk.android.oss.model.PutObjectResult;
 import com.bm.library.PhotoView;
-import MyInterface.InitView;
 import Utils.PopupWindowUtils;
 
+import com.example.HomeworkOne.BaseActivity.BaseActivity;
 import com.example.HomeworkOne.globalConfig.MyApplication;
-import com.google.gson.Gson;
 import com.lqr.imagepicker.ui.ImageGridActivity;
 import com.lqr.imagepicker.*;
 import com.lqr.imagepicker.view.CropImageView;
 import com.lqr.optionitemview.OptionItemView;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import java.io.IOException;
 import java.util.ArrayList;
-import Utils.PicassoImageLoader;
 import Utils.TimeUtils;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import Utils.OssSecretBean;
-import static com.example.HomeworkOne.AcLogin.JSON;
 
 
-public class UserHeader extends Activity implements InitView{
+public class UserHeader extends BaseActivity{
     @Bind(R.id.pv)
     PhotoView header;
     @Bind(R.id.ivToolbarNavigation)
@@ -61,19 +42,15 @@ public class UserHeader extends Activity implements InitView{
     @Bind(R.id.ibToolbarMore)
     ImageButton more;
 
-    public static Context context;
     public static final String BROADCAST_ACTION = "CHANGE_HEADER";
     private PopupWindow mPopupWindow;
     public static final int REQUEST_IMAGE_PICKER = 1000;
-    private ImagePicker imagePicker;
     private View menu;
-    private String signature;
     private String header_url;
-    private OSS oss;
     private OptionItemView album;
     private OptionItemView camera;
     private OptionItemView cancel;
-    private RequestBody requestBody;
+    private MyApplication myApplication;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,9 +61,9 @@ public class UserHeader extends Activity implements InitView{
         initListener();
     }
 
+    @SuppressLint("InflateParams")
     @Override
     public void initView() {
-        context = getApplicationContext();
         LayoutInflater factory = LayoutInflater.from(this);
         menu = factory.inflate(R.layout.popup_header, null);
         album = menu.findViewById(R.id.choose_from_album);
@@ -95,9 +72,9 @@ public class UserHeader extends Activity implements InitView{
         ButterKnife.bind(this);
         more.setVisibility(View.VISIBLE);
         initHeader();
+        myApplication = (MyApplication) getApplication();
 
-        imagePicker = ImagePicker.getInstance();
-        imagePicker.setImageLoader(new PicassoImageLoader());   //设置图片加载器
+        ImagePicker imagePicker = ImagePicker.getInstance();
         imagePicker.setMultiMode(false);
         imagePicker.setShowCamera(true);  //显示拍照按钮
         imagePicker.setCrop(true);        //允许裁剪（单选才有效）
@@ -121,7 +98,6 @@ public class UserHeader extends Activity implements InitView{
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initOss();
                 showPopupMenu();
             }
         });
@@ -175,7 +151,7 @@ public class UserHeader extends Activity implements InitView{
                             com.lqr.imagepicker.bean.ImageItem imageItem = images.get(0);
                             //name the header
                             String objectKey = "header"+email+ TimeUtils.getCurrentTime() +".png";
-                            putToOss(objectKey,imageItem.path);
+                            myApplication.putToOss(objectKey,imageItem.path);
                             header_url = "http://ht-data.oss-cn-shenzhen.aliyuncs.com/"
                                     +objectKey;
                                     //+"?x-oss-process=image/resize,m_fixed,h_50,w_50";
@@ -189,118 +165,42 @@ public class UserHeader extends Activity implements InitView{
         }
     }
 
-    private void initOss(){
-        String endpoint = "http://oss-cn-shenzhen.aliyuncs.com";
-        OSSCustomSignerCredentialProvider credentialProvider = new OSSCustomSignerCredentialProvider() {
-            @Override
-            public String signContent(String content) {
-                // 您需要在这里依照OSS规定的签名算法，实现加签一串字符内容，并把得到的签名传拼接上AccessKeyId后返回
-                // 一般实现是，将字符内容post到您的业务服务器，然后返回签名
-                // 如果因为某种原因加签失败，描述error信息后，返回nil
-                // 以下是用本地算法进行的演示
-                //return "OSS " + AccessKeyId + ":" + base64(hmac-sha1(AccessKeySecret, content));
-                SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
-                String sessionid = sharedPreferences.getString("sessionid","null");
-                String url = "http://120.78.67.135:8000/oss/android_signature/";
-                OkHttpClient okHttpClient = new OkHttpClient();
-                try {
-                    JSONObject param = new JSONObject();
-                    param.put("content", content);
-                    requestBody = RequestBody.create(JSON, param.toString());
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                Request request = new Request.Builder().url(url).addHeader("cookie",sessionid)
-                        .post(requestBody).build();
-                Call call = okHttpClient.newCall(request);
-                try{
-                    Response response = call.execute();
-                    Gson gson = new Gson();
-                    OssSecretBean ossSecretBean = gson.fromJson(response.body().string(),
-                            OssSecretBean.class);
-                    signature = ossSecretBean.getAuthorization();
-                    //Log.e("signature",signature);
-                    return signature;
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-                return "null";
-            }
-        };
-        oss = new OSSClient(getApplicationContext(), endpoint, credentialProvider);
-    }
-
-    private void putToOss(String objectKey, String path){
-        PutObjectRequest put = new PutObjectRequest("ht-data", objectKey, path);
-        // 文件元信息的设置是可选的
-        // ObjectMetadata metadata = new ObjectMetadata();
-        // metadata.setContentType("application/octet-stream"); // 设置content-type
-        // metadata.setContentMD5(BinaryUtil.calculateBase64Md5(uploadFilePath)); // 校验MD5
-        // put.setMetadata(metadata);
-        try {
-            PutObjectResult putResult = oss.putObject(put);
-            Log.d("PutObject", "UploadSuccess");
-            Log.d("ETag", putResult.getETag());
-            Log.d("RequestId", putResult.getRequestId());
-        } catch (ClientException e) {
-            // 本地异常如网络异常等
-            e.printStackTrace();
-        } catch (ServiceException e) {
-            // 服务异常
-            Log.e("RequestId", e.getRequestId());
-            Log.e("ErrorCode", e.getErrorCode());
-            Log.e("HostId", e.getHostId());
-            Log.e("RawMessage", e.getRawMessage());
-        }
-    }
 
     private void setUserHeader(final String url){
         //上传用户头像url到服务器上
-        final SharedPreferences sharedPreferences = getSharedPreferences("Session",MODE_PRIVATE);
-        int user_id = sharedPreferences.getInt("user_id",0);
-        OkHttpClient okHttpClient = new OkHttpClient();
+        final MyApplication myApplication = (MyApplication) getApplication();
+        String host = myApplication.getHost();
+
         JSONObject param = new JSONObject();
         try {
             param.put("header", url);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        RequestBody requestBody = RequestBody.create(JSON, param.toString());
-        MyApplication myApplication = (MyApplication) getApplication();
-        String host = myApplication.getHost();
-        Request request = new Request.Builder()
-                .url(host+"/android_account/header/"+user_id+"/")
-                .post(requestBody)
-                .build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                UserHeader.this.runOnUiThread(new Runnable() {
+
+        OkGo.<String>post(host+"/android_account/set-header/")
+                .headers(myApplication.header())
+                .upJson(param)
+                .execute(new StringCallback() {
                     @Override
-                    public void run() {
-                        Toast.makeText(UserHeader.this,"您的网络似乎出了小差...",Toast.LENGTH_SHORT).show();
+                    public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                        if (response.code() == 200) {
+                            //把用户头像信息更新到SharedPreferences
+                            SharedPreferences.Editor editor = myApplication.getShare().edit();
+                            editor.putString("header",url);
+                            editor.apply();
+                            showSuccessToast("设置成功");
+                            initHeader();
+                        }
+                        else
+                            showErrorToast("请求失败");
+                    }
+
+                    @Override
+                    public void onError(com.lzy.okgo.model.Response<String> response) {
+                        showErrorToast("网络开小差");
                     }
                 });
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                UserHeader.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        //把用户头像信息更新到SharedPreferences
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("header",url);
-                        editor.apply();
-                        Toast.makeText(UserHeader.this,"设置成功！",Toast.LENGTH_SHORT).show();
-                        initHeader();
-                    }
-                });
-            }
-        });
     }
 
     private void initHeader(){

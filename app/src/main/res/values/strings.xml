@@ -229,4 +229,5 @@
     <string name="hasNoAccount">还没有账号?</string>
     <string name="account">账号</string>
     <string name="phoneOrEmail">手机号/邮箱</string>
+    <string name="loading">加载中...</string>
 </resources>

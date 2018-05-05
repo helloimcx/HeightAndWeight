@@ -38,7 +38,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.thefinestartist.utils.content.ContextUtil.getSharedPreferences;
 
 /**
  * Author: kafca
@@ -119,7 +118,7 @@ public class FmDiscover extends Fragment implements InitView {
     获取数据
      */
     private void getData(final int page) {
-        MyApplication myApplication = (MyApplication) getActivity().getApplication();
+        final MyApplication myApplication = (MyApplication) getActivity().getApplication();
         final String host = myApplication.getHost();
         OkGo.<String>get(host + "/moment/list/?page=" + page)
                 .headers(myApplication.header())
@@ -178,107 +177,98 @@ public class FmDiscover extends Fragment implements InitView {
 
                         //首次打开或刷新时适配adapter
                         if (page == 1) {
-                            getActivity().runOnUiThread(new Runnable() {
+                            commonAdapter = new CommonAdapter<Map<String, Object>>(
+                                    getActivity(), R.layout.moment_item,
+                                    dataList
+                            ) {
                                 @Override
-                                public void run() {
-                                    commonAdapter = new CommonAdapter<Map<String, Object>>(
-                                            getActivity(), R.layout.moment_item,
-                                            dataList
-                                    ) {
+                                protected void convert(final ViewHolder viewHolder,
+                                                       Map<String, Object> stringObjectMap, int i) {
+                                    String header_url;
+                                    try {
+                                        header_url = stringObjectMap.get("header").toString();
+                                    } catch (Exception e) {
+                                        //若用户没有设置头像，头像url置为default header
+                                        header_url = "https://ws1.sinaimg.cn/large/" +
+                                                "006bShEGly1forsphz7zaj3069069wea.jpg";
+                                    }
+                                    final String name = stringObjectMap.get("name").toString();
+                                    String content;
+                                    try {
+                                        content = stringObjectMap.get("content").toString();
+                                    } catch (Exception e) {
+                                        content = "";
+                                    }
+                                    final String image_url = stringObjectMap.get("url").toString();
+                                    ImageView header = viewHolder.getView(R.id.moment_header);
+                                    Uri header_uri = Uri.parse(header_url);
+                                    Picasso.with(getActivity()).load(header_uri)
+                                            .placeholder(R.mipmap.default_header)
+                                            .fit().centerCrop().into(header);
+                                    viewHolder.setText(R.id.moment_name, name);
+                                    viewHolder.setText(R.id.moment_content, content);
+                                    final ImageView image = viewHolder.getView(R.id.moment_image);
+                                    final Uri image_uri = Uri.parse(image_url);
+                                    Picasso.with(getActivity()).load(image_uri)
+                                            .placeholder(R.mipmap.default_moment)
+                                            .fit()
+                                            .centerCrop().into(image);
+                                    //图片点击放大
+                                    image.setOnClickListener(new View.OnClickListener() {
                                         @Override
-                                        protected void convert(final ViewHolder viewHolder,
-                                                               Map<String, Object> stringObjectMap, int i) {
-                                            String header_url = "";
-                                            try {
-                                                header_url = stringObjectMap.get("header").toString();
-                                            } catch (Exception e) {
-                                                //若用户没有设置头像，头像url置为default header
-                                                header_url = "https://ws1.sinaimg.cn/large/" +
-                                                        "006bShEGly1forsphz7zaj3069069wea.jpg";
-                                            }
-                                            final String name = stringObjectMap.get("name").toString();
-                                            String content;
-                                            try {
-                                                content = stringObjectMap.get("content").toString();
-                                            } catch (Exception e) {
-                                                content = "";
-                                            }
-                                            final String image_url = stringObjectMap.get("url").toString();
-                                            ImageView header = viewHolder.getView(R.id.moment_header);
-                                            Uri header_uri = Uri.parse(header_url);
-                                            Picasso.with(getActivity()).load(header_uri)
-                                                    .placeholder(R.mipmap.default_header)
-                                                    .fit().centerCrop().into(header);
-                                            viewHolder.setText(R.id.moment_name, name);
-                                            viewHolder.setText(R.id.moment_content, content);
-                                            final ImageView image = viewHolder.getView(R.id.moment_image);
-                                            final Uri image_uri = Uri.parse(image_url);
-                                            Picasso.with(getActivity()).load(image_uri)
-                                                    .placeholder(R.mipmap.default_moment)
-                                                    .fit()
-                                                    .centerCrop().into(image);
-                                            //图片点击放大
-                                            image.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    Intent intent = new Intent(getActivity(), AcShowPhotos.class);
-                                                    intent.putExtra("image_url", image_url);
-                                                    startActivity(intent);
-                                                }
-                                            });
-
-                                            final int moment_id = (int) stringObjectMap.get("moment_id");
-                                            final LikeButton likeButton = viewHolder.getView(R.id.star_button);
-                                            final SharedPreferences sharedPreferences = getActivity()
-                                                    .getSharedPreferences(moment_id + "", MODE_PRIVATE);
-                                            final boolean has_liked = sharedPreferences
-                                                    .getBoolean("has_liked", false);
-                                            int likes_count = sharedPreferences
-                                                    .getInt("likes_count", 0);
-                                            if (has_liked)
-                                                likeButton.setLiked(true);
-                                            else
-                                                likeButton.setLiked(false);
-                                            viewHolder.setText(R.id.likes_count, likes_count + "");
-
-                                            // 点赞和取消点赞
-                                            likeButton.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View v) {
-                                                    OkGo.<String>post(host + "/moment/like/" + moment_id + "/")
-                                                            .execute(new StringCallback() {
-                                                                @Override
-                                                                public void onSuccess(final com.lzy.okgo.model.Response<String> response) {
-                                                                    if (response.code() != 200 && response.code() != 202)
-                                                                        return;
-                                                                    JsonLikeBean jsonLikeBean = gson.fromJson(response.body(), JsonLikeBean.class);
-                                                                    final int likes_count = jsonLikeBean.getCount();
-                                                                    getActivity().runOnUiThread(new Runnable() {
-                                                                        @Override
-                                                                        public void run() {
-                                                                            viewHolder.setText(R.id.likes_count, likes_count + "");
-                                                                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                                                                            if (response.code() == 200) {
-                                                                                likeButton.setLiked(true);
-                                                                                editor.putBoolean("has_liked", true);
-                                                                            } else {
-                                                                                likeButton.setLiked(false);
-                                                                                editor.putBoolean("has_liked", false);
-                                                                            }
-                                                                            editor.putInt("likes_count", likes_count);
-                                                                            editor.apply();
-                                                                        }
-                                                                    });
-                                                                }
-                                                            });
-                                                }
-                                            });
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(getActivity(), AcShowPhotos.class);
+                                            intent.putExtra("image_url", image_url);
+                                            startActivity(intent);
                                         }
-                                    };
-                                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                                    recyclerView.setAdapter(commonAdapter);
+                                    });
+
+                                    final int moment_id = (int) stringObjectMap.get("moment_id");
+                                    final LikeButton likeButton = viewHolder.getView(R.id.star_button);
+                                    final SharedPreferences sharedPreferences = getActivity()
+                                            .getSharedPreferences(moment_id + "", MODE_PRIVATE);
+                                    final boolean has_liked = sharedPreferences
+                                            .getBoolean("has_liked", false);
+                                    int likes_count = sharedPreferences
+                                            .getInt("likes_count", 0);
+                                    if (has_liked)
+                                        likeButton.setLiked(true);
+                                    else
+                                        likeButton.setLiked(false);
+                                    viewHolder.setText(R.id.likes_count, likes_count + "");
+
+                                    // 点赞和取消点赞
+                                    likeButton.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            OkGo.<String>post(host + "/moment/moment-like/" + moment_id + "/")
+                                                    .headers(myApplication.header())
+                                                    .execute(new StringCallback() {
+                                                        @Override
+                                                        public void onSuccess(final com.lzy.okgo.model.Response<String> response) {
+                                                            if (response.code() != 200 && response.code() != 202)
+                                                                return;
+                                                            JsonLikeBean jsonLikeBean = gson.fromJson(response.body(), JsonLikeBean.class);
+                                                            final int likes_count = jsonLikeBean.getCount();
+                                                            viewHolder.setText(R.id.likes_count, likes_count + "");
+                                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                            if (response.code() == 200) {
+                                                                likeButton.setLiked(true);
+                                                                editor.putBoolean("has_liked", true);
+                                                            } else {
+                                                                likeButton.setLiked(false);
+                                                                editor.putBoolean("has_liked", false);
+                                                            }
+                                                            editor.putInt("likes_count", likes_count);
+                                                            editor.apply();
+                                                        }
+                                                    });
+                                        }
+                                    });
                                 }
-                            });
+                            };
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                            recyclerView.setAdapter(commonAdapter);
                         }
                         else {
                             commonAdapter.notifyDataSetChanged();

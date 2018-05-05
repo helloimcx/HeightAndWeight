@@ -1,6 +1,5 @@
 package com.example.HomeworkOne;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -12,16 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import MyInterface.InitView;
 import Utils.JsonUserBean;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
-import okhttp3.MediaType;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.HomeworkOne.BaseActivity.BaseActivity;
 import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.google.gson.*;
@@ -33,11 +31,9 @@ import com.lzy.okgo.callback.StringCallback;
  * Created by kafca on 17-9-28.
  */
 
-public class AcLogin extends Activity implements InitView{
-    static AcLogin instance;
+public class AcLogin extends BaseActivity{
     private String accountStr;
     private String passwordStr;
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     @Bind(R.id.edit_account)
     EditText account;
     @Bind(R.id.edit_password)
@@ -61,9 +57,9 @@ public class AcLogin extends Activity implements InitView{
 
     @Override
     public void initView() {
+        loadingDialog.setMessage("正在登陆");
         ButterKnife.bind(this);
         goback.setVisibility(View.GONE);
-        instance = this;
     }
 
     @Override
@@ -82,7 +78,7 @@ public class AcLogin extends Activity implements InitView{
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                showLoading();
                 //获取登录表单
                 accountStr = account.getText().toString();
                 passwordStr = password.getText().toString();
@@ -151,11 +147,13 @@ public class AcLogin extends Activity implements InitView{
                                 } else {
                                     Toasty.error(AcLogin.this, "请求错误!"+response.code()).show();
                                 }
+                                hideLoading();
                             }
 
                             @Override
                             public void onError(com.lzy.okgo.model.Response<String> response) {
                                 Toasty.error(AcLogin.this, "账号不存在!").show();
+                                hideLoading();
                             }
                         });
             }

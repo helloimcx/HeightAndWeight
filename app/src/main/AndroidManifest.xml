@@ -83,7 +83,7 @@
         </activity>
 
         <activity
-            android:name="com.example.HomeworkOne.BaseActivity.AcHttpRequest"
+            android:name="com.example.HomeworkOne.BaseActivity.BaseActivity"
             android:label="@string/app_name" >
         </activity>
 

@@ -1,5 +1,6 @@
 package com.example.HomeworkOne;
 
+import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,38 +8,27 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.HomeworkOne.BaseActivity.AcHttpRequest;
 import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.gson.Gson;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
 import com.wang.avi.AVLoadingIndicatorView;
 
-import org.intellij.lang.annotations.Identifier;
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import MyInterface.InitView;
 import Utils.JsonFMRatioBean;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import es.dmoral.toasty.Toasty;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 /**
  * Author: kafca
@@ -46,7 +36,7 @@ import okhttp3.Response;
  * Description: show the ratio of female and male users
  */
 
-public class AcFMRatioGraph extends AcHttpRequest{
+public class AcFMRatioGraph extends Activity implements InitView{
     @Bind(R.id.chart_fm_ratio)
     PieChart pieChart;
     @Bind(R.id.ivToolbarNavigation)
@@ -55,7 +45,6 @@ public class AcFMRatioGraph extends AcHttpRequest{
     AVLoadingIndicatorView avLoadingIndicatorView;
     private int count_female, count_male;
     private List<PieEntry> dataList;
-    private IAxisValueFormatter formatter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,18 +57,14 @@ public class AcFMRatioGraph extends AcHttpRequest{
 
     @Override
     public void initView() {
-        super.initView();
         ButterKnife.bind(this);
         avLoadingIndicatorView.setVisibility(View.VISIBLE);
         dataList = new ArrayList<>();
-        MyApplication myApplication = (MyApplication) getApplication();
-        String url = myApplication.getHost()+"/data/fm_ratio/";
-        httpGet(url);
+        getData();
     }
 
     @Override
     public void initListener() {
-        super.initListener();
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,59 +74,41 @@ public class AcFMRatioGraph extends AcHttpRequest{
 
     }
 
-    @Override
-    public void httpGet(@NotNull String url) {
-        super.httpGet(url);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                AcFMRatioGraph.this.runOnUiThread(new Runnable() {
+    private void getData(){
+        MyApplication myApplication = (MyApplication) getApplication();
+        String url = myApplication.getHost()+"/data/fm_ratio/";
+        OkGo.<String>get(url)
+                .execute(new StringCallback() {
                     @Override
-                    public void run() {
-                        Toasty.warning(AcFMRatioGraph.this,"您的网络似乎开小差了...",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.code()==200){
-                    Gson gson = new Gson();
-                    JsonFMRatioBean jsonFMRatioBean = null;
-                    try {
-                        jsonFMRatioBean = gson.fromJson(response.body().string(),
-                                JsonFMRatioBean.class);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    if (jsonFMRatioBean!=null){
-                        count_female = jsonFMRatioBean.getFemale();
-                        count_male = jsonFMRatioBean.getMale();
-                    }
-                    dataList.add(new PieEntry((float)count_female,"女"));
-                    dataList.add(new PieEntry((float)count_male,"男"));
-                    AcFMRatioGraph.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
+                    public void onSuccess(com.lzy.okgo.model.Response<String> response) {
+                        if (response.code()==200){
+                            Gson gson = new Gson();
+                            JsonFMRatioBean jsonFMRatioBean = gson.fromJson(response.body(),
+                                    JsonFMRatioBean.class);
+                            if (jsonFMRatioBean!=null){
+                                count_female = jsonFMRatioBean.getFemale();
+                                count_male = jsonFMRatioBean.getMale();
+                            }
+                            dataList.add(new PieEntry((float)count_female,"女"));
+                            dataList.add(new PieEntry((float)count_male,"男"));
                             initChart();
                             setData(dataList);
                             avLoadingIndicatorView.setVisibility(View.GONE);
                         }
-                    });
-                }
-                else {
-                    AcFMRatioGraph.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
+                        else {
                             Toasty.warning(AcFMRatioGraph.this,"服务器出错！",
                                     Toast.LENGTH_SHORT).show();
                         }
-                    });
-                }
-            }
-        });
+                    }
+
+                    @Override
+                    public void onError(com.lzy.okgo.model.Response<String> response) {
+                        Toasty.warning(AcFMRatioGraph.this,"您的网络似乎开小差了...",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
+
 
     private void initChart(){
         pieChart.setDescription(null);

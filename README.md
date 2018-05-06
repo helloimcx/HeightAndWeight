@@ -9,7 +9,7 @@
 * Share your heroism with the world.
 
 ### ScreenShot
-![](https://ws1.sinaimg.cn/large/006bShEGgy1fnp83gqoyxj30a80eotcd.jpg)
+![](https://github.com/Kafcal/HeightAndWeight/blob/master/screenShot/Screenshot_41.png?raw=true)
 
 ### Available online platform:
 * [Huawei appstore](http://appstore.huawei.com/app/C100146073)

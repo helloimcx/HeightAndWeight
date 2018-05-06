@@ -27,6 +27,8 @@ import com.gc.materialdesign.views.CheckBox;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
+import static Utils.Md5.md5;
+
 
 /**
  * Created by kafca on 17-9-28.
@@ -128,7 +130,7 @@ public class AcRegister extends Activity implements InitView{
                     phoneStr = phone.getText().toString();
                 }
                 usernameStr = username.getText().toString();
-                passwordStr = password.getText().toString();
+                passwordStr = md5(password.getText().toString());
                 if(male.isCheck()){
                     sex = "M";
                 }

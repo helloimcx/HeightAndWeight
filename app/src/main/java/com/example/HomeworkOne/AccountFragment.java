@@ -87,7 +87,7 @@ public class AccountFragment extends Fragment implements InitView{
 		SharedPreferences sharedPreferences = getActivity().
 				getSharedPreferences("Session", Context.MODE_PRIVATE);
 		String name_str = sharedPreferences.getString("username","null");
-		String email_str = sharedPreferences.getString("email","null");
+		String email_str = sharedPreferences.getString("email","");
 		String header_str = sharedPreferences.getString("header","null");
 		Uri header_uri = Uri.parse(header_str);
 		Picasso.with(getActivity()).load(header_uri).placeholder(R.mipmap.default_header).fit().centerCrop().into(header);

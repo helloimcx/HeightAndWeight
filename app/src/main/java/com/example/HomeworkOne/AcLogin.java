@@ -26,6 +26,8 @@ import com.google.gson.*;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
+import static Utils.Md5.md5;
+
 
 /**
  * Created by kafca on 17-9-28.
@@ -81,7 +83,7 @@ public class AcLogin extends BaseActivity{
                 showLoading();
                 //获取登录表单
                 accountStr = account.getText().toString();
-                passwordStr = password.getText().toString();
+                passwordStr = md5(password.getText().toString());
                 if (accountStr.length() * password.length() == 0){
                     Toasty.warning(AcLogin.this, "请输入账号和密码!",
                             Toast.LENGTH_SHORT, true).show();

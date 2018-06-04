@@ -21,6 +21,7 @@ abstract class BaseActivity : Activity(), InitView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
+        setActivityState()
         loadingDialog = LoadingDialog(this, R.style.MyDialogStyle)
     }
 

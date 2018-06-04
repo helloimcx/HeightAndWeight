@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit
 import java.util.logging.Level
 import com.lzy.okgo.https.HttpsUtils
 import com.lzy.okgo.model.HttpHeaders
+import com.mob.MobSDK
 import okhttp3.Response
 import org.json.JSONObject
 
@@ -43,6 +44,7 @@ class MyApplication : Application() {
         initOkGo()
         intiOss()
         initImagePicker()
+        MobSDK.init(this);
         super.onCreate()
     }
 

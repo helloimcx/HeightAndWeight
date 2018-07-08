@@ -42,6 +42,8 @@ public class AcLogin extends BaseActivity{
     EditText password;
     @Bind(R.id.tv_no_account)
     TextView no_account;
+    @Bind(R.id.tv_forget_password)
+    TextView forget_pwd;
     @Bind(R.id.btn_login)
     ButtonRectangle LoginButton;
     @Bind(R.id.ivToolbarNavigation)
@@ -72,6 +74,15 @@ public class AcLogin extends BaseActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AcLogin.this, AcRegister.class);
+                startActivity(intent);
+            }
+        });
+
+        // ÷ÿ…Ë√‹¬Î
+        forget_pwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcLogin.this, AcForgetPwd.class);
                 startActivity(intent);
             }
         });

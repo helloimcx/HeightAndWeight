@@ -6,6 +6,7 @@ package Utils
  * Description: UserBean
  */
 data  class JsonUserBean (var user_id: Int,
+                          var id: Int,
                           var phone: String,
                           var email: String,
                           var username: String,

@@ -1,6 +1,7 @@
 package com.example.HomeworkOne;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 
 import java.lang.String;
 
+import Utils.JsonUserBean;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 import es.dmoral.toasty.Toasty;
@@ -24,6 +26,7 @@ import com.example.HomeworkOne.BaseActivity.BaseActivity;
 import com.example.HomeworkOne.globalConfig.MyApplication;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.views.CheckBox;
+import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -192,10 +195,12 @@ public class AcRegister extends BaseActivity{
     // 提交验证码，其中的code表示验证码，如“1357”
     public void submitCode(String country, String phone, String code, final JSONObject param) {
         // 注册一个事件回调，用于处理提交验证码操作的结果
+        showLoading();
         SMSSDK.registerEventHandler(new EventHandler() {
             public void afterEvent(int event, int result, Object data) {
                 if (result == SMSSDK.RESULT_COMPLETE) {
                     MyApplication myApplication = (MyApplication) getApplication();
+                    final SharedPreferences sharedPreferences = myApplication.getShare();
                     OkGo.<String>post(myApplication.getHost() + "/android_account/create/")
                             .upJson(param)
                             .execute(new StringCallback() {
@@ -204,12 +209,34 @@ public class AcRegister extends BaseActivity{
                                     if(response.code() == 201){
                                         Toasty.success(AcRegister.this,
                                                 "注册成功!", Toast.LENGTH_SHORT, true).show();
+                                        Gson gson = new Gson();
+                                        JsonUserBean jsonUserBean = gson.fromJson(response.body(),
+                                                JsonUserBean.class);
+                                        int id = jsonUserBean.getId();
+                                        String phone = jsonUserBean.getPhone();
+                                        String email = jsonUserBean.getEmail();
+                                        String username = jsonUserBean.getUsername();
+                                        String sex = jsonUserBean.getSex();
+                                        String header = jsonUserBean.getHeader();
+                                        String token = jsonUserBean.getToken();
+                                        sex = (sex.equals("M")) ? "男" : "女";
+                                        SharedPreferences.Editor edit = sharedPreferences.edit();
+                                        edit.putInt("user_id", id);
+                                        edit.putString("phone", phone);
+                                        edit.putString("email", email);
+                                        edit.putString("username", username);
+                                        edit.putString("sex", sex);
+                                        edit.putString("header", header);
+                                        edit.putString("token", token);
+                                        edit.apply();
 
-                                        //转到登陆
-                                        Intent intent = new Intent(AcRegister.this, AcLogin.class);
+                                        //转到主页面
+                                        hideLoading();
+                                        Intent intent = new Intent(AcRegister.this, MainActivity.class);
                                         startActivity(intent);
                                     }
                                     else {
+                                        hideLoading();
                                         Toasty.warning(AcRegister.this, "账号已存在",
                                                 Toast.LENGTH_SHORT, true).show();
                                     }
@@ -217,6 +244,7 @@ public class AcRegister extends BaseActivity{
 
                                 @Override
                                 public void onError(com.lzy.okgo.model.Response<String> response) {
+                                    hideLoading();
                                     Toasty.error(AcRegister.this, "请求错误").show();
                                 }
                             });
@@ -224,6 +252,7 @@ public class AcRegister extends BaseActivity{
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            hideLoading();
                             showErrorToast("验证码错误");
                         }
                     });

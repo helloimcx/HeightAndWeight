@@ -133,20 +133,6 @@
         app:right_image_margin_right="40px"
         app:right_src="@drawable/right_arrow"/>
 
-    <com.lqr.optionitemview.OptionItemView
-        android:id="@+id/oivEmoji"
-        style="@style/OptionItem"
-        android:layout_marginTop="@dimen/option_item_margin_top"
-        android:background="@drawable/selector_common_item"
-        android:visibility="gone"
-        app:left_image_margin_left="@dimen/option_item_margin_left"
-        app:left_image_margin_right="@dimen/option_item_margin_right"
-        app:left_src="@mipmap/ic_emo_yellow"
-        app:left_text="@string/emotion"
-        app:left_text_color="@color/black0"
-        app:left_text_size="16sp"
-        app:right_image_margin_right="40px"
-        app:right_src="@drawable/right_arrow"/>
 
     <com.lqr.optionitemview.OptionItemView
         android:id="@+id/account_contact"
